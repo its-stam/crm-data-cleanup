@@ -1,5 +1,7 @@
 # crm-data-cleanup
 
+![Messy CRM export in, clean contacts out: three rows of one person merged into one contact; 2,000 rows in, 190 set aside, 484 duplicates merged, 1,326 clean contacts](docs/images/overview.png)
+
 CRM exports from different tools describe the same person several times, with mixed-case e-mails, phone numbers in a dozen notations, test entries, internal addresses and keyboard junk in between. Imported as they are, they fill the new CRM with duplicates and unreachable contacts; cleaned by deleting, they lose real people.
 
 This repository shows a pipeline that cleans such exports **before** the import, never deletes a row, and gives a person a review page to sign off. Python 3.11+, standard library only.
@@ -26,6 +28,8 @@ python -m crm_cleanup run --input data/sample/*.csv --out out/
 open out/review.html        # xdg-open on Linux, start on Windows
 python -m unittest          # 62 tests
 ```
+
+![Terminal run: 2000 input rows, 190 excluded, 484 merged away, 1326 output records, integrity checks passed; 62 tests OK](docs/images/cli-run.png)
 
 ## Output
 
@@ -67,6 +71,8 @@ A cleanup that deletes cannot be audited. Everything the pipeline sets aside sta
 ## Why a person signs off before the import
 
 The rules are heuristics. A shared mailbox such as `info@` joins people who are not the same, and a name with few vowels can be a real name. `review.html` puts the cases where this can happen in front of a person: all excluded rows, all suspect records, and the largest merge groups. The import should happen after that check, not before.
+
+![Review page: summary counts, sign-off checklist, excluded rows grouped by reason, suspect records with the reason they were flagged](docs/images/review-page.png)
 
 ## Using your own data
 
