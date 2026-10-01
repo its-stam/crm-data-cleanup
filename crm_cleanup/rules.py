@@ -16,8 +16,9 @@ _VOWELS = set("aeiouyøæœ")
 _KEYBOARD_ROWS = re.compile(r"asdf|sdfg|dfgh|fghj|ghjk|hjkl|qwer|qwert|yxcv|xcvb|cvbn|vbnm|rtzu|tzui")
 
 # Vowel share (y counts as a vowel; accents are ignored) of the letters in a text.
-EXCLUDE_BELOW = 0.10   # four or more letters and (almost) no vowel: keyboard mash
+EXCLUDE_BELOW = 0.10   # (almost) no vowel: keyboard mash, if the name is long enough, see below
 SUSPECT_BELOW = 0.15   # five or more letters and about one vowel in seven: ask a human
+MASH_MIN_LETTERS = 6   # shorter vowel-less names ("Plch", "Wrzl") are real surnames: flag, do not exclude
 _INITIAL = re.compile(r"\w\.?")
 
 
@@ -37,6 +38,23 @@ def vowel_ratio(text: str) -> float:
     return sum(c in _VOWELS for c in base) / len(base) if base else 1.0
 
 
+def _is_keyboard_mash(base: str) -> bool:
+    """No vowels, and either long enough (6+ letters) or containing a keyboard-row pattern."""
+    if len(base) < 4 or vowel_ratio(base) >= EXCLUDE_BELOW:
+        return False
+    return len(base) >= MASH_MIN_LETTERS or bool(_KEYBOARD_ROWS.search(base))
+
+
+def _is_digit_pattern(number: str) -> bool:
+    """All digits equal, or strictly ascending / descending (1234567890 wraps)."""
+    if len(number) < 6:
+        return False
+    if len(set(number)) == 1:
+        return True
+    steps = {(int(b) - int(a)) % 10 for a, b in zip(number, number[1:])}
+    return steps == {1} or steps == {9}
+
+
 def _domain_matches(address: str, domains) -> bool:
     host = address.rpartition("@")[2]
     return any(host == d or host.endswith("." + d) for d in domains)
@@ -51,21 +69,22 @@ def exclusion_reasons(rec: Record, cfg: Config) -> list:
     if any(p.search(text) for p in cfg.test_patterns for text in probes if text):
         reasons.append(("test_entry", "test entry (matches a configured test pattern)"))
     base = name_letters(rec.name)
-    if len(base) >= 4 and vowel_ratio(base) < EXCLUDE_BELOW:
+    if _is_keyboard_mash(base):
         reasons.append(("keyboard_mash", f"keyboard mash (vowel share {vowel_ratio(base):.0%})"))
     if not rec.emails and not rec.phones:
         reasons.append(("no_contact", "no usable contact method (no valid e-mail, no valid phone)"))
     return reasons
 
 
-def suspect_flags(rec: Record) -> list:
+def suspect_flags(rec: Record, country_code: str = "49") -> list:
     """Borderline signals on a row that is kept, as (code, text)."""
     flags = []
     base = name_letters(rec.name)
     if not rec.name:
         flags.append(("no_name", "no name"))
-    if len(base) >= 5 and vowel_ratio(base) < SUSPECT_BELOW:
-        flags.append(("low_vowel_share", f"name has few vowels ({vowel_ratio(base):.0%})"))
+    ratio = vowel_ratio(base)
+    if (len(base) >= 4 and ratio < EXCLUDE_BELOW) or (len(base) >= 5 and ratio < SUSPECT_BELOW):
+        flags.append(("low_vowel_share", f"name has few vowels ({ratio:.0%})"))
     if _KEYBOARD_ROWS.search(letters(rec.name)):
         flags.append(("keyboard_pattern", "name contains a keyboard-row pattern"))
     if re.search(r"\d", rec.name):
@@ -79,9 +98,8 @@ def suspect_flags(rec: Record) -> list:
             flags.append(("cryptic_email", "e-mail local part looks random"))
             break
     for phone in rec.phones:
-        number = phone[1:]
-        if len(set(number)) <= 2 or re.search(r"(\d)\1{7,}", number) or re.search(
-                r"1234567|2345678|3456789|9876543|8765432|7654321", number):
-            flags.append(("odd_phone", "phone number is a repeated or sequential pattern"))
+        national = phone[1 + len(country_code):] if phone.startswith("+" + country_code) else phone[1:]
+        if _is_digit_pattern(national):
+            flags.append(("odd_phone", "the whole phone number is a repeated or sequential pattern"))
             break
     return flags

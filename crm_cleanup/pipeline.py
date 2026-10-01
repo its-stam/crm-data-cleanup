@@ -188,7 +188,7 @@ def process(paths, cfg: Config) -> Result:
         rec.reasons = exclusion_reasons(rec, cfg)
         (excluded if rec.reasons else kept).append(rec)
     for rec in kept:
-        rec.flags = suspect_flags(rec)
+        rec.flags = suspect_flags(rec, cfg.country_code)
 
     # Excluded rows are set aside before matching: an internal or test row
     # must never be the link that glues two real contacts together.

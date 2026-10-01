@@ -58,7 +58,7 @@ class _Builder:
     def __init__(self, n: int, seed: int):
         self.rng = random.Random(seed)
         self.n = n
-        self.phone_pool = list(range(1, 10000))   # 0000 is reserved for one odd-looking number
+        self.phone_pool = list(range(1, 10000))   # xxxx = 0001 .. 9999
         self.rng.shuffle(self.phone_pool)
         self.used_locals = set()
         self.rows = []                             # drafts: dicts, one per output row
@@ -190,7 +190,7 @@ def build(n: int, seed: int):
     special = {
         "test": share(0.03), "internal": share(0.025), "internal_shared": share(0.005), "mash": share(0.02),
         "no_contact": share(0.015), "mash_border": share(0.015), "digits": share(0.01), "repeat": share(0.005),
-        "cryptic": share(0.01), "no_name": share(0.01), "keyboard": share(0.005), "odd_phone": 1 if n >= 200 else 0,
+        "cryptic": share(0.01), "no_name": share(0.01), "keyboard": share(0.005),
     }
     n_special = sum(special.values())
     if n_special > n:
@@ -239,9 +239,6 @@ def build(n: int, seed: int):
         b.draft(first, last, b.local(f"kontakt.{rng.randint(1000, 9999)}") + "@example.com", [b.phone()])
     for _ in range(special["no_name"]):
         b.draft("", "", b.local(f"kontakt.{rng.randint(1000, 9999)}") + "@example.com", [b.phone()] if rng.random() < 0.4 else [])
-    for _ in range(special["odd_phone"]):
-        first, last, company, city = b.person()
-        b.draft(first, last, b.local(f"{slug(first)}.{slug(last)}") + "@example.com", ["1510000" + "0000"], company, city)
 
     # real people, some of them more than once
     remaining, entities = n - n_special, 0

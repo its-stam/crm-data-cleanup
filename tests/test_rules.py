@@ -33,6 +33,19 @@ class ExclusionTest(unittest.TestCase):
         rec = make_record(name="Xkjhsd Qwrtpl", emails=["x@example.com"])
         self.assertEqual(codes(exclusion_reasons(rec, self.cfg)), ["keyboard_mash"])
 
+    def test_short_real_names_without_vowels_are_kept_and_flagged_only(self):  # item 7
+        for name in ["Plch", "Wrzl", "Krmpf"]:
+            rec = make_record(name=name, emails=["x@example.com"])
+            with self.subTest(name=name):
+                self.assertEqual(exclusion_reasons(rec, self.cfg), [])
+                self.assertIn("low_vowel_share", codes(suspect_flags(rec)))
+
+    def test_vowel_less_names_are_excluded_from_six_letters_or_with_a_keyboard_pattern(self):  # item 7
+        for name in ["Krmpfl", "Hjkl", "Sdfg Hjkl"]:
+            rec = make_record(name=name, emails=["x@example.com"])
+            with self.subTest(name=name):
+                self.assertEqual(codes(exclusion_reasons(rec, self.cfg)), ["keyboard_mash"])
+
     def test_borderline_name_stays_and_is_flagged(self):
         rec = make_record(name="Bertschlk Kranz", emails=["x@example.com"])
         self.assertEqual(exclusion_reasons(rec, self.cfg), [])
@@ -67,12 +80,17 @@ class SuspectTest(unittest.TestCase):
         self.assertIn("no_name", self.flags(name=""))
         self.assertIn("keyboard_pattern", self.flags(name="Asdfg Qwert"))
 
-    def test_cryptic_mail_and_odd_phone(self):
+    def test_cryptic_mail(self):
         self.assertIn("cryptic_email", self.flags(emails=["xkcvbnmqz@example.com"]))
-        self.assertIn("odd_phone", self.flags(phones=["+4915100000000"]))       # eight zeros in a row
-        self.assertIn("odd_phone", self.flags(phones=["+491234567890"]))        # sequential
-        self.assertNotIn("odd_phone", self.flags(phones=["+4915100000001"]))    # seven zeros: still ordinary
         self.assertNotIn("cryptic_email", self.flags(emails=["schmidt@example.com"]))
+
+    def test_odd_phone_only_when_the_whole_national_number_is_a_pattern(self):  # item 8
+        for number in ["+4911111111", "+4912345678", "+4987654321", "+491234567890", "+499876543210"]:
+            with self.subTest(number=number):
+                self.assertIn("odd_phone", self.flags(phones=[number]))
+        for number in ["+49891234567", "+493012345678", "+4915100000000", "+4915100001234", "+4915112345670"]:
+            with self.subTest(number=number):  # real numbers that merely contain a run
+                self.assertNotIn("odd_phone", self.flags(phones=[number]))
 
 
 if __name__ == "__main__":
