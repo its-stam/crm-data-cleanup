@@ -140,5 +140,22 @@ class ConfigCommentsTest(unittest.TestCase):
             self.assertNotIn(english, comments)
 
 
+class ReadmeTest(unittest.TestCase):
+    def test_readme_is_german_and_shows_the_real_console_output(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        for heading in ["## Die vier Schritte", "## Schnellstart", "## Ausgabe", "## Bekannte Grenzen", "## In English"]:
+            self.assertIn(heading, readme)
+        for english in ["## The four steps", "## Quickstart", "## Known limits", "## Auf Deutsch"]:
+            self.assertNotIn(english, readme)
+        self.assertEqual(len(re.findall(r"!\[[^\]]*\]\(docs/images/", readme)), 3)
+        with tempfile.TemporaryDirectory() as tmp:
+            stdout = io.StringIO()
+            with contextlib.redirect_stdout(stdout):
+                cli.main(["run", "--input", str(ROOT / "data" / "sample" / "*.csv"), "--out", tmp,
+                          "--config", str(ROOT / "config.example.toml")])
+        shown = stdout.getvalue().replace(tmp, "out")
+        self.assertIn(shown, readme)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -1,118 +1,129 @@
 # crm-data-cleanup
 
-![Cleanup shown as a pipeline: 2,000 imported rows, 190 set aside with a reason, 484 duplicates merged, 1,326 clean contacts; integrity checks passed and ready to import](docs/images/overview.png)
+![Die Bereinigung als Ablauf: 2.000 eingelesene Zeilen, 190 mit Begründung beiseitegelegt, 484 Dubletten zusammengeführt, 1.326 saubere Kontakte; Prüfungen bestanden und bereit zum Import](docs/images/overview.png)
 
-CRM exports from different tools describe the same person several times, with mixed-case e-mails, phone numbers in a dozen notations, test entries, internal addresses and keyboard junk in between. Imported as they are, they fill the new CRM with duplicates and unreachable contacts; cleaned by deleting, they lose real people.
+CRM-Exporte aus verschiedenen Werkzeugen beschreiben dieselbe Person mehrfach: mit unterschiedlich geschriebenen E-Mail-Adressen, Telefonnummern in einem Dutzend Schreibweisen und dazwischen Testeinträgen, internen Adressen und Tastatur-Müll. Unverändert importiert, füllen sie das neue CRM mit Dubletten und unerreichbaren Kontakten; werden sie durch Löschen bereinigt, gehen echte Kontakte verloren.
 
-This repository shows a pipeline that cleans such exports **before** the import, never deletes a row, and gives a person a review page to sign off. Python 3.11+, standard library only.
+Dieses Repository zeigt eine Pipeline, die solche Exporte **vor** dem Import bereinigt, dabei keine Zeile löscht und einem Menschen eine Prüfseite zur Freigabe bereitstellt. Python 3.11+, nur Standardbibliothek.
 
-## The four steps
+## Die vier Schritte
 
-1. **Load and unify.** Several CSV files with different column names are read through a small TOML mapping per source (`config.example.toml`) and turned into one common shape.
-2. **Normalise.** Whitespace is collapsed. E-mails are lower-cased and validated. Phone numbers become E.164 with Germany as default country: `0151 0000 1234`, `0151/00001234`, `+49 (0)151 0000 1234` and `0049 151 0000 1234` all end up as `+4915100001234`. Numbers need 9 to 15 digits; anything that is not clearly a number is rejected, not guessed.
-3. **Set aside, never delete.** Rows from internal domains, test entries, keyboard mash (a name without vowels: excluded from six letters or with a keyboard-row pattern, shorter ones such as `Plch` are only flagged) and rows without any usable contact method go to `excluded.csv` with the reason. Borderline rows stay in the output but carry `suspect = yes` and the reason.
-4. **Deduplicate and merge.** Rows are grouped with union-find over the normalised e-mail **and** phone number, transitively: if A and B share an e-mail and B and C share a phone number, all three are one person. The most complete row leads; further e-mails and numbers go into `email_2` / `phone_2` (more into `more_emails` / `more_phones`), the merged rows are listed in `merged_from`. Excluded rows are set aside before matching, so a test row can never glue two real contacts together.
+1. **Einlesen und vereinheitlichen.** Mehrere CSV-Dateien mit unterschiedlichen Spaltennamen werden über eine kleine TOML-Zuordnung je Quelle (`config.example.toml`) gelesen und in eine gemeinsame Form gebracht.
+2. **Normalisieren.** Leerzeichen werden zusammengefasst. E-Mail-Adressen werden klein geschrieben und geprüft. Telefonnummern werden nach E.164 umgewandelt, mit Deutschland als Standardland: `0151 0000 1234`, `0151/00001234`, `+49 (0)151 0000 1234` und `0049 151 0000 1234` werden alle zu `+4915100001234`. Eine Nummer braucht 9 bis 15 Ziffern; was nicht eindeutig eine Nummer ist, wird abgelehnt und nicht geraten.
+3. **Beiseitelegen, nie löschen.** Zeilen von internen Domains, Testeinträge, Tastatur-Müll (ein Name ohne Vokale: ausgeschlossen ab sechs Buchstaben oder mit einem Tastaturreihen-Muster, kürzere wie `Plch` werden nur markiert) und Zeilen ohne nutzbaren Kontaktweg landen mit Begründung in `excluded.csv`. Grenzfälle bleiben in der Ausgabe, tragen aber `suspect = yes` und den Grund.
+4. **Dubletten erkennen und zusammenführen.** Zeilen werden per Union-Find über die normalisierte E-Mail-Adresse **und** Telefonnummer gruppiert, auch über mehrere Ecken: Teilen A und B eine E-Mail-Adresse und B und C eine Telefonnummer, sind alle drei dieselbe Person. Die vollständigste Zeile führt; weitere E-Mail-Adressen und Nummern stehen in `email_2` / `phone_2` (weitere in `more_emails` / `more_phones`), die zusammengeführten Zeilen in `merged_from`. Ausgeschlossene Zeilen werden vor dem Abgleich beiseitegelegt, damit ein Testeintrag nie zwei echte Kontakte verbinden kann.
 
-Then the proofs run as hard assertions, in memory and again on the files read back from disk. If one fails, the run stops with exit code 1:
+Danach laufen die Rechenproben als harte Assertions, im Speicher und noch einmal auf den von der Platte zurückgelesenen Dateien. Schlägt eine fehl, bricht der Lauf mit Exit-Code 1 ab:
 
-- input rows = excluded + merged into another record + output records
-- every input row is accounted for exactly once
-- no normalised e-mail and no phone number is lost
-- every e-mail, phone number and id is unique in `clean.csv`
-- formats are valid (lower-case e-mail, E.164 phone, ISO date)
+- Eingangszeilen = ausgeschlossen + in einen anderen Datensatz zusammengeführt + Ausgabedatensätze
+- jede Eingangszeile ist genau einmal berücksichtigt
+- keine normalisierte E-Mail-Adresse und keine Telefonnummer geht verloren
+- jede E-Mail-Adresse, Telefonnummer und ID ist in `clean.csv` eindeutig
+- die Formate sind gültig (E-Mail klein geschrieben, Telefonnummer E.164, Datum ISO)
 
-## Quickstart
+## Schnellstart
 
 ```bash
 python -m crm_cleanup run --input data/sample/*.csv --out out/
-open out/review.html        # xdg-open on Linux, start on Windows
-python -m unittest          # 62 tests
+open out/review.html        # unter Linux xdg-open, unter Windows start
+python -m unittest          # 73 Tests
 ```
 
-![Terminal run: 2000 input rows, 190 excluded, 484 merged away, 1326 output records, integrity checks passed; 62 tests OK](docs/images/cli-run.png)
+Die Ausgabe des Laufs mit den Beispieldaten:
 
-## Output
+```
+Eingangszeilen       2.000
+Ausgeschlossen         190   -> out/excluded.csv
+Zusammengeführt        484
+Saubere Kontakte     1.326   -> out/clean.csv
+  davon verdächtig     110   -> prüfen in out/review.html
+Alle Prüfungen bestanden. Öffnen Sie review.html und geben Sie frei, bevor Sie importieren.
+```
 
-The run on the two sample files (`data/sample/`, 2,000 invented rows, seed 42):
+![Terminal: Lauf mit den Beispieldaten, Bilanz 2.000 = 190 + 484 + 1.326, alle Prüfungen bestanden, Tests grün](docs/images/cli-run.png)
 
-| | Rows |
+## Ausgabe
+
+Der Lauf mit den beiden Beispieldateien (`data/sample/`, 2.000 erfundene Zeilen, Seed 42):
+
+| | Zeilen |
 |---|---|
-| Input rows | 2000 |
-| excluded (`excluded.csv`) | 190 |
-| merged into another record | 484 |
-| **Output records (`clean.csv`)** | **1326** |
+| Eingangszeilen | 2.000 |
+| ausgeschlossen (`excluded.csv`) | 190 |
+| in einen anderen Datensatz zusammengeführt | 484 |
+| **Saubere Kontakte (`clean.csv`)** | **1.326** |
 
-`2000 = 190 + 484 + 1326`. The excluded rows split into 60 internal, 60 test entries, 40 keyboard mash and 30 without a usable contact method. 381 output records were built from more than one row (278 pairs, 103 groups of three), and 110 records carry the `suspect` flag.
+`2.000 = 190 + 484 + 1.326`. Die ausgeschlossenen Zeilen verteilen sich auf 60 interne Adressen, 60 Testeinträge, 40 Tastatur-Müll und 30 ohne nutzbaren Kontaktweg. 381 Ausgabedatensätze sind aus mehr als einer Zeile entstanden (278 Paare, 103 Dreiergruppen), und 110 Datensätze tragen die Markierung `suspect`.
 
-| File | Content |
+| Datei | Inhalt |
 |---|---|
-| `out/clean.csv` | one row per person: `id, name, company, city, email, email_2, more_emails, phone, phone_2, more_phones, created, sources, merged_from, suspect, suspect_reasons, notes` |
-| `out/excluded.csv` | every set-aside row with its original values and the reason |
-| `out/review.html` | page for the human check: excluded rows by reason, suspect records, the largest merge groups, filter box |
-| `out/report.md` | the balance above plus counts per reason, flag and group size |
+| `out/clean.csv` | eine Zeile je Person: `id, name, company, city, email, email_2, more_emails, phone, phone_2, more_phones, created, sources, merged_from, suspect, suspect_reasons, notes` |
+| `out/excluded.csv` | jede beiseitegelegte Zeile mit ihren Originalwerten und dem Grund |
+| `out/review.html` | Seite für die Prüfung durch einen Menschen: ausgeschlossene Zeilen nach Grund, verdächtige Datensätze, die größten Zusammenführungsgruppen, Suchfeld |
+| `out/report.md` | die Bilanz von oben sowie Zahlen je Grund, Markierung und Gruppengröße |
 
-One merge from the sample, three rows of two exports become one record:
+Eine Zusammenführung aus den Beispieldaten: Drei Zeilen aus zwei Exporten werden zu einem Datensatz:
 
 ```
 crm_export_a  A-00172  Philipp Jung    pjung@example.com             +49 151 0000 9107    Ulm
 crm_export_b  B-00904  Philipp / Jung  philipp.jung@example.com      0049 151 0000 9107   Ulm
-crm_export_a  A-00016  Philipp Jung    Pjung@Example.Com             (no phone)           Ulm
+crm_export_a  A-00016  Philipp Jung    Pjung@Example.Com             (kein Telefon)       Ulm
 
 -> crm_export_a:A-00172  Philipp Jung  pjung@example.com  philipp.jung@example.com  +4915100009107
    merged_from: crm_export_b:B-00904 | crm_export_a:A-00016
 ```
 
-Values that cannot be normalised (an e-mail like `n/a`, a date like `31.02.2024`) are not dropped from the trail: they appear in the `notes` column.
+Werte, die sich nicht normalisieren lassen (eine E-Mail-Adresse wie `n/a`, ein Datum wie `31.02.2024`), gehen nicht verloren: Sie stehen in der Spalte `notes`.
 
-## Why nothing is deleted
+## Warum nichts gelöscht wird
 
-A cleanup that deletes cannot be audited. Everything the pipeline sets aside stays in `excluded.csv` with the original values and the rule that fired, and every merged row stays traceable through `merged_from`. If a rule is too strict, the row is one search away and can be put back.
+Eine Bereinigung, die löscht, lässt sich nicht nachprüfen. Alles, was die Pipeline beiseitelegt, bleibt mit den Originalwerten und der ausgelösten Regel in `excluded.csv`, und jede zusammengeführte Zeile bleibt über `merged_from` nachvollziehbar. Ist eine Regel zu streng, ist die Zeile mit einer Suche gefunden und lässt sich zurückholen.
 
-## Why a person signs off before the import
+## Warum ein Mensch vor dem Import freigibt
 
-The rules are heuristics. A shared mailbox such as `info@` joins people who are not the same, and a name with few vowels can be a real name. `review.html` puts the cases where this can happen in front of a person: all excluded rows, all suspect records, and the largest merge groups. The import should happen after that check, not before.
+Die Regeln sind Faustregeln. Ein Sammelpostfach wie `info@` verbindet Personen, die nicht dieselben sind, und ein Name mit wenigen Vokalen kann ein echter Name sein. `review.html` legt die Fälle, in denen das passieren kann, einem Menschen vor: alle ausgeschlossenen Zeilen, alle verdächtigen Datensätze und die größten Zusammenführungsgruppen. Importiert wird nach dieser Prüfung, nicht davor.
 
-![Review page: summary counts, sign-off checklist, excluded rows grouped by reason, suspect records with the reason they were flagged](docs/images/review-page.png)
+![Prüfseite: Kennzahlen, Freigabe-Checkliste, ausgeschlossene Zeilen nach Grund gruppiert, verdächtige Datensätze mit dem Grund ihrer Markierung](docs/images/review-page.png)
 
-## Using your own data
+## Mit eigenen Daten
 
-Copy `config.example.toml`, list your internal domains, and map the columns of each export (`name`, or `first_name` and `last_name`; `email`, `email_2`, `phone`, `phone_2`, `company`, `city`, `created`). Put the files in `data/real/` (ignored by git) and run with `--config`:
+Kopieren Sie `config.example.toml`, tragen Sie Ihre internen Domains ein und ordnen Sie die Spalten jedes Exports zu (`name` oder `first_name` und `last_name`; `email`, `email_2`, `phone`, `phone_2`, `company`, `city`, `created`). Legen Sie die Dateien in `data/real/` ab (von Git ignoriert) und starten Sie den Lauf mit `--config`:
 
 ```bash
-python -m crm_cleanup run --input data/real/*.csv --out out/ --config my-config.toml
+python -m crm_cleanup run --input data/real/*.csv --out out/ --config meine-config.toml
 ```
 
-`out/` is ignored by git as well, because it contains contact data. When you open `clean.csv` in a spreadsheet, import it as text: spreadsheets turn `+4915100001234` into a number and drop the plus.
+Auch `out/` wird von Git ignoriert, weil es Kontaktdaten enthält. Wenn Sie `clean.csv` in einer Tabellenkalkulation öffnen, importieren Sie sie als Text: Tabellenkalkulationen machen aus `+4915100001234` eine Zahl und verlieren das Pluszeichen.
 
-## Sample data
+## Beispieldaten
 
 ```bash
 python -m crm_cleanup.generate --n 2000 --seed 42 --out data/sample/
 ```
 
-The generator writes two files with different column names and only invented data: example.com / example.org addresses, made-up names, numbers in the range +49 151 0000xxxx. The same seed gives byte-identical files. It also knows the ground truth (how many rows are junk, how many people appear twice), and a test checks the pipeline against it: on the sample it finds exactly the 190 junk rows and merges exactly the 484 duplicates that were put in. That shows the mechanics work. It does not measure how well the junk rules fit your real data.
+Der Generator schreibt zwei Dateien mit unterschiedlichen Spaltennamen und ausschließlich erfundenen Daten: Adressen auf example.com / example.org, ausgedachte Namen, Telefonnummern im Bereich +49 151 0000xxxx. Derselbe Seed liefert byteidentische Dateien. Er kennt außerdem die Wahrheit (wie viele Zeilen Ausschuss sind, wie viele Personen doppelt vorkommen), und ein Test prüft die Pipeline dagegen: Auf den Beispieldaten findet sie genau die 190 Ausschusszeilen und führt genau die 484 eingebauten Dubletten zusammen. Das zeigt, dass die Mechanik funktioniert. Es misst nicht, wie gut die Ausschlussregeln zu Ihren echten Daten passen.
 
-## Known limits
+## Bekannte Grenzen
 
-- **Names.** A name typed fully in capitals or fully in lower case is title-cased, so `MCDONALD` becomes `Mcdonald` and only a short list of particles (`von`, `van`, `de` ...) stays lower case. Mixed-case names are never touched.
-- **Thresholds.** The suspect and exclusion thresholds (vowel share 10 % and 15 %, six letters, the keyboard-row list) are calibrated on the generated sample data. On real data, in other languages or with other naming habits, expect false alarms and misses; that is what the review page is for.
-- **Matching.** Only exact e-mail and phone matches join rows. There is no fuzzy name matching, and a shared mailbox joins people who are not the same.
-- **Phone numbers.** `049 151 ...` is read as country code 49 only when a separator follows, because `04921 ...` (Emden) is a national number. Digits that start with `49` and have ten or more digits are taken as international.
-- **Ids.** An id or source file name that contains `|` is rejected, because `|` separates the lists in the output.
+- **Namen.** Ein Name, der komplett in Großbuchstaben oder komplett klein geschrieben ist, wird mit `title()` normalisiert: Aus `MCDONALD` wird `Mcdonald`, und nur eine kurze Liste von Namenszusätzen (`von`, `van`, `de` ...) bleibt klein. Namen in gemischter Schreibweise werden nie angefasst.
+- **Schwellenwerte.** Die Schwellen für Verdacht und Ausschluss (Vokalanteil 10 % und 15 %, sechs Buchstaben, die Liste der Tastaturreihen) sind an den erzeugten Beispieldaten kalibriert. Bei echten Daten, in anderen Sprachen oder mit anderen Namensgewohnheiten sind Fehlalarme und Lücken zu erwarten; dafür gibt es die Prüfseite.
+- **Abgleich.** Nur exakte Treffer bei E-Mail-Adresse und Telefonnummer verbinden Zeilen. Einen unscharfen Namensabgleich gibt es nicht, und ein Sammelpostfach verbindet Personen, die nicht dieselben sind.
+- **Telefonnummern.** `049 151 ...` wird nur dann als Landesvorwahl 49 gelesen, wenn ein Trennzeichen folgt, weil `04921 ...` (Emden) eine nationale Nummer ist. Ziffernfolgen, die mit `49` beginnen und mindestens zehn Ziffern haben, gelten als international.
+- **IDs.** Eine ID oder ein Quelldateiname mit `|` wird abgelehnt, weil `|` in den Ausgabedateien die Listen trennt.
 
-## Layout
+## Aufbau
 
 ```
 crm_cleanup/   normalize.py  rules.py  dedupe.py  checks.py  pipeline.py  outputs.py  config.py  cli.py  generate.py
 config.example.toml
-data/sample/   two generated exports
+data/sample/   zwei erzeugte Exporte
 tests/         python -m unittest
 ```
 
-## License
+## Lizenz
 
-MIT, see `LICENSE`.
+MIT, siehe `LICENSE`.
 
-## Auf Deutsch
+## In English
 
-Dieses Projekt bereinigt CRM-Kontaktexporte, bevor sie in ein neues System importiert werden. Mehrere CSV-Dateien mit unterschiedlichen Spaltennamen werden vereinheitlicht, E-Mails und Telefonnummern normalisiert und Dubletten über E-Mail und Telefon zusammengeführt, auch über mehrere Ecken. Interne Adressen, Testeinträge, Tastatur-Müll und Zeilen ohne Kontaktweg werden nie gelöscht, sondern mit Grund in `excluded.csv` abgelegt. Harte Rechenproben stellen sicher, dass keine Zeile und keine Mail oder Nummer verloren geht, sonst bricht der Lauf ab. Vor dem Import prüft ein Mensch die Sichtungsseite `review.html`, weil die Regeln Faustregeln sind und zum Beispiel ein Sammelpostfach verschiedene Personen verbinden kann.
+This project cleans CRM contact exports before they are imported into a new system; console output, reports and the review page are in German. Several CSV files with different column names are unified, e-mails and phone numbers are normalised, and duplicates are merged through shared e-mails or phone numbers, even across several hops. Internal addresses, test entries, keyboard junk and rows without a contact method are never deleted but listed with a reason in `excluded.csv`. Hard integrity checks stop the run if any row, e-mail or phone number would be lost. A person reviews `review.html` before the import, because the rules are rules of thumb and, for example, a shared mailbox can join different people.
