@@ -26,6 +26,29 @@ def read_csv(path) -> list:
 
 # ------------------------------------------------------------------ report
 
+_REASON_LABELS = {
+    "internal": "Interne Adressen",
+    "test_entry": "Testeinträge",
+    "keyboard_mash": "Tastatur-Müll",
+    "no_contact": "Kein Kontaktweg",
+}
+
+_FLAG_LABELS = {
+    "low_vowel_share": "Wenige Vokale im Namen",
+    "cryptic_email": "Zufällig wirkende E-Mail",
+    "digits_in_name": "Ziffern im Namen",
+    "no_name": "Kein Name",
+    "keyboard_pattern": "Tastaturreihen-Muster im Namen",
+    "repeated_name": "Vor- und Nachname identisch",
+    "odd_phone": "Auffällige Telefonnummer",
+}
+
+
+def _label(labels: dict, code: str) -> str:
+    """German label with the unchanged code behind it, e.g. 'Interne Adressen (`internal`)'."""
+    return f"{labels[code]} (`{code}`)" if code in labels else f"`{code}`"
+
+
 def _table(headers, rows) -> str:
     lines = ["| " + " | ".join(headers) + " |", "|" + "|".join("---" for _ in headers) + "|"]
     lines += ["| " + " | ".join(str(c) for c in row) + " |" for row in rows]
@@ -50,69 +73,72 @@ def _group_sizes(result) -> Counter:
 
 def write_report(path, result) -> None:
     r = result
+    n = format_int
     reasons = Counter(row["reason_code"] for row in r.excluded_rows)
     sizes = _group_sizes(r)
-    merged_groups = sum(n for size, n in sizes.items() if size > 1)
+    merged_groups = sum(count for size, count in sizes.items() if size > 1)
     largest = max(sizes)
 
     parts = [
-        "# Cleanup report",
+        "# Bereinigungsbericht",
         "",
-        "## Balance",
+        "## Bilanz",
         "",
-        _table(["", "Rows"], [
-            ["Input rows", r.n_input],
-            ["excluded (`excluded.csv`)", r.n_excluded],
-            ["merged into another record", r.n_absorbed],
-            ["**Output records (`clean.csv`)**", f"**{r.n_output}**"],
+        _table(["", "Zeilen"], [
+            ["Eingangszeilen", n(r.n_input)],
+            ["ausgeschlossen (`excluded.csv`)", n(r.n_excluded)],
+            ["in einen anderen Datensatz zusammengeführt", n(r.n_absorbed)],
+            ["**Saubere Kontakte (`clean.csv`)**", f"**{n(r.n_output)}**"],
         ]),
         "",
-        f"Check: {r.n_input} = {r.n_excluded} + {r.n_absorbed} + {r.n_output}. "
-        "Every input row is accounted for exactly once.",
+        f"Probe: {n(r.n_input)} = {n(r.n_excluded)} + {n(r.n_absorbed)} + {n(r.n_output)}. "
+        "Jede Eingangszeile ist genau einmal berücksichtigt.",
         "",
-        "## Input files",
+        "## Eingabedateien",
         "",
-        _table(["File", "Rows"], [[name, n] for name, n in r.source_counts]),
+        _table(["Datei", "Zeilen"], [[name, n(count)] for name, count in r.source_counts]),
         "",
-        "## Excluded rows by reason",
+        "## Ausgeschlossene Zeilen nach Grund",
         "",
-        "Nothing is deleted. Each row below is in `excluded.csv` with its reason "
-        "(first matching rule; a row can match more than one).",
+        "Es wird nichts gelöscht. Jede Zeile unten steht mit ihrem Grund in `excluded.csv` "
+        "(erste zutreffende Regel; eine Zeile kann auf mehrere zutreffen).",
         "",
-        _table(["Reason", "Rows"], sorted(reasons.items(), key=lambda kv: (-kv[1], kv[0]))),
+        _table(["Grund", "Zeilen"], [[_label(_REASON_LABELS, code), n(count)]
+                                     for code, count in sorted(reasons.items(), key=lambda kv: (-kv[1], kv[0]))]),
         "",
-        "## Suspect records (kept, flagged)",
+        "## Verdächtige Datensätze (behalten, markiert)",
         "",
-        f"{r.n_suspect} of {r.n_output} output records carry `suspect = yes`. "
-        "They stay in `clean.csv`; `review.html` lists them with the reason.",
+        f"{n(r.n_suspect)} von {n(r.n_output)} Ausgabedatensätzen tragen `suspect = yes`. "
+        "Sie bleiben in `clean.csv`; `review.html` listet sie mit der Begründung auf.",
         "",
-        _table(["Flag", "Records"], sorted(_flag_counts(r).items(), key=lambda kv: (-kv[1], kv[0]))),
+        _table(["Markierung", "Datensätze"], [[_label(_FLAG_LABELS, code), n(count)]
+                                              for code, count in sorted(_flag_counts(r).items(), key=lambda kv: (-kv[1], kv[0]))]),
         "",
-        "## Duplicates",
+        "## Dubletten",
         "",
-        f"{merged_groups} output records were built from more than one row "
-        f"({r.n_absorbed} rows merged away). Largest group: {largest} rows.",
+        f"{n(merged_groups)} Ausgabedatensätze sind aus mehr als einer Zeile entstanden "
+        f"({n(r.n_absorbed)} Zeilen zusammengeführt). Größte Gruppe: {n(largest)} Zeilen.",
         "",
-        _table(["Rows in group", "Output records"], sorted(sizes.items())),
+        _table(["Zeilen je Gruppe", "Ausgabedatensätze"], [[size, n(count)] for size, count in sorted(sizes.items())]),
         "",
-        "## Unusable values",
+        "## Unbrauchbare Werte",
         "",
-        "Values that could not be normalised are not dropped from the audit trail: "
-        "they appear in the `notes` column of the record they belong to.",
+        "Werte, die sich nicht normalisieren ließen, bleiben nachvollziehbar: "
+        "Sie stehen in der Spalte `notes` des zugehörigen Datensatzes.",
         "",
-        _table(["Kind", "Count"], sorted(_unusable_counts(r).items())),
+        _table(["Art", "Anzahl"], [[kind, n(count)] for kind, count in sorted(_unusable_counts(r).items())]),
         "",
-        "## Integrity checks (all passed)",
+        "## Prüfungen (alle bestanden)",
         "",
-        "- balance: input = excluded + merged + output",
-        "- every input row is either a kept record, merged into one, or excluded, exactly once",
-        "- no normalised e-mail or phone number from the input is missing from the output",
-        "- every e-mail, phone number and id is unique in `clean.csv`",
-        "- every e-mail is lower case and valid, every phone number is E.164 (9 to 15 digits), every date is ISO",
-        "- the same checks pass again on the files read back from disk",
+        "- Bilanz: Eingangszeilen = ausgeschlossen + zusammengeführt + Ausgabe",
+        "- jede Eingangszeile ist genau einmal entweder behalten, zusammengeführt oder ausgeschlossen",
+        "- keine normalisierte E-Mail und keine Telefonnummer aus der Eingabe fehlt in der Ausgabe",
+        "- jede E-Mail, Telefonnummer und ID ist in `clean.csv` eindeutig",
+        "- jede E-Mail ist klein geschrieben und gültig, jede Telefonnummer ist E.164 (9 bis 15 Ziffern), jedes Datum ist ISO",
+        "- dieselben Prüfungen bestehen noch einmal auf den von der Platte zurückgelesenen Dateien",
     ]
     if r.warnings:
-        parts += ["", "## Warnings", ""] + [f"- {w}" for w in r.warnings]
+        parts += ["", "## Warnungen", ""] + [f"- {w}" for w in r.warnings]
     Path(path).write_text("\n".join(parts) + "\n", encoding="utf-8")
 
 
@@ -188,23 +214,16 @@ def _html_table(headers, rows) -> str:
     return f'<div class="table-wrap"><table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>'
 
 
-_REASON_LABELS = {
-    "internal": "Internal addresses",
-    "test_entry": "Test entries",
-    "keyboard_mash": "Keyboard mash",
-    "no_contact": "No contact method",
-}
-
-
 def write_review(path, result) -> None:
     r = result
+    n = format_int
     by_reason = {}
     for row in r.excluded_rows:
         by_reason.setdefault(row["reason_code"], []).append(row)
 
     excluded_html = "".join(
-        f'<details data-reason="{escape(code)}"><summary>{escape(_REASON_LABELS.get(code, code))}<span class="count">{len(rows):,}</span></summary>'
-        + _html_table(["Id", "Name", "E-mail", "Phone", "Reason"],
+        f'<details data-reason="{escape(code)}"><summary>{escape(_REASON_LABELS.get(code, code))}<span class="count">{n(len(rows))}</span></summary>'
+        + _html_table(["ID", "Name", "E-Mail", "Telefon", "Grund"],
                       [[x["id"], x["name"], x["email"], x["phone"], ("pill", "ex", [x["reason"]])] for x in rows])
         + "</details>"
         for code, rows in sorted(by_reason.items(), key=lambda kv: (-len(kv[1]), kv[0]))
@@ -212,7 +231,7 @@ def write_review(path, result) -> None:
 
     suspects = [c for c in r.contacts if c.flags]
     suspect_html = _html_table(
-        ["Id", "Name", "E-mail", "Phone", "Why flagged"],
+        ["ID", "Name", "E-Mail", "Telefon", "Warum markiert"],
         [[c.id, c.name, c.emails[0] if c.emails else "", c.phones[0] if c.phones else "",
           ("pill", "", [text for _, text in c.flags])] for c in suspects],
     )
@@ -220,49 +239,49 @@ def write_review(path, result) -> None:
     biggest = sorted((c for c in r.contacts if len(c.members) > 1),
                      key=lambda c: (-len(c.members), c.leader.index))[:10]
     merge_html = "".join(
-        f"<details><summary>{len(c.members)} rows into <code>{escape(c.id)}</code> ({escape(c.name)})</summary>"
-        + _html_table(["Row", "Name", "E-mail", "Phone", "Role"],
+        f"<details><summary>{len(c.members)} Zeilen zu <code>{escape(c.id)}</code> ({escape(c.name)})</summary>"
+        + _html_table(["Zeile", "Name", "E-Mail", "Telefon", "Rolle"],
                       [[m.uid, m.name, ", ".join(m.emails), ", ".join(m.phones),
-                        ("pill", "lead", ["leads"]) if m is c.leader else "merged"] for m in c.members])
+                        ("pill", "lead", ["führt"]) if m is c.leader else "zusammengeführt"] for m in c.members])
         + "</details>"
         for c in biggest
-    ) or "<p>No duplicates found.</p>"
+    ) or "<p>Keine Dubletten gefunden.</p>"
 
     cards = "".join(
-        f'<div class="card{extra}" style="--tone:var({tone})"><span>{escape(label)}</span><b>{n:,}</b></div>'
-        for label, n, tone, extra in [("Input rows", r.n_input, "--blue", ""),
-                                      ("Excluded", r.n_excluded, "--red", ""),
-                                      ("Merged away", r.n_absorbed, "--purple", ""),
-                                      ("Flagged suspect", r.n_suspect, "--amber", ""),
-                                      ("Clean contacts", r.n_output, "--green", " ok")]
+        f'<div class="card{extra}" style="--tone:var({tone})"><span>{escape(label)}</span><b>{n(count)}</b></div>'
+        for label, count, tone, extra in [("Eingangszeilen", r.n_input, "--blue", ""),
+                                          ("Ausgeschlossen", r.n_excluded, "--red", ""),
+                                          ("Zusammengeführt", r.n_absorbed, "--purple", ""),
+                                          ("Verdächtig markiert", r.n_suspect, "--amber", ""),
+                                          ("Saubere Kontakte", r.n_output, "--green", " ok")]
     )
 
     page = f"""<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Review before import</title><style>{_CSS}</style></head>
-<body><header class="bar"><div class="bar-in"><h1>Review before import</h1>
-<span class="sum">{r.n_output:,} clean contacts<i>·</i>{r.n_input:,} rows in</span></div></header>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prüfung vor dem Import</title><style>{_CSS}</style></head>
+<body><header class="bar"><div class="bar-in"><h1>Prüfung vor dem Import</h1>
+<span class="sum">{n(r.n_output)} saubere Kontakte<i>·</i>{n(r.n_input)} Zeilen eingelesen</span></div></header>
 <main>
-<p class="lead">Excluded rows and borderline records, for a person to check. Nothing here has been deleted.
-This page contains contact data: do not publish it.</p>
+<p class="lead">Ausgeschlossene Zeilen und Grenzfälle zur Prüfung durch einen Menschen. Nichts davon wurde gelöscht.
+Diese Seite enthält Kontaktdaten: Bitte veröffentlichen Sie sie nicht.</p>
 <div class="cards">{cards}</div>
-<label for="q" class="hint">Filter every table on this page</label>
-<div class="search"><input id="q" type="search" placeholder="Search name, e-mail, phone or reason"></div>
+<label for="q" class="hint">Alle Tabellen dieser Seite filtern</label>
+<div class="search"><input id="q" type="search" placeholder="Name, E-Mail, Telefon oder Grund suchen"></div>
 
-<h2>Sign-off</h2>
+<h2>Freigabe</h2>
 <ul class="check">
-<li><label><input type="checkbox"> I looked through the {r.n_excluded} excluded rows and none of them is a real contact.</label></li>
-<li><label><input type="checkbox"> I looked through the {r.n_suspect} suspect records and fixed or accepted each one.</label></li>
-<li><label><input type="checkbox"> The largest merge groups below are the same person or company.</label></li>
+<li><label><input type="checkbox"> Ich habe die {n(r.n_excluded)} ausgeschlossenen Zeilen durchgesehen, keine davon ist ein echter Kontakt.</label></li>
+<li><label><input type="checkbox"> Ich habe die {n(r.n_suspect)} verdächtigen Datensätze durchgesehen und jeden korrigiert oder akzeptiert.</label></li>
+<li><label><input type="checkbox"> Die größten Zusammenführungsgruppen unten sind jeweils dieselbe Person oder Firma.</label></li>
 </ul>
 
-<h2>Excluded rows <span class="count">{r.n_excluded:,}</span></h2>
+<h2>Ausgeschlossene Zeilen <span class="count">{n(r.n_excluded)}</span></h2>
 {excluded_html}
 
-<h2>Suspect records <span class="count">{r.n_suspect:,}</span></h2>
+<h2>Verdächtige Datensätze <span class="count">{n(r.n_suspect)}</span></h2>
 {suspect_html}
 
-<h2>Largest merge groups</h2>
+<h2>Größte Zusammenführungsgruppen</h2>
 {merge_html}
 </main><script>{_JS}</script></body></html>
 """
