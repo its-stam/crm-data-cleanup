@@ -25,13 +25,17 @@ def clean_text(value) -> str:
 # Pragmatic subset of RFC 5322: ASCII local part without leading, trailing or
 # doubled dots; domain labels may contain non-ASCII letters (internationalised
 # domains); the top-level domain has at least two letters and no digits.
-_LABEL = r"[^\W_]+(?:-[^\W_]+)*"
-_MAIL_RE = re.compile(rf"[a-z0-9_%+'-]+(?:\.[a-z0-9_%+'-]+)*@(?:{_LABEL}\.)+[^\W\d_]{{2,}}")
+_LABEL = r"[^\W_]+(?:-+[^\W_]+)*"          # "--" allowed: punycode labels such as xn--gebude-0ra
+_TLD = r"(?:[^\W\d_]{2,}|xn--[a-z0-9-]*[a-z0-9])"
+_MAIL_RE = re.compile(rf"[a-z0-9_%+'-]+(?:\.[a-z0-9_%+'-]+)*@(?:{_LABEL}\.)+{_TLD}")
+_ANGLE = re.compile(r"<\s*([^<>\s]+)\s*>")
 
 
 def normalize_email(raw) -> str:
     """Lower-case, trimmed, valid address, or '' if the value is not an address."""
-    value = clean_text(raw).lower().strip("<> ")
+    value = clean_text(raw).lower()
+    angle = _ANGLE.search(value)           # 'John Doe <john@example.com>'
+    value = (angle.group(1) if angle else value).strip("<> ")
     if value.startswith("mailto:"):
         value = value[len("mailto:"):]
     value = value.rstrip(".,; ")
@@ -56,11 +60,14 @@ def normalize_phone(raw, country_code: str = "49") -> str:
     Rules, in this order:
     * a leading label such as "Tel." is removed;
     * values that still contain letters or other text are rejected (never guessed);
-    * '+...' keeps its country code ('+49 0151' loses the redundant trunk zero);
+    * '+...' keeps its country code;
     * '00...' is an international prefix;
-    * '0...' is a national number and gets the default country code;
+    * '0...' is a national number and gets the default country code, except
+      '049 151 ...' (zero, country code, separator), which already has it;
     * digits that already start with the default country code are accepted
-      when they are long enough to be a full number;
+      from ten digits on (spreadsheets swallow the plus);
+    * in every branch a trunk zero right behind the default country code
+      ('+49 0151', '0049 0151') is dropped;
     * the result must have 9 to 15 digits.
     """
     value = _TRUNK_ZERO.sub("", _PHONE_LABEL.sub("", clean_text(raw)))
@@ -71,16 +78,19 @@ def normalize_phone(raw, country_code: str = "49") -> str:
         return ""
     if value.startswith("+"):
         intl = digits
-        if intl.startswith(country_code + "0"):
-            intl = country_code + intl[len(country_code) + 1:]
     elif digits.startswith("00"):
         intl = digits[2:]
     elif digits.startswith("0"):
-        intl = country_code + digits[1:]
-    elif digits.startswith(country_code) and len(digits) >= 11:
+        # ponytail: "04921 123456" (Emden) is a national number that starts with 049, so the
+        # zero-country-code reading needs a separator right behind it. Upgrade: area-code table.
+        has_code = re.match(rf"\(?0{country_code}[\s./)-]", value)
+        intl = digits[1:] if has_code else country_code + digits[1:]
+    elif digits.startswith(country_code) and len(digits) >= 10:
         intl = digits
     else:
         return ""
+    if intl.startswith(country_code + "0"):
+        intl = country_code + intl[len(country_code) + 1:]
     if intl.startswith("0") or not 9 <= len(intl) <= 15:
         return ""
     return "+" + intl
