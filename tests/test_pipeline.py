@@ -99,17 +99,17 @@ class PipelineTest(unittest.TestCase):
         with self.assertRaises(ConfigError):
             process([other], self.cfg)
         broken = write_rows(self.tmp / "crm_export_a2.csv", ["Contact ID", "Full Name"], [["1", "x"]])
-        with self.assertRaisesRegex(ConfigError, "not in the file"):
+        with self.assertRaisesRegex(ConfigError, "fehlen in der Datei"):
             process([broken], self.cfg)
 
     def test_ids_containing_the_list_separator_are_rejected_with_the_row_number(self):  # item 9
         bad = write_rows(self.tmp / "crm_export_a4.csv", HEAD_A, [
             ["1", "Anna Müller", "a1@example.com", "", "", "", ""],
             ["2|x", "Ben Meier", "b1@example.com", "", "", "", ""]])
-        with self.assertRaisesRegex(ConfigError, r"crm_export_a4\.csv: row 2: id .* contains '\|'"):
+        with self.assertRaisesRegex(ConfigError, r"crm_export_a4\.csv, Zeile 2: Die ID .* enthält '\|'"):
             process([bad], self.cfg)
         bad_name = write_rows(self.tmp / "crm_export_a|5.csv", HEAD_A, [["1", "Anna Müller", "a1@example.com", "", "", "", ""]])
-        with self.assertRaisesRegex(ConfigError, "row 1: id .* contains"):
+        with self.assertRaisesRegex(ConfigError, "Zeile 1: Die ID .* enthält"):
             process([bad_name], self.cfg)
 
     def test_duplicate_ids_in_one_file_get_distinct_uids(self):
@@ -139,13 +139,13 @@ class IntegrityTest(unittest.TestCase):
 
     def test_manipulated_count_fails_the_balance(self):
         check_balance(10, 4, 2, 4)
-        with self.assertRaisesRegex(IntegrityError, "balance broken"):
+        with self.assertRaisesRegex(IntegrityError, "Bilanz verletzt"):
             check_balance(10, 4, 2, 5)
-        with self.assertRaisesRegex(IntegrityError, "balance broken"):
+        with self.assertRaisesRegex(IntegrityError, "Bilanz verletzt"):
             check_balance(10, 4, 2, 3)
 
     def test_a_dropped_output_row_fails(self):
-        with self.assertRaisesRegex(IntegrityError, "balance broken"):
+        with self.assertRaisesRegex(IntegrityError, "Bilanz verletzt"):
             verify(self.expected, self.clean[:-1], self.excluded)
 
     def test_an_excluded_row_moved_back_into_the_count_fails(self):
@@ -155,7 +155,7 @@ class IntegrityTest(unittest.TestCase):
     def test_a_lost_email_fails(self):
         target = next(row for row in self.clean if row["email_2"])
         target["email_2"] = ""
-        with self.assertRaisesRegex(IntegrityError, "lost contact data"):
+        with self.assertRaisesRegex(IntegrityError, "Kontaktdaten verloren"):
             verify(self.expected, self.clean, self.excluded)
 
     def test_a_duplicated_key_fails(self):
@@ -167,7 +167,7 @@ class IntegrityTest(unittest.TestCase):
     def test_a_trunk_zero_behind_the_country_code_fails(self):  # item 3
         row = next(row for row in self.clean if not row["phone_2"])
         row["phone_2"] = "+49015100001234"      # nothing is lost or duplicated: only the format is wrong
-        with self.assertRaisesRegex(IntegrityError, "invalid phone"):
+        with self.assertRaisesRegex(IntegrityError, "Ungültige Telefonnummer"):
             verify(self.expected, self.clean, self.excluded)
 
     def test_a_badly_formatted_phone_fails(self):

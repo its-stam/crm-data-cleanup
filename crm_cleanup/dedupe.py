@@ -63,7 +63,7 @@ def merge_group(group: list) -> Contact:
     name = next((n for n in names if not _INITIAL_TOKEN.search(n)), names[0] if names else "")
     notes = []
     for other in _unique(m.name for m in members if m.name and m.name.casefold() != name.casefold()):
-        notes.append(f"also recorded as: {other}")
+        notes.append(f"auch erfasst als: {other}")
     for m in members:
         notes.extend(f"{u} ({m.uid})" for u in m.unusable)
     flags = _unique(f for m in members for f in m.flags)

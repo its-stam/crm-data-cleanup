@@ -27,8 +27,8 @@ def check_balance(n_input: int, n_excluded: int, n_absorbed: int, n_output: int)
     total = n_excluded + n_absorbed + n_output
     if n_input != total:
         raise IntegrityError(
-            f"balance broken: {n_input} input rows != {n_excluded} excluded "
-            f"+ {n_absorbed} merged + {n_output} output = {total}"
+            f"Bilanz verletzt: {n_input} Eingangszeilen != {n_excluded} ausgeschlossen "
+            f"+ {n_absorbed} zusammengeführt + {n_output} Ausgabe = {total}"
         )
 
 
@@ -65,7 +65,7 @@ def verify(expected: Expected, clean_rows: list, excluded_rows: list) -> None:
     clean_ids = [row["id"] for row in clean_rows]
     check_balance(len(expected.uids), len(excluded_ids), len(merged), len(clean_ids))
     if sorted(clean_ids + merged + excluded_ids) != sorted(expected.uids):
-        raise IntegrityError("accounting broken: some input rows are missing or counted twice")
+        raise IntegrityError("Zuordnung verletzt: Eingangszeilen fehlen oder wurden doppelt gezählt")
 
     # (b) no normalised e-mail or phone is lost
     out_emails = [e for row in clean_rows for e in _row_emails(row)]
@@ -76,27 +76,27 @@ def verify(expected: Expected, clean_rows: list, excluded_rows: list) -> None:
     lost_phones = expected.phones - set(out_phones) - kept_elsewhere_phones
     if lost_emails or lost_phones:
         raise IntegrityError(
-            f"lost contact data: {len(lost_emails)} e-mail(s), {len(lost_phones)} phone number(s), "
-            f"e.g. {sorted(lost_emails | lost_phones)[:3]}"
+            f"Kontaktdaten verloren: {len(lost_emails)} E-Mail(s), {len(lost_phones)} Telefonnummer(n), "
+            f"z. B. {sorted(lost_emails | lost_phones)[:3]}"
         )
 
     # (c) every key appears once across the output
-    for label, values in (("e-mail", out_emails), ("phone", out_phones), ("id", clean_ids)):
+    for label, values in (("E-Mail", out_emails), ("Telefonnummer", out_phones), ("ID", clean_ids)):
         if len(values) != len(set(values)):
             dup = next(v for v in values if values.count(v) > 1)
-            raise IntegrityError(f"{label} is not unique in the output, e.g. {dup!r}")
+            raise IntegrityError(f"{label} ist in der Ausgabe nicht eindeutig, z. B. {dup!r}")
 
     # (d) formats
     for value in out_emails:
         if not is_valid_email(value) or value != value.lower():
-            raise IntegrityError(f"invalid e-mail in output: {value!r}")
+            raise IntegrityError(f"Ungültige E-Mail in der Ausgabe: {value!r}")
     for value in out_phones:
         if not is_valid_phone(value, expected.country_code):
-            raise IntegrityError(f"invalid phone number in output: {value!r}")
+            raise IntegrityError(f"Ungültige Telefonnummer in der Ausgabe: {value!r}")
     for row in clean_rows:
         if row["created"] and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", row["created"]):
-            raise IntegrityError(f"invalid date in output: {row['created']!r}")
+            raise IntegrityError(f"Ungültiges Datum in der Ausgabe: {row['created']!r}")
         if row["suspect"] not in ("", "yes"):
-            raise IntegrityError(f"invalid suspect flag: {row['suspect']!r}")
+            raise IntegrityError(f"Ungültige Markierung in der Spalte suspect: {row['suspect']!r}")
         if clean_text(row["id"]) != row["id"] or not row["id"]:
-            raise IntegrityError(f"invalid id: {row['id']!r}")
+            raise IntegrityError(f"Ungültige ID: {row['id']!r}")

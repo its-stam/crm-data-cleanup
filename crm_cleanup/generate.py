@@ -66,7 +66,7 @@ class _Builder:
     # -- identifiers
     def phone(self) -> str:
         if not self.phone_pool:
-            raise ValueError("--n is too large for the number range +49 151 0000xxxx (maximum about 5000)")
+            raise ValueError("--n ist zu groß für den Nummernbereich +49 151 0000xxxx (höchstens etwa 5000)")
         return f"1510000{self.phone_pool.pop():04d}"   # national significant number, 11 digits
 
     def local(self, base: str) -> str:
@@ -194,7 +194,7 @@ def build(n: int, seed: int):
     }
     n_special = sum(special.values())
     if n_special > n:
-        raise ValueError("--n is too small")
+        raise ValueError("--n ist zu klein")
 
     # junk that has to be set aside
     for k in range(special["test"]):
@@ -295,15 +295,15 @@ def write_files(out_dir, rows_a, rows_b) -> list:
 
 
 def main(argv=None) -> int:
-    parser = argparse.ArgumentParser(description="Generate invented, deterministic CRM export files.")
-    parser.add_argument("--n", type=int, default=2000, help="total number of rows over both files (default 2000)")
-    parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--out", default="data/sample")
+    parser = argparse.ArgumentParser(description="Erzeugt erfundene, reproduzierbare CRM-Exportdateien.")
+    parser.add_argument("--n", type=int, default=2000, help="Zeilen insgesamt über beide Dateien (Standard: 2000)")
+    parser.add_argument("--seed", type=int, default=42, help="Startwert; derselbe Wert erzeugt identische Dateien (Standard: 42)")
+    parser.add_argument("--out", default="data/sample", help="Zielordner (Standard: data/sample)")
     args = parser.parse_args(argv)
     rows_a, rows_b, truth = build(args.n, args.seed)
     for path in write_files(args.out, rows_a, rows_b):
-        print(f"wrote {path}")
-    print(f"{len(rows_a)} + {len(rows_b)} rows, seed {args.seed}")
+        print(f"geschrieben: {path}")
+    print(f"{len(rows_a)} + {len(rows_b)} Zeilen, Seed {args.seed}")
     return 0
 
 

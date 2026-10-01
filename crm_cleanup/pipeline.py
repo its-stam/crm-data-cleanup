@@ -66,7 +66,7 @@ def expand_inputs(patterns) -> list:
     for pattern in patterns:
         hits = [pattern] if os.path.exists(pattern) else sorted(glob.glob(pattern))
         if not hits:
-            raise ConfigError(f"no input file matches {pattern!r}")
+            raise ConfigError(f"Keine Eingabedatei passt zu {pattern!r}")
         paths.extend(hits)
     return sorted(dict.fromkeys(paths))
 
@@ -95,7 +95,7 @@ def _build_record(row: dict, sm: SourceMap, cfg: Config, stem: str, number: int,
             if value not in rec.emails:
                 rec.emails.append(value)
         else:
-            rec.unusable.append(f"unusable e-mail {raw!r}")
+            rec.unusable.append(f"unbrauchbare E-Mail {raw!r}")
     for field_name in ("phone", "phone_2"):
         raw = _cell(row, c, field_name)
         if not raw:
@@ -106,12 +106,12 @@ def _build_record(row: dict, sm: SourceMap, cfg: Config, stem: str, number: int,
             if value not in rec.phones:
                 rec.phones.append(value)
         else:
-            rec.unusable.append(f"unusable phone {raw!r}")
+            rec.unusable.append(f"unbrauchbare Telefonnummer {raw!r}")
     created = _cell(row, c, "created")
     if created:
         rec.created = iso_date(created)
         if not rec.created:
-            rec.unusable.append(f"unparseable date {created!r}")
+            rec.unusable.append(f"nicht lesbares Datum {created!r}")
     return rec
 
 
@@ -127,19 +127,19 @@ def load_records(paths, cfg: Config):
             headers = set(reader.fieldnames or [])
             missing = sorted(h for h in sm.columns.values() if h not in headers)
             if missing:
-                raise ConfigError(f"{path.name}: column(s) {missing} from the config are not in the file "
-                                  f"(found: {sorted(headers)})")
+                raise ConfigError(f"{path.name}: Spalte(n) {missing} aus der Konfiguration fehlen in der Datei "
+                                  f"(gefunden: {sorted(headers)})")
             n_before = len(records)
             for number, row in enumerate(reader, start=1):
                 ident = _cell(row, sm.columns, "id")
                 uid = f"{path.stem}:{ident}" if ident else f"{path.stem}:row{number}"
                 if checks.LIST_SEP.strip() in uid:
                     raise ConfigError(
-                        f"{path.name}: row {number}: id {uid!r} contains '{checks.LIST_SEP.strip()}', "
-                        "the list separator of the output files; clean the id column or rename the file")
+                        f"{path.name}, Zeile {number}: Die ID {uid!r} enthält '{checks.LIST_SEP.strip()}', "
+                        "das Listentrennzeichen der Ausgabedateien; bereinigen Sie die ID-Spalte oder benennen Sie die Datei um")
                 if uid in seen_uids:
                     uid = f"{uid}@row{number}"
-                    warnings.append(f"{path.name} row {number}: duplicate id, using {uid}")
+                    warnings.append(f"{path.name}, Zeile {number}: doppelte ID, verwendet wird {uid}")
                 seen_uids.add(uid)
                 records.append(_build_record(row, sm, cfg, path.stem, number, len(records), uid))
             counts.append((path.name, len(records) - n_before))

@@ -7,16 +7,17 @@ from pathlib import Path
 
 from .checks import IntegrityError
 from .config import ConfigError, load_config
+from .outputs import format_int
 from .pipeline import run
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="python -m crm_cleanup", description="Clean CRM contact exports before an import.")
+    parser = argparse.ArgumentParser(prog="python -m crm_cleanup", description="Bereinigt CRM-Kontaktexporte vor einem Import.")
     sub = parser.add_subparsers(dest="command", required=True)
-    p = sub.add_parser("run", help="load, normalise, exclude, deduplicate, verify and write the reports")
-    p.add_argument("--input", nargs="+", required=True, metavar="CSV", help="one or more CSV files (wildcards allowed)")
-    p.add_argument("--out", default="out", help="output folder (default: out)")
-    p.add_argument("--config", default="config.example.toml", help="column mapping and exclusion lists (default: config.example.toml)")
+    p = sub.add_parser("run", help="einlesen, normalisieren, ausschließen, Dubletten zusammenführen, prüfen und Berichte schreiben")
+    p.add_argument("--input", nargs="+", required=True, metavar="CSV", help="eine oder mehrere CSV-Dateien (Platzhalter erlaubt)")
+    p.add_argument("--out", default="out", help="Ausgabeordner (Standard: out)")
+    p.add_argument("--config", default="config.example.toml", help="Spaltenzuordnung und Ausschlusslisten (Standard: config.example.toml)")
     return parser
 
 
@@ -25,20 +26,24 @@ def main(argv=None) -> int:
     try:
         result = run(args.input, load_config(args.config), args.out)
     except ConfigError as exc:
-        print(f"error: {exc}", file=sys.stderr)
+        print(f"Fehler: {exc}", file=sys.stderr)
         return 2
     except IntegrityError as exc:
-        print(f"INTEGRITY CHECK FAILED: {exc}\nDo not import the files in {Path(args.out)}.", file=sys.stderr)
+        print(f"PRÜFUNG FEHLGESCHLAGEN: {exc}\nDie Dateien in {Path(args.out)} dürfen nicht importiert werden.", file=sys.stderr)
         return 1
     for warning in result.warnings:
-        print(f"warning: {warning}", file=sys.stderr)
+        print(f"Warnung: {warning}", file=sys.stderr)
     out = Path(args.out)
-    print(f"Input rows         {result.n_input:>6}")
-    print(f"Excluded           {result.n_excluded:>6}   -> {out / 'excluded.csv'}")
-    print(f"Merged away        {result.n_absorbed:>6}")
-    print(f"Output records     {result.n_output:>6}   -> {out / 'clean.csv'}")
-    print(f"  flagged suspect  {result.n_suspect:>6}   -> check in {out / 'review.html'}")
-    print("Integrity checks passed. Open review.html and sign off before importing.")
+    rows = [
+        ("Eingangszeilen", result.n_input, ""),
+        ("Ausgeschlossen", result.n_excluded, f"-> {out / 'excluded.csv'}"),
+        ("Zusammengeführt", result.n_absorbed, ""),
+        ("Saubere Kontakte", result.n_output, f"-> {out / 'clean.csv'}"),
+        ("  davon verdächtig", result.n_suspect, f"-> prüfen in {out / 'review.html'}"),
+    ]
+    for label, n, target in rows:
+        print(f"{label:<20}{format_int(n):>6}   {target}".rstrip())
+    print("Alle Prüfungen bestanden. Öffnen Sie review.html und geben Sie frei, bevor Sie importieren.")
     return 0
 
 

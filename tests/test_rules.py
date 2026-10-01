@@ -66,6 +66,33 @@ class ExclusionTest(unittest.TestCase):
         self.assertEqual(codes(exclusion_reasons(rec, self.cfg)), ["test_entry", "no_contact"])
 
 
+class GermanReasonsTest(unittest.TestCase):
+    def test_exclusion_reasons_are_german_and_codes_are_unchanged(self):
+        cfg = make_config()
+        texts = {}
+        for rec in [make_record(emails=["kim@example.org"]), make_record(name="Test Test", emails=["x@example.com"]),
+                    make_record(name="Xkjhsd Qwrtpl", emails=["x@example.com"]), make_record()]:
+            texts.update(dict(exclusion_reasons(rec, cfg)))
+        self.assertEqual(texts["internal"], "interne Adresse (konfigurierte Domain oder Adressliste)")
+        self.assertEqual(texts["test_entry"], "Testeintrag (passt auf ein konfiguriertes Testmuster)")
+        self.assertRegex(texts["keyboard_mash"], r"^Tastatur-Müll \(Vokalanteil \d+ %\)$")
+        self.assertEqual(texts["no_contact"], "kein nutzbarer Kontaktweg (keine gültige E-Mail, keine gültige Telefonnummer)")
+
+    def test_suspect_reasons_are_german_and_codes_are_unchanged(self):
+        rec = make_record(name="Lena Lena 2", emails=["xkcvbnmqz@example.com"], phones=["+4911111111"])
+        texts = dict(suspect_flags(rec))
+        self.assertEqual(texts["digits_in_name"], "Ziffern im Namen")
+        self.assertEqual(texts["cryptic_email"], "Lokalteil der E-Mail wirkt zufällig")
+        self.assertEqual(texts["odd_phone"], "Die gesamte Telefonnummer ist ein Wiederholungs- oder Zahlenfolgemuster")
+        texts = dict(suspect_flags(make_record(name="Lena Lena", emails=["a@example.com"])))
+        self.assertEqual(texts["repeated_name"], "Vor- und Nachname sind identisch")
+        self.assertEqual(dict(suspect_flags(make_record(name="", emails=["a@example.com"])))["no_name"], "kein Name")
+        self.assertEqual(dict(suspect_flags(make_record(name="Asdfg Qwert", emails=["a@example.com"])))["keyboard_pattern"],
+                         "Name enthält ein Tastaturreihen-Muster")
+        self.assertRegex(dict(suspect_flags(make_record(name="Plch", emails=["a@example.com"])))["low_vowel_share"],
+                         r"^Name mit wenigen Vokalen \(\d+ %\)$")
+
+
 class SuspectTest(unittest.TestCase):
     def flags(self, **kw):
         kw.setdefault("emails", ["anna.mueller@example.com"])

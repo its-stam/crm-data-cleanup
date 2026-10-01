@@ -39,19 +39,19 @@ class Config:
         for source in self.sources:
             if fnmatch(filename, source.match):
                 return source
-        raise ConfigError(f"no [[source]] entry matches the file name {filename!r}")
+        raise ConfigError(f"Kein [[source]]-Block passt zum Dateinamen {filename!r}")
 
 
 def load_config(path) -> Config:
     path = Path(path)
     if not path.is_file():
-        raise ConfigError(f"config file not found: {path} (pass one with --config)")
+        raise ConfigError(f"Konfigurationsdatei nicht gefunden: {path} (mit --config angeben)")
     with path.open("rb") as fh:
         raw = tomllib.load(fh)
 
     country_code = str(raw.get("phone", {}).get("default_country_code", "49"))
     if not country_code.isdigit():
-        raise ConfigError("phone.default_country_code must contain digits only, e.g. \"49\"")
+        raise ConfigError("phone.default_country_code darf nur Ziffern enthalten, z. B. \"49\"")
 
     exclude = raw.get("exclude", {})
     patterns = []
@@ -59,16 +59,16 @@ def load_config(path) -> Config:
         try:
             patterns.append(re.compile(text, re.I))
         except re.error as exc:
-            raise ConfigError(f"invalid test pattern {text!r}: {exc}") from exc
+            raise ConfigError(f"Ungültiges Testmuster {text!r}: {exc}") from exc
 
     sources = []
     for entry in raw.get("source", []):
         columns = dict(entry.get("columns", {}))
         unknown = sorted(set(columns) - set(CANONICAL_FIELDS))
         if unknown:
-            raise ConfigError(f"unknown field(s) in [source.columns]: {', '.join(unknown)}")
+            raise ConfigError(f"Unbekannte(s) Feld(er) in [source.columns]: {', '.join(unknown)}")
         if "match" not in entry:
-            raise ConfigError("every [[source]] needs a 'match' pattern for the file name")
+            raise ConfigError("Jeder [[source]]-Block braucht ein Muster 'match' für den Dateinamen")
         sources.append(SourceMap(
             match=entry["match"],
             columns=columns,
@@ -76,7 +76,7 @@ def load_config(path) -> Config:
             encoding=entry.get("encoding", "utf-8-sig"),
         ))
     if not sources:
-        raise ConfigError("the config defines no [[source]] entry")
+        raise ConfigError("Die Konfiguration enthält keinen [[source]]-Block")
 
     return Config(
         country_code=country_code,

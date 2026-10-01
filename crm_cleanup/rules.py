@@ -38,6 +38,11 @@ def vowel_ratio(text: str) -> float:
     return sum(c in _VOWELS for c in base) / len(base) if base else 1.0
 
 
+def _pct(ratio: float) -> str:
+    """German notation: 14 %, with a space."""
+    return f"{ratio:.0%}".replace("%", " %")
+
+
 def _is_keyboard_mash(base: str) -> bool:
     """No vowels, and either long enough (6+ letters) or containing a keyboard-row pattern."""
     if len(base) < 4 or vowel_ratio(base) >= EXCLUDE_BELOW:
@@ -64,15 +69,15 @@ def exclusion_reasons(rec: Record, cfg: Config) -> list:
     """All exclusion reasons as (code, text), in priority order. Empty = keep."""
     reasons = []
     if any(e in cfg.internal_emails or _domain_matches(e, cfg.internal_domains) for e in rec.emails):
-        reasons.append(("internal", "internal address (configured domain or address list)"))
+        reasons.append(("internal", "interne Adresse (konfigurierte Domain oder Adressliste)"))
     probes = [rec.name, rec.company, *rec.emails]
     if any(p.search(text) for p in cfg.test_patterns for text in probes if text):
-        reasons.append(("test_entry", "test entry (matches a configured test pattern)"))
+        reasons.append(("test_entry", "Testeintrag (passt auf ein konfiguriertes Testmuster)"))
     base = name_letters(rec.name)
     if _is_keyboard_mash(base):
-        reasons.append(("keyboard_mash", f"keyboard mash (vowel share {vowel_ratio(base):.0%})"))
+        reasons.append(("keyboard_mash", f"Tastatur-Müll (Vokalanteil {_pct(vowel_ratio(base))})"))
     if not rec.emails and not rec.phones:
-        reasons.append(("no_contact", "no usable contact method (no valid e-mail, no valid phone)"))
+        reasons.append(("no_contact", "kein nutzbarer Kontaktweg (keine gültige E-Mail, keine gültige Telefonnummer)"))
     return reasons
 
 
@@ -81,25 +86,25 @@ def suspect_flags(rec: Record, country_code: str = "49") -> list:
     flags = []
     base = name_letters(rec.name)
     if not rec.name:
-        flags.append(("no_name", "no name"))
+        flags.append(("no_name", "kein Name"))
     ratio = vowel_ratio(base)
     if (len(base) >= 4 and ratio < EXCLUDE_BELOW) or (len(base) >= 5 and ratio < SUSPECT_BELOW):
-        flags.append(("low_vowel_share", f"name has few vowels ({ratio:.0%})"))
+        flags.append(("low_vowel_share", f"Name mit wenigen Vokalen ({_pct(ratio)})"))
     if _KEYBOARD_ROWS.search(letters(rec.name)):
-        flags.append(("keyboard_pattern", "name contains a keyboard-row pattern"))
+        flags.append(("keyboard_pattern", "Name enthält ein Tastaturreihen-Muster"))
     if re.search(r"\d", rec.name):
-        flags.append(("digits_in_name", "digits in name"))
+        flags.append(("digits_in_name", "Ziffern im Namen"))
     parts = rec.name.lower().split()
     if len(parts) == 2 and parts[0] == parts[1]:
-        flags.append(("repeated_name", "first and last name are identical"))
+        flags.append(("repeated_name", "Vor- und Nachname sind identisch"))
     for address in rec.emails:
         local = letters(address.partition("@")[0])
         if len(local) >= 7 and vowel_ratio(local) < 0.12:
-            flags.append(("cryptic_email", "e-mail local part looks random"))
+            flags.append(("cryptic_email", "Lokalteil der E-Mail wirkt zufällig"))
             break
     for phone in rec.phones:
         national = phone[1 + len(country_code):] if phone.startswith("+" + country_code) else phone[1:]
         if _is_digit_pattern(national):
-            flags.append(("odd_phone", "the whole phone number is a repeated or sequential pattern"))
+            flags.append(("odd_phone", "Die gesamte Telefonnummer ist ein Wiederholungs- oder Zahlenfolgemuster"))
             break
     return flags

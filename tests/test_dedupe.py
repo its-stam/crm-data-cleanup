@@ -70,11 +70,11 @@ class MergeTest(unittest.TestCase):
         contact = merge_group([lead, other])
         self.assertEqual(contact.id, lead.uid)
         self.assertEqual(contact.name, "Leon Brandt")
-        self.assertIn("also recorded as: L. Brandt", contact.notes)
+        self.assertIn("auch erfasst als: L. Brandt", contact.notes)
 
     def test_unusable_values_are_kept_in_the_notes(self):
-        row = make_record(0, emails=[M1], unusable=["unusable phone 'n/a'"])
-        self.assertEqual(merge_group([row]).notes, [f"unusable phone 'n/a' ({row.uid})"])
+        row = make_record(0, emails=[M1], unusable=["unbrauchbare Telefonnummer 'n/a'"])
+        self.assertEqual(merge_group([row]).notes, [f"unbrauchbare Telefonnummer 'n/a' ({row.uid})"])
 
 
 if __name__ == "__main__":

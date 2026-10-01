@@ -7,6 +7,11 @@ from html import escape
 from pathlib import Path
 
 
+def format_int(n: int) -> str:
+    """German thousands separator: 1326 -> 1.326."""
+    return f"{n:,}".replace(",", ".")
+
+
 def write_csv(path, columns, rows) -> None:
     with Path(path).open("w", encoding="utf-8", newline="") as fh:
         writer = csv.DictWriter(fh, fieldnames=columns, lineterminator="\n")
