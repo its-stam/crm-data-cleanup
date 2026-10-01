@@ -1,0 +1,50 @@
+# Example configuration for the sample files in data/sample/.
+# Copy this file, adjust the lists and map the columns of your own exports.
+
+[phone]
+default_country_code = "49"            # numbers starting with 0 get this country code (49 = Germany)
+
+[exclude]
+# Rows with an address on one of these domains (subdomains included) are set aside.
+internal_domains = ["example.org"]
+# Single internal addresses that are not covered by a domain.
+internal_emails = ["support@example.com", "billing@example.com"]
+# Regular expressions (case-insensitive) applied to name, company and e-mail.
+test_patterns = [
+  '\btest\b',
+  '\btest\d*@',
+  '\bmustermann\b',
+  '\bdummy\b',
+]
+
+# One [[source]] block per file layout. `match` is a file name pattern.
+# Left side: the field the pipeline knows. Right side: the column header in the file.
+# Use `name`, or `first_name` and `last_name`.
+
+[[source]]
+match = "crm_export_a*.csv"
+delimiter = ","
+encoding = "utf-8-sig"
+[source.columns]
+id = "Contact ID"
+name = "Full Name"
+email = "Email"
+phone = "Phone"
+company = "Company"
+city = "City"
+created = "Created"
+
+[[source]]
+match = "crm_export_b*.csv"
+delimiter = ","
+encoding = "utf-8-sig"
+[source.columns]
+id = "Kontakt-Nr"
+first_name = "Vorname"
+last_name = "Nachname"
+email = "E-Mail"
+phone = "Telefon"
+phone_2 = "Mobil"
+company = "Firma"
+city = "Ort"
+created = "Erstellt am"
