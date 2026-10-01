@@ -130,5 +130,15 @@ class GermanRunTest(unittest.TestCase):
         self.assertIn(f"Probe: {format_int(r.n_input)} = {format_int(r.n_excluded)} + {format_int(r.n_absorbed)} + {format_int(r.n_output)}.", report)
 
 
+class ConfigCommentsTest(unittest.TestCase):
+    def test_example_config_comments_are_german(self):
+        text = (ROOT / "config.example.toml").read_text(encoding="utf-8")
+        comments = " ".join(line.partition("#")[2] for line in text.splitlines() if "#" in line)
+        self.assertIn("Beispielkonfiguration", comments)
+        self.assertIn("Sie", comments)
+        for english in ["Example configuration", "Copy this file", "Regular expressions", "file name pattern", "Single internal"]:
+            self.assertNotIn(english, comments)
+
+
 if __name__ == "__main__":
     unittest.main()

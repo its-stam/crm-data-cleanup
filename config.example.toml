@@ -1,15 +1,15 @@
-# Example configuration for the sample files in data/sample/.
-# Copy this file, adjust the lists and map the columns of your own exports.
+# Beispielkonfiguration für die Beispieldateien in data/sample/.
+# Kopieren Sie diese Datei, passen Sie die Listen an und ordnen Sie die Spalten Ihrer eigenen Exporte zu.
 
 [phone]
-default_country_code = "49"            # numbers starting with 0 get this country code (49 = Germany)
+default_country_code = "49"            # Nummern, die mit 0 beginnen, erhalten diese Landesvorwahl (49 = Deutschland)
 
 [exclude]
-# Rows with an address on one of these domains (subdomains included) are set aside.
+# Zeilen mit einer Adresse auf einer dieser Domains (Subdomains eingeschlossen) werden beiseitegelegt.
 internal_domains = ["example.org"]
-# Single internal addresses that are not covered by a domain.
+# Einzelne interne Adressen, die keine Domain abdeckt.
 internal_emails = ["support@example.com", "billing@example.com"]
-# Regular expressions (case-insensitive) applied to name, company and e-mail.
+# Reguläre Ausdrücke (ohne Unterscheidung von Groß- und Kleinschreibung) für Name, Firma und E-Mail.
 test_patterns = [
   '\btest\b',
   '\btest\d*@',
@@ -17,9 +17,9 @@ test_patterns = [
   '\bdummy\b',
 ]
 
-# One [[source]] block per file layout. `match` is a file name pattern.
-# Left side: the field the pipeline knows. Right side: the column header in the file.
-# Use `name`, or `first_name` and `last_name`.
+# Ein [[source]]-Block je Dateiaufbau. `match` ist ein Muster für den Dateinamen.
+# Links: das Feld, das die Pipeline kennt. Rechts: die Spaltenüberschrift in der Datei.
+# Verwenden Sie `name` oder `first_name` und `last_name`.
 
 [[source]]
 match = "crm_export_a*.csv"
