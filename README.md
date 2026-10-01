@@ -8,7 +8,7 @@ This repository shows a pipeline that cleans such exports **before** the import,
 
 1. **Load and unify.** Several CSV files with different column names are read through a small TOML mapping per source (`config.example.toml`) and turned into one common shape.
 2. **Normalise.** Whitespace is collapsed. E-mails are lower-cased and validated. Phone numbers become E.164 with Germany as default country: `0151 0000 1234`, `0151/00001234`, `+49 (0)151 0000 1234` and `0049 151 0000 1234` all end up as `+4915100001234`. Numbers need 9 to 15 digits; anything that is not clearly a number is rejected, not guessed.
-3. **Set aside, never delete.** Rows from internal domains, test entries, keyboard mash (judged by the share of vowels in the name) and rows without any usable contact method go to `excluded.csv` with the reason. Borderline rows stay in the output but carry `suspect = yes` and the reason.
+3. **Set aside, never delete.** Rows from internal domains, test entries, keyboard mash (a name without vowels: excluded from six letters or with a keyboard-row pattern, shorter ones such as `Plch` are only flagged) and rows without any usable contact method go to `excluded.csv` with the reason. Borderline rows stay in the output but carry `suspect = yes` and the reason.
 4. **Deduplicate and merge.** Rows are grouped with union-find over the normalised e-mail **and** phone number, transitively: if A and B share an e-mail and B and C share a phone number, all three are one person. The most complete row leads; further e-mails and numbers go into `email_2` / `phone_2` (more into `more_emails` / `more_phones`), the merged rows are listed in `merged_from`. Excluded rows are set aside before matching, so a test row can never glue two real contacts together.
 
 Then the proofs run as hard assertions, in memory and again on the files read back from disk. If one fails, the run stops with exit code 1:
@@ -24,7 +24,7 @@ Then the proofs run as hard assertions, in memory and again on the files read ba
 ```bash
 python -m crm_cleanup run --input data/sample/*.csv --out out/
 open out/review.html        # xdg-open on Linux, start on Windows
-python -m unittest          # 51 tests
+python -m unittest          # 62 tests
 ```
 
 ## Output
@@ -35,10 +35,10 @@ The run on the two sample files (`data/sample/`, 2,000 invented rows, seed 42):
 |---|---|
 | Input rows | 2000 |
 | excluded (`excluded.csv`) | 190 |
-| merged into another record | 483 |
-| **Output records (`clean.csv`)** | **1327** |
+| merged into another record | 484 |
+| **Output records (`clean.csv`)** | **1326** |
 
-`2000 = 190 + 483 + 1327`. The excluded rows split into 60 internal, 60 test entries, 40 keyboard mash and 30 without a usable contact method. 381 output records were built from more than one row (279 pairs, 102 groups of three), and 111 records carry the `suspect` flag.
+`2000 = 190 + 484 + 1326`. The excluded rows split into 60 internal, 60 test entries, 40 keyboard mash and 30 without a usable contact method. 381 output records were built from more than one row (278 pairs, 103 groups of three), and 110 records carry the `suspect` flag.
 
 | File | Content |
 |---|---|
@@ -50,12 +50,12 @@ The run on the two sample files (`data/sample/`, 2,000 invented rows, seed 42):
 One merge from the sample, three rows of two exports become one record:
 
 ```
-crm_export_a  A-00172  Philipp  Jung   pjung@example.com             +49 151 00009107     Ulm
-crm_export_b  B-00906  Philipp / Jung  philipp.jung@example.com      0049 151 0000 9107   Ulm
+crm_export_a  A-00172  Philipp Jung    pjung@example.com             +49 151 0000 9107    Ulm
+crm_export_b  B-00904  Philipp / Jung  philipp.jung@example.com      0049 151 0000 9107   Ulm
 crm_export_a  A-00016  Philipp Jung    Pjung@Example.Com             (no phone)           Ulm
 
 -> crm_export_a:A-00172  Philipp Jung  pjung@example.com  philipp.jung@example.com  +4915100009107
-   merged_from: crm_export_b:B-00906 | crm_export_a:A-00016
+   merged_from: crm_export_b:B-00904 | crm_export_a:A-00016
 ```
 
 Values that cannot be normalised (an e-mail like `n/a`, a date like `31.02.2024`) are not dropped from the trail: they appear in the `notes` column.
@@ -84,7 +84,15 @@ python -m crm_cleanup run --input data/real/*.csv --out out/ --config my-config.
 python -m crm_cleanup.generate --n 2000 --seed 42 --out data/sample/
 ```
 
-The generator writes two files with different column names and only invented data: example.com / example.org addresses, made-up names, numbers in the range +49 151 0000xxxx. The same seed gives byte-identical files. It also knows the ground truth (how many rows are junk, how many people appear twice), and a test checks the pipeline against it: on the sample it finds exactly the 190 junk rows and merges exactly the 483 duplicates that were put in. That shows the mechanics work. It does not measure how well the junk rules fit your real data.
+The generator writes two files with different column names and only invented data: example.com / example.org addresses, made-up names, numbers in the range +49 151 0000xxxx. The same seed gives byte-identical files. It also knows the ground truth (how many rows are junk, how many people appear twice), and a test checks the pipeline against it: on the sample it finds exactly the 190 junk rows and merges exactly the 484 duplicates that were put in. That shows the mechanics work. It does not measure how well the junk rules fit your real data.
+
+## Known limits
+
+- **Names.** A name typed fully in capitals or fully in lower case is title-cased, so `MCDONALD` becomes `Mcdonald` and only a short list of particles (`von`, `van`, `de` ...) stays lower case. Mixed-case names are never touched.
+- **Thresholds.** The suspect and exclusion thresholds (vowel share 10 % and 15 %, six letters, the keyboard-row list) are calibrated on the generated sample data. On real data, in other languages or with other naming habits, expect false alarms and misses; that is what the review page is for.
+- **Matching.** Only exact e-mail and phone matches join rows. There is no fuzzy name matching, and a shared mailbox joins people who are not the same.
+- **Phone numbers.** `049 151 ...` is read as country code 49 only when a separator follows, because `04921 ...` (Emden) is a national number. Digits that start with `49` and have ten or more digits are taken as international.
+- **Ids.** An id or source file name that contains `|` is rejected, because `|` separates the lists in the output.
 
 ## Layout
 
