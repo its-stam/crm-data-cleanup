@@ -96,8 +96,9 @@ def normalize_phone(raw, country_code: str = "49") -> str:
     return "+" + intl
 
 
-def is_valid_phone(value: str) -> bool:
-    return bool(_E164_RE.fullmatch(value))
+def is_valid_phone(value: str, country_code: str = "49") -> bool:
+    """E.164 shape, and no trunk zero right behind the default country code ('+49015...')."""
+    return bool(_E164_RE.fullmatch(value)) and not value.startswith("+" + country_code + "0")
 
 
 # ------------------------------------------------------------------ name

@@ -201,7 +201,7 @@ def process(paths, cfg: Config) -> Result:
         excluded_rows=[excluded_row(r) for r in excluded],
         source_counts=counts, warnings=warnings,
     )
-    checks.verify(checks.Expected.from_records(records), result.clean_rows, result.excluded_rows)
+    checks.verify(checks.Expected.from_records(records, cfg.country_code), result.clean_rows, result.excluded_rows)
     return result
 
 
@@ -215,7 +215,7 @@ def run(patterns, cfg: Config, out_dir) -> Result:
     outputs.write_review(out_dir / "review.html", result)
     # Second pass on the files themselves, not on the in-memory rows.
     checks.verify(
-        checks.Expected.from_records(result.records),
+        checks.Expected.from_records(result.records, cfg.country_code),
         outputs.read_csv(out_dir / "clean.csv"),
         outputs.read_csv(out_dir / "excluded.csv"),
     )

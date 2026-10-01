@@ -38,13 +38,15 @@ class Expected:
     uids: tuple
     emails: frozenset
     phones: frozenset
+    country_code: str = "49"
 
     @classmethod
-    def from_records(cls, records) -> "Expected":
+    def from_records(cls, records, country_code: str = "49") -> "Expected":
         return cls(
             uids=tuple(r.uid for r in records),
             emails=frozenset(e for r in records for e in r.emails),
             phones=frozenset(p for r in records for p in r.phones),
+            country_code=country_code,
         )
 
 
@@ -89,7 +91,7 @@ def verify(expected: Expected, clean_rows: list, excluded_rows: list) -> None:
         if not is_valid_email(value) or value != value.lower():
             raise IntegrityError(f"invalid e-mail in output: {value!r}")
     for value in out_phones:
-        if not is_valid_phone(value):
+        if not is_valid_phone(value, expected.country_code):
             raise IntegrityError(f"invalid phone number in output: {value!r}")
     for row in clean_rows:
         if row["created"] and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", row["created"]):

@@ -149,6 +149,12 @@ class IntegrityTest(unittest.TestCase):
         with self.assertRaises(IntegrityError):
             verify(self.expected, self.clean, self.excluded)
 
+    def test_a_trunk_zero_behind_the_country_code_fails(self):  # item 3
+        row = next(row for row in self.clean if not row["phone_2"])
+        row["phone_2"] = "+49015100001234"      # nothing is lost or duplicated: only the format is wrong
+        with self.assertRaisesRegex(IntegrityError, "invalid phone"):
+            verify(self.expected, self.clean, self.excluded)
+
     def test_a_badly_formatted_phone_fails(self):
         row = next(row for row in self.clean if row["phone"])
         row["phone"] = "0151 0000 0001"
