@@ -114,27 +114,52 @@ def write_report(path, result) -> None:
 # ------------------------------------------------------------------ review
 
 _CSS = """
-:root{--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--line:#d6d3d1;--card:#fff;--accent:#0f766e;--warn:#b45309}
-@media (prefers-color-scheme:dark){:root{--bg:#161412;--fg:#f5f5f4;--muted:#a8a29e;--line:#44403c;--card:#1f1c1a;--accent:#2dd4bf;--warn:#fbbf24}}
+:root{--bg:#f4f5f7;--surface:#fff;--fg:#192435;--muted:#656e7a;--line:#e1e3e7;--head:#f7f8fa;
+--green:#08a742;--green-bg:#e6f6ec;--blue:#317ae2;--amber:#e8a400;--amber-fg:#8a5a00;--amber-bg:#fff3d1;--purple:#7a6ff0;--red:#e5484d;--red-bg:#fdecec}
+@media (prefers-color-scheme:dark){:root{--bg:#14161f;--surface:#1c1f2b;--fg:#e9ebf1;--muted:#9aa1ad;--line:#2d3142;
+--head:#222636;--green:#3ccf7a;--green-bg:#17301f;--blue:#6aa3ff;--amber:#ffc94d;--amber-fg:#ffc94d;--amber-bg:#33290f;--purple:#a49dff;--red:#ff6b70;--red-bg:#3a1c1e}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:1080px;margin:0 auto;padding:24px 16px 64px}
-h1{font-size:1.6rem;margin:0 0 4px}h2{font-size:1.15rem;margin:32px 0 8px}
-p.lead{color:var(--muted);margin:0 0 20px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
-.card b{display:block;font-size:1.6rem;font-variant-numeric:tabular-nums}.card span{color:var(--muted);font-size:.85rem}
-details{background:var(--card);border:1px solid var(--line);border-radius:10px;margin:10px 0;padding:0 14px}
-summary{cursor:pointer;padding:10px 0;font-weight:600}
-.table-wrap{overflow-x:auto;margin-bottom:12px}
-table{border-collapse:collapse;width:100%;font-size:.9rem}
-th,td{text-align:left;padding:6px 10px;border-top:1px solid var(--line);vertical-align:top}
-th{color:var(--muted);font-weight:600;white-space:nowrap}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.bar{background:var(--surface);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.bar h1{font-size:20px;font-weight:600;margin:0}
+.bar .sum{margin-left:auto;color:var(--fg);font-weight:500;font-variant-numeric:tabular-nums}
+.bar .sum i{font-style:normal;color:var(--muted);margin:0 6px}
+main{max-width:1120px;margin:0 auto;padding:20px 20px 64px}
+h2{font-size:16px;font-weight:600;margin:28px 0 10px;display:flex;align-items:center;gap:8px}
+h2 .count{font-size:12px;font-weight:600;color:var(--muted);background:var(--head);border:1px solid var(--line);border-radius:10px;padding:0 8px}
+p.lead{color:var(--muted);margin:0 0 16px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:0 0 18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:10px 14px 12px;box-shadow:0 1px 2px rgba(25,36,53,.06)}
+.card:before{content:"";display:block;width:36px;height:4px;border-radius:2px;background:var(--tone,var(--blue));margin:2px 0 10px}
+.card span{display:block;color:var(--muted);font-size:13px}
+.card b{display:block;font-size:26px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.3px}
+.card.ok{background:var(--green-bg);border-color:transparent}.card.ok b{color:var(--green)}
+.search{position:relative;margin:0 0 4px}
+.search:before{content:"";position:absolute;left:14px;top:50%;width:11px;height:11px;margin-top:-8px;border:2px solid var(--muted);border-radius:50%}
+.search:after{content:"";position:absolute;left:25px;top:50%;width:6px;height:2px;margin-top:4px;background:var(--muted);transform:rotate(45deg)}
+input[type=search]{width:100%;padding:9px 14px 9px 38px;border:1px solid var(--line);border-radius:20px;background:var(--surface);color:var(--fg);font:inherit}
+input[type=search]:focus{outline:2px solid var(--blue);outline-offset:0;border-color:transparent}
+label.hint{display:block;color:var(--muted);font-size:13px;margin:0 0 6px}
+ul.check{list-style:none;padding:0;margin:0;background:var(--surface);border:1px solid var(--line);border-radius:4px}
+ul.check li{padding:10px 14px;border-top:1px solid var(--line)}ul.check li:first-child{border-top:0}
+ul.check input{accent-color:var(--green);width:16px;height:16px;vertical-align:-3px;margin-right:8px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:4px;margin:8px 0}
+summary{cursor:pointer;padding:10px 14px;font-weight:600;list-style-position:inside}
+summary .count{font-size:12px;font-weight:600;color:var(--muted);background:var(--head);border:1px solid var(--line);border-radius:10px;padding:0 8px;margin-left:6px}
+details[open] summary{border-bottom:1px solid var(--line)}
+.table-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:4px}
+details .table-wrap{border:0;border-radius:0}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:9px 12px;border-top:1px solid var(--line);vertical-align:top}
+thead th{background:var(--head);color:var(--muted);font-weight:500;font-size:13px;white-space:nowrap;border-top:0}
+tbody tr:hover{background:var(--head)}
+td:nth-child(2){color:var(--blue);font-weight:500}
 code{font:12px ui-monospace,SFMono-Regular,Menlo,monospace}
-.tag{color:var(--warn)}
-input[type=search]{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);font:inherit}
-ul.check{list-style:none;padding:0}ul.check li{margin:6px 0}
-@media (max-width:600px){main{padding:16px 12px 48px}th,td{padding:6px}}
+.pill{display:inline-block;font-size:12px;font-weight:600;line-height:18px;padding:0 8px;border-radius:9px;background:var(--amber-bg);color:var(--amber-fg);margin:1px 4px 1px 0}
+.pill.ex{background:var(--red-bg);color:var(--red)}
+.pill.lead{background:var(--green-bg);color:var(--green)}
+@media (max-width:600px){.bar-in,main{padding-left:12px;padding-right:12px}th,td{padding:8px}}
 """
 
 _JS = """
@@ -144,10 +169,26 @@ document.querySelectorAll('tbody tr').forEach(tr=>{tr.hidden=t&&!tr.textContent.
 """
 
 
+def _cell(value) -> str:
+    """A plain value is escaped text; a ("pill", css_class, [texts]) tuple renders escaped badges."""
+    if isinstance(value, tuple) and value and value[0] == "pill":
+        _, css, texts = value
+        return "".join(f'<span class="pill {css}">{escape(t)}</span>' for t in texts)
+    return escape(str(value))
+
+
 def _html_table(headers, rows) -> str:
     head = "".join(f"<th>{escape(h)}</th>" for h in headers)
-    body = "".join("<tr>" + "".join(f"<td>{escape(str(c))}</td>" for c in row) + "</tr>" for row in rows)
+    body = "".join("<tr>" + "".join(f"<td>{_cell(c)}</td>" for c in row) + "</tr>" for row in rows)
     return f'<div class="table-wrap"><table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>'
+
+
+_REASON_LABELS = {
+    "internal": "Internal addresses",
+    "test_entry": "Test entries",
+    "keyboard_mash": "Keyboard mash",
+    "no_contact": "No contact method",
+}
 
 
 def write_review(path, result) -> None:
@@ -157,9 +198,9 @@ def write_review(path, result) -> None:
         by_reason.setdefault(row["reason_code"], []).append(row)
 
     excluded_html = "".join(
-        f"<details><summary>{escape(code)} ({len(rows)})</summary>"
+        f'<details data-reason="{escape(code)}"><summary>{escape(_REASON_LABELS.get(code, code))}<span class="count">{len(rows):,}</span></summary>'
         + _html_table(["Id", "Name", "E-mail", "Phone", "Reason"],
-                      [[x["id"], x["name"], x["email"], x["phone"], x["reason"]] for x in rows])
+                      [[x["id"], x["name"], x["email"], x["phone"], ("pill", "ex", [x["reason"]])] for x in rows])
         + "</details>"
         for code, rows in sorted(by_reason.items(), key=lambda kv: (-len(kv[1]), kv[0]))
     )
@@ -168,7 +209,7 @@ def write_review(path, result) -> None:
     suspect_html = _html_table(
         ["Id", "Name", "E-mail", "Phone", "Why flagged"],
         [[c.id, c.name, c.emails[0] if c.emails else "", c.phones[0] if c.phones else "",
-          "; ".join(text for _, text in c.flags)] for c in suspects],
+          ("pill", "", [text for _, text in c.flags])] for c in suspects],
     )
 
     biggest = sorted((c for c in r.contacts if len(c.members) > 1),
@@ -177,28 +218,31 @@ def write_review(path, result) -> None:
         f"<details><summary>{len(c.members)} rows into <code>{escape(c.id)}</code> ({escape(c.name)})</summary>"
         + _html_table(["Row", "Name", "E-mail", "Phone", "Role"],
                       [[m.uid, m.name, ", ".join(m.emails), ", ".join(m.phones),
-                        "leads" if m is c.leader else "merged"] for m in c.members])
+                        ("pill", "lead", ["leads"]) if m is c.leader else "merged"] for m in c.members])
         + "</details>"
         for c in biggest
     ) or "<p>No duplicates found.</p>"
 
     cards = "".join(
-        f'<div class="card"><b>{n}</b><span>{escape(label)}</span></div>'
-        for label, n in [("input rows", r.n_input), ("excluded", r.n_excluded),
-                         ("merged away", r.n_absorbed), ("output records", r.n_output),
-                         ("flagged suspect", r.n_suspect)]
+        f'<div class="card{extra}" style="--tone:var({tone})"><span>{escape(label)}</span><b>{n:,}</b></div>'
+        for label, n, tone, extra in [("Input rows", r.n_input, "--blue", ""),
+                                      ("Excluded", r.n_excluded, "--red", ""),
+                                      ("Merged away", r.n_absorbed, "--purple", ""),
+                                      ("Flagged suspect", r.n_suspect, "--amber", ""),
+                                      ("Clean contacts", r.n_output, "--green", " ok")]
     )
 
     page = f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Review before import</title><style>{_CSS}</style></head>
-<body><main>
-<h1>Review before import</h1>
+<body><header class="bar"><div class="bar-in"><h1>Review before import</h1>
+<span class="sum">{r.n_output:,} clean contacts<i>·</i>{r.n_input:,} rows in</span></div></header>
+<main>
 <p class="lead">Excluded rows and borderline records, for a person to check. Nothing here has been deleted.
 This page contains contact data: do not publish it.</p>
 <div class="cards">{cards}</div>
-<label for="q" class="lead">Filter every table on this page</label>
-<input id="q" type="search" placeholder="name, e-mail, phone, reason ...">
+<label for="q" class="hint">Filter every table on this page</label>
+<div class="search"><input id="q" type="search" placeholder="Search name, e-mail, phone or reason"></div>
 
 <h2>Sign-off</h2>
 <ul class="check">
@@ -207,10 +251,10 @@ This page contains contact data: do not publish it.</p>
 <li><label><input type="checkbox"> The largest merge groups below are the same person or company.</label></li>
 </ul>
 
-<h2>Excluded rows ({r.n_excluded})</h2>
+<h2>Excluded rows <span class="count">{r.n_excluded:,}</span></h2>
 {excluded_html}
 
-<h2>Suspect records ({r.n_suspect})</h2>
+<h2>Suspect records <span class="count">{r.n_suspect:,}</span></h2>
 {suspect_html}
 
 <h2>Largest merge groups</h2>
