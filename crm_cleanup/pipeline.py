@@ -133,6 +133,10 @@ def load_records(paths, cfg: Config):
             for number, row in enumerate(reader, start=1):
                 ident = _cell(row, sm.columns, "id")
                 uid = f"{path.stem}:{ident}" if ident else f"{path.stem}:row{number}"
+                if checks.LIST_SEP.strip() in uid:
+                    raise ConfigError(
+                        f"{path.name}: row {number}: id {uid!r} contains '{checks.LIST_SEP.strip()}', "
+                        "the list separator of the output files; clean the id column or rename the file")
                 if uid in seen_uids:
                     uid = f"{uid}@row{number}"
                     warnings.append(f"{path.name} row {number}: duplicate id, using {uid}")

@@ -29,7 +29,7 @@ def mini_dataset(folder: Path):
         ["A6", "Pat Intern", "pat@example.org", "0151 0000 0005", "", "", ""],                       # excluded: internal
         ["A7", "Xkjhsd Qwrtpl", "x@example.com", "", "", "", ""],                                    # excluded: mash
         ["A8", "Nobody", "n/a", "12345", "", "", ""],                                                # excluded: no contact
-        ["A9", "<script>alert(1)</script> Kim", "kim@example.com", "", "", "", ""],
+        ["A9", "Kim <img src=x onerror=alert(1)>", "kim@example.com", "", "", "", ""],               # suspect: digit in name
     ])
     b = write_rows(folder / "crm_export_b.csv", HEAD_B, [
         ["B1", "Anna", "Müller", "anna.m@example.com", "+49 (0)151 0000 0001", "", "", "", "17.03.2024"],  # links A1 and A3
@@ -73,12 +73,17 @@ class PipelineTest(unittest.TestCase):
         self.assertEqual((row["email"], row["phone"]), ("n/a", "12345"))
         self.assertEqual(row["reason_code"], "no_contact")
 
-    def test_run_writes_four_files_and_review_page_escapes_html(self):
+    def test_run_writes_four_files_and_review_page_escapes_html(self):  # item 10
         out = self.tmp / "out"
-        run([str(p) for p in self.paths], self.cfg, out)
+        r = run([str(p) for p in self.paths], self.cfg, out)
         self.assertEqual(sorted(p.name for p in out.iterdir()), ["clean.csv", "excluded.csv", "report.md", "review.html"])
+        payload = "Kim <img src=x onerror=alert(1)>"
+        suspects = [c.name for c in r.contacts if c.flags]
+        self.assertIn(payload, suspects)                      # the name really is on the review page ...
         page = (out / "review.html").read_text(encoding="utf-8")
-        self.assertNotIn("<script>alert(1)", page)
+        self.assertIn("Kim &lt;img src=x onerror=alert(1)&gt;", page)   # ... as text,
+        self.assertNotIn("<img", page)                        # never as a tag
+        self.assertNotIn("onerror=alert(1)>", page)
         self.assertIn("test_entry", page)
 
     def test_wildcards_and_argument_order_do_not_change_the_result(self):
@@ -96,6 +101,16 @@ class PipelineTest(unittest.TestCase):
         broken = write_rows(self.tmp / "crm_export_a2.csv", ["Contact ID", "Full Name"], [["1", "x"]])
         with self.assertRaisesRegex(ConfigError, "not in the file"):
             process([broken], self.cfg)
+
+    def test_ids_containing_the_list_separator_are_rejected_with_the_row_number(self):  # item 9
+        bad = write_rows(self.tmp / "crm_export_a4.csv", HEAD_A, [
+            ["1", "Anna Müller", "a1@example.com", "", "", "", ""],
+            ["2|x", "Ben Meier", "b1@example.com", "", "", "", ""]])
+        with self.assertRaisesRegex(ConfigError, r"crm_export_a4\.csv: row 2: id .* contains '\|'"):
+            process([bad], self.cfg)
+        bad_name = write_rows(self.tmp / "crm_export_a|5.csv", HEAD_A, [["1", "Anna Müller", "a1@example.com", "", "", "", ""]])
+        with self.assertRaisesRegex(ConfigError, "row 1: id .* contains"):
+            process([bad_name], self.cfg)
 
     def test_duplicate_ids_in_one_file_get_distinct_uids(self):
         dup = write_rows(self.tmp / "crm_export_a3.csv", HEAD_A, [
