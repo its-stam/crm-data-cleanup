@@ -1,0 +1,979 @@
+Kontakt-Nr,Vorname,Nachname,E-Mail,Telefon,Mobil,Firma,Ort,Erstellt am
+B-00001,W.,Krause,,+49 151 00007462,,,Kassel,31.12.2024
+B-00002,Dorothea,Jansen,  dorothea.jansen@example.com ,,,Eichenau Malerbetrieb,Rostock,21.11.2025
+B-00003,Tamara,Eberle,tamara.eberle@example.com,+49 (0)151 0000 5457,,,Kassel,30.07.2020
+B-00004,Leon,Unger ,  leon.unger@example.com ,,,,Essen,26.03.2024
+B-00005,theresa,Unger,Theresa.Unger@Example.Com,0151 0000 4838,,Tannenwald Bau GmbH,,12.10.2019
+B-00006,Karin,Lorenz,karin.lorenz@example.com,0151-0000-2978,,Alpenglut Heizung & Sanitär,Erfurt,09.02.2022
+B-00007,JÜRGEN,NOVAK,  juergen.novak@example.com ,,,,Kassel,14.04.2023
+B-00008,Carla,Lorenz,carla.lorenz@example.com,+4915100005154,,,Berlin,26.11.2023
+B-00009,T.,Hartmann,,+4915100009957,,Nordlicht Gartenbau,,10.02.2021
+B-00010,Tamara,TAMARA,tamara.tamara@example.com,(0151) 0000 0189,,,,10.05.2025
+B-00011,Emma,Voigt,  evoigt@example.com ,015100001324,,,Graz,08.02.2024
+B-00012,Björn,fuchs,bjoern.fuchs@example.com,4915100004916,,Falkenhorst Metallbau GmbH,Ulm,18.06.2024
+B-00013,Anna,Voigt ,Anna.Voigt@Example.Com,Tel. 0151 00007922,,Rheinblick Dachdecker GmbH,Erfurt,03.03.2019
+B-00014,Anna ,Ott,anna.ott2@example.com,0151-0000-8409,,Alpenglut Elektro,Berlin,02.02.2025
+B-00015,Wiebke,Zimmer,Wzimmer@Example.Com,,,,Hamburg,28.07.2023
+B-00016,MARA,Krause,mara.krause@example.com,,,Kiefernhof Haustechnik GmbH,,21.08.2023
+B-00017,,,Kontakt.2303@Example.Com,0151/00007788,,,,10.07.2022
+B-00018,Käthe,schröder,kschroeder@example.com,0151-0000-7753,,Morgenrot Metallbau GmbH,Freiburg,15.02.2020
+B-00019,Anna ,Ulrich,aulrich@example.com,0151 0000 4564,,,Ulm,19.01.2024
+B-00020,Ottilie,Köhler,ottilie.koehler@example.com,12345,,,,25.07.2020
+B-00021,Ulrike,Graf,Ulrike.Graf2@Example.Com,(0151) 0000 4821,,,Dresden,20.02.2025
+B-00022,D. ,Eberle,,(0151) 0000 6348,,Steinfeld Heizung & Sanitär,Nürnberg,22.12.2022
+B-00023,Wiebke,Vollmer,Wiebke.Vollmer@Example.Com,0151/00003177,,Lindenhof Metallbau GmbH,,01.07.2019
+B-00024,Hannes,Vogel,Hvogel@Example.Com,,,,,
+B-00025,Karin,bergmann,karin.bergmann2@example.com,+49 (0)151 0000 9508,,,Graz,13.06.2024
+B-00026,NADINE,Neumann ,nadine.neumann@example.com,0151 0000 5591,,Eichenau Dachdecker GmbH,Mainz,16.02.2022
+B-00027,Miriam,Thiel,MIRIAM.THIEL@EXAMPLE.COM,+4915100003631,,Lindenhof Schreinerei,,29.01.2020
+B-00028,Team,Support,Support@Example.Com,,,,,29.12.2024
+B-00029,Zoe,Vogel,zvogel@example.com,0151 0000 9785,,Alpenglut Elektro,,09.08.2025
+B-00030,Emma,Reimann,  emma.reimann@example.com ,0151-0000-5214,,Alpenglut Bau GmbH,Hannover,24.01.2023
+B-00031,Fabian,Martin,fabian.martin@example.com,0049 151 0000 1477,,Sonnenberg Malerbetrieb,,08.05.2022
+B-00032,Theresa,Jung,theresa.jung@example.com,015100004346,,Lindenhof Bau GmbH,Frankfurt,07.04.2022
+B-00033,Jürgen,Wolff ,juergen.wolff.example.com,Tel. 0151 00002601,,Seebrise Haustechnik GmbH,,15.08.2023
+B-00034,Ben,RICHTER,BEN.RICHTER@EXAMPLE.COM,+49 151 0000 3442,,Rheinblick Dachdecker GmbH,Graz,25.12.2021
+B-00035,A.,Graf,armin.graf@example.com,,,Kiefernhof Malerbetrieb,Dresden,03.05.2021
+B-00036,Qwertz,Asdfg,kontakt.1425@example.com,4915100001404,,,,09.10.2022
+B-00037,Greta,Jansen,Greta.Jansen@Example.Com,0151/00006799,,,,23.08.2019
+B-00038,Asdfg,QWERT,Kontakt.8213@Example.Com,+49 151 0000 5039,,,,02.02.2024
+B-00039,Dorothea ,Jung,,Tel. 0151 00001318,,,,12.11.2024
+B-00040,Ida,Imhof,ida.imhof@example.com,+49 (0)151 0000 7566,,,Hamburg,24.03.2025
+B-00041,Olivia,voigt,olivia.voigt@example.com,+49 (0)151 0000 4979,,Nordlicht Dachdecker GmbH,München,
+B-00042,LEA,Graf,Lea.Graf@Example.Com,,,Alpenglut Bau GmbH,,22.03.2024
+B-00043,Ines ,dietrich,Ines.Dietrich@Example.Com,+4915100005554,,Falkenhorst Haustechnik GmbH,,07.05.2023
+B-00044,JONAS,IBRAHIM,jibrahim@example.com,,,,,26.06.2020
+B-00045,Zoe,Arnold,zoe.arnold@example.com,Tel. 0151 00001444,,,Bremen,15.08.2020
+B-00046,Jakob,Conrad,Jakob.Conrad@Example.Com,,,,Hannover,07.01.2021
+B-00047,Dorothea,WAGNER,DOROTHEA.WAGNER@EXAMPLE.COM,0151-0000-6593,,Rheinblick Bau GmbH,Nürnberg,
+B-00048,LEA,Wagner,Lea.Wagner@Example.Com,015100003233,,,Berlin,28.05.2021
+B-00049,Noah ,Wolff,NOAH.WOLFF@EXAMPLE.COM,+49 (0)151 0000 8566,,Steinfeld Schreinerei,Hannover,19.06.2024
+B-00050,Noah,Marx,noah.marx2@example.com,015100004382,,Nordlicht Metallbau GmbH,Dortmund,05.06.2021
+B-00051,IDA,Martin,ida.martin@example.com,,,,Berlin,11.04.2021
+B-00052,Lea,Bergmann,,(0151) 0000 0673,,,Frankfurt,26.08.2020
+B-00053,t.,Haas,thaas@example.com,,,,,21.05.2022
+B-00054,Elif,Gebhardt,elif.gebhardt@example.com,0049 151 0000 5877,,Rheinblick Bau GmbH,,23.06.2025
+B-00055,Paul,engel,Paul.Engel@Example.Com,+49 151 00007936,,,,
+B-00056,Rita,HARTMANN,rita.hartmann@example.com,,,Rheinblick Haustechnik GmbH,,05.06.2021
+B-00057,Käthe,Reimann,,Tel. 0151 00003117,,Silberbach Bau GmbH,,01.03.2024
+B-00058,Ottilie,Baumgartner,mfftkczwnb@example.com,+4915100002647,,,Frankfurt,02.04.2022
+B-00059,Viktor ,Peters,,0151 0000 4701,,,Kassel,28.02.2019
+B-00060,Felix,Lorenz,FELIX.LORENZ@EXAMPLE.COM,015100004162,,Seebrise Elektro,,18.10.2022
+B-00061,Ben,NOVAK,BEN.NOVAK@EXAMPLE.COM,n/a,,Alpenglut Malerbetrieb,,
+B-00062,Björn,czerny,BJOERN.CZERNY@EXAMPLE.COM,,,,Bremen,23.01.2023
+B-00063,Mara,Nowak ,mara.nowak@example.org,,,Tannenwald Metallbau GmbH,Mainz,17.04.2023
+B-00064,C.,Wagner,CLARA.WAGNER@EXAMPLE.COM,,,,Berlin,06.12.2020
+B-00065,Ines,Ulrich,ines.ulrich@example.com,(0151) 0000 3645,,,Leipzig,21.06.2019
+B-00066,Vera,Vollmer,vera.vollmer@example.com,12345,,Nordlicht Heizung & Sanitär,Hamburg,09.05.2021
+B-00067,Theresa ,Lehmann ,theresa.lehmann@example.com,0151/00004563,,,Leipzig,01.06.2024
+B-00068,Rita,Böhm,RITA.BOEHM@EXAMPLE.COM,4915100003091,,,Frankfurt,01.08.2021
+B-00069,Rita,Jung,rita.jung@example.com,015100008364,,Morgenrot Elektro,Essen,03.07.2021
+B-00070,Zoe,Ulrich,zoe.ulrich2@example.com,+49 151 00008699,,Rheinblick Gartenbau,,18.02.2023
+B-00071,TIMO,SOMMER,timo.sommer2@example.com,0049 151 0000 8822,,Lindenhof Reinigung,Nürnberg,16.06.2024
+B-00072,Karin,Marx ,,0151,,Alpenglut Schreinerei,Mainz,24.12.2023
+B-00073,U.,köhler,uwe.koehler@example,+4915100008836,,,Erfurt,10.04.2023
+B-00074,GRETA,Zimmer,,0151-0000-1748,,,Dresden,17.07.2023
+B-00075,Jonas,Haas,  jonas.haas@example.com ,0151 0000 6637,,Nordlicht Dachdecker GmbH,,09.06.2024
+B-00076,G.,Czerny ,,+49 151 0000 6566,,Wiesengrund Schreinerei,Freiburg,09.07.2022
+B-00077,S.,Bergmann,Stefan.Bergmann@Example.Com,015100003946,,Falkenhorst Bau GmbH,Bremen,10.10.2025
+B-00078,Masrvjl ,Rnmohjp,masrvjl.rnmohjp@example.com,0151 0000 4305,,,,20.10.2020
+B-00079,KATHARINA,Lindner,katharina.lindner@example.com,+4915100000097,,,Bremen,03.06.2023
+B-00080,Philipp,EBERLE,philipp.eberle@example.com,+4915100000401,,Eichenau Metallbau GmbH,,18.08.2021
+B-00081,Armin,lang,armin.lang@example.com,0151 0000 8634,,Silberbach Haustechnik GmbH,Ulm,30.04.2021
+B-00082,Katharina,Albrecht,katharina.albrecht@example.com,(0151) 0000 2504,,Kiefernhof Dachdecker GmbH,Mainz,11.05.2020
+B-00083,Boris,Baumgartner,  boris.baumgartner@example.com ,,,Steinfeld Bau GmbH,Ulm,16.02.2020
+B-00084,Clara,Beck ,clara.beck@example.com,12345,,Bergwerk Dachdecker GmbH,Kassel,01.07.2021
+B-00085,Noah,hartmann,NOAH.HARTMANN@EXAMPLE.COM,,,Nordlicht Bau GmbH,Berlin,04.09.2024
+B-00086,Wsng,Ktsgzm,WSNGKTSGZM@EXAMPLE.COM,(0151) 0000 1308,,,,21.05.2019
+B-00087,Paul,Bergmann,Pbergmann@Example.Com,+49 (0)151 0000 0728,,,Hamburg,17.02.2022
+B-00088,Viktor,Graf,  viktor.graf@example.com ,+4915100003539,,Tannenwald Schreinerei,Ulm,25.12.2023
+B-00089,Xenia,Horvat,xenia.horvat@example.com,+49 (0)151 0000 4107,,Eichenau Fensterbau,Hannover,28.12.2025
+B-00090,Pxfg ,Rhcfpth,,+4915100004555,,,,12.10.2024
+B-00091,Theresa,QUAST,  tquast@example.com ,+49 (0)151 0000 7343,,Morgenrot Haustechnik GmbH,,01.12.2020
+B-00092,Olivia,Peters,olivia.peters@example.com,+49 151 00006808,,Rheinblick Bau GmbH,Köln,28.09.2020
+B-00093,,,kontakt.9761@example.com,,,,,16.05.2025
+B-00094,Wiebke,Moser,  wiebke.moser@example.com ,0151 0000 8767,,,Bremen,08.02.2022
+B-00095,Vpzwvj,Ckcj,vpzwvjckcj@example.com,0151-0000-3433,,,,31.05.2021
+B-00096,Armin,peters,  armin.peters@example.com ,Tel. 0151 00007355,,Bergwerk Malerbetrieb,Hannover,16.03.2023
+B-00097,Elif ,Hartmann,elif.hartmann3@example.com,,,Kiefernhof Haustechnik GmbH,Dortmund,11.05.2024
+B-00098,Viktor,maurer,  viktor.maurer@example.com ,015100007076,,Kiefernhof Heizung & Sanitär,Hamburg,02.03.2024
+B-00099,B.,Pfeiffer,,0151-0000-9748,,Silberbach Logistik KG,Frankfurt,19.08.2022
+B-00100,Quentin,Arnold,Quentin.Arnold@Example.Com,0151-0000-1881,,,,21.03.2019
+B-00101,David,Teufel,david.teufel@example.com,0151-0000-5583,,Alpenglut Fensterbau,Leipzig,27.05.2025
+B-00102,Clara,Lehmann,clara.lehmann@example.com,Tel. 0151 00002698,,,,10.05.2020
+B-00103,stefan,Thiel,stefan.thiel@example.com,+49 151 00007382,,Tannenwald Elektro,Bremen,10.03.2021
+B-00104,Mmvofts,Pwrvnfho,mmvofts.pwrvnfho@example.com,+49 151 00009561,,,,14.03.2025
+B-00105,Armin,lindner,armin.lindner@example.com,+49 (0)151 0000 3156,,Silberbach Reinigung,Köln,20.12.2021
+B-00106,Wiebke,Winter ,Wiebke.Winter@Example.Com,,,Falkenhorst Elektro,,24.08.2022
+B-00107,Tamara,Gebhardt 8,tamara.gebhardt@example.com,,,Wiesengrund Haustechnik GmbH,Bremen,22.02.2019
+B-00108,Viktor ,Böhm,viktor.boehm@example.com,,,,Dortmund,13.10.2025
+B-00109,Ida,Teufel,,0151/00003596,,Falkenhorst Dachdecker GmbH,Bremen,17.11.2020
+B-00110,Boris ,Lindner,,+49 151 0000 0932,,Falkenhorst Reinigung,,04.02.2019
+B-00111,Fjmcg,rnchjtl,Fjmcgrnchjtl@Example.Com,+4915100003753,,,,22.07.2024
+B-00112,Yannik ,Horvat ,YANNIK.HORVAT@EXAMPLE.COM,0151 0000 1497,,Morgenrot Haustechnik GmbH,Essen,30.01.2019
+B-00113,Alina,Arnold,Alina.Arnold@Example.Com,+4915100001481,,Falkenhorst Metallbau GmbH,Leipzig,02.11.2021
+B-00114,Tamara,SCHAEFER,tamara.schaefer@example.com,015100008099,,Kiefernhof Heizung & Sanitär,Erfurt,12.11.2022
+B-00115,Paul ,Lehmann,  paul.lehmann@example.com ,+49 151 0000 6119,,Wiesengrund Elektro,Nürnberg,30.08.2020
+B-00116,Theresa,Conrad,Theresa.Conrad@Example.Com,+49 151 00007958,,,Freiburg,10.03.2019
+B-00117,Ben,Müller,,0151 0000 2068,,Tannenwald Malerbetrieb,Leipzig,12.04.2021
+B-00118,G.,Wolff,gisela.wolff@example.com,015100008908,,Tannenwald Heizung & Sanitär,Nürnberg,12.02.2019
+B-00119,Rita,marx,Rmarx2@Example.Com,,,,,11.11.2020
+B-00120,walter,JUNG,Walter.Jung@Example.Com,0151-0000-9226,,,,15.12.2019
+B-00121,Wiebke,Moser,wmoser@example.com,Tel. 0151 00008767,,,Bremen,14.02.2023
+B-00122,Marek,Lorenz,marek.lorenz@example.com,0151/00008698,,Steinfeld Elektro,Frankfurt,25.08.2023
+B-00123,ULRIKE,Lang ,kein mail,0049 151 0000 6889,,Rheinblick Heizung & Sanitär,Rostock,20.05.2023
+B-00124,,,kontakt.9108@example.com,0151-0000-2706,,,,24.08.2020
+B-00125,Viktor,LEHMANN,viktor.lehmann@example.org,,,,,03.06.2025
+B-00126,B.,Vogel,ben.vogel@example.com,,,,Erfurt,06.07.2022
+B-00127,O.,Lindner,oskar.lindner@example.com,015100009158,,Alpenglut Schreinerei,Berlin,05.09.2021
+B-00128,Gisela,Seidel,  gisela.seidel@example.com ,+49 151 00002224,,Kiefernhof Reinigung,Essen,15.06.2019
+B-00129,Armin,Schröder,armin.schroeder@example.com,Tel. 0151 00006931,,Morgenrot Dachdecker GmbH,München,04.05.2020
+B-00130,Stefan,ulrich,stefan.ulrich@example.com,+49 151 00002371,,Seebrise Elektro,München,13.09.2021
+B-00131,Heiko,Haas ,heiko.haas@example.com,+49 (0)151 0000 8314,,Steinfeld Fensterbau,Leipzig,19.07.2022
+B-00132,Lea,LEHMANN,lea.lehmann@example.com,+49 (0)151 0000 9108,,Eichenau Fensterbau,Dresden,18.12.2021
+B-00133,jürgen,Lüdke,juergen.luedke@example.com,,,,Dresden,22.07.2025
+B-00134,Ottilie,Jäger,ojaeger@example.com,+49 151 00008215,,,Essen,24.05.2022
+B-00135,Dorothea,Engel,dorothea.engel@example.com,0151 0000 6087,,Seebrise Elektro,Dresden,05.05.2021
+B-00136,Wiebke,Horvat,wiebke.horvat@example.com,0049 151 0000 7957,,Silberbach Gartenbau,Graz,25.07.2022
+B-00137,felix,graf,,(0151) 0000 3181,,Morgenrot Bau GmbH,Dortmund,29.03.2021
+B-00138,Timo ,Maurer,timo.maurer2@example.com,,,Lindenhof Fensterbau,,21.01.2020
+B-00139,Ben,Naumann,ben.naumann@example.com,,,Kiefernhof Dachdecker GmbH,Bremen,03.12.2021
+B-00140,dummy,Kontakt,Dummy.Kontakt42@Example.Com,(0151) 0000 3258,,,,03.09.2020
+B-00141,Lea,Lorenz,lea.lorenz@example.com,4915100009241,,,Essen,09.03.2022
+B-00142,Qwertz ,Asdfg,kontakt.4547@example.com,0151/00007963,,,,28.10.2022
+B-00143,Käthe,Jäger ,kjaeger@example.com,+49 (0)151 0000 9618,,,,06.07.2024
+B-00144,Katharina,Maurer,katharina.maurer@example,(0151) 0000 9087,,Lindenhof Elektro,,26.09.2019
+B-00145,Lukas,Novak,novak@example,+49,,Kiefernhof Haustechnik GmbH,Freiburg,18.02.2019
+B-00146,Uwe,Vollmer ,uvollmer@example.com,,,Eichenau Malerbetrieb,Stuttgart,16.08.2022
+B-00147,Jürgen,Neumann,jneumann@example.com,0151 0000 6813,,Tannenwald Fensterbau,München,02.04.2025
+B-00148,cem,Eberle,ceberle@example.com,,,,,26.12.2020
+B-00149,Viktor,Czerny,viktor.czerny@example.com,,,,Rostock,21.05.2023
+B-00150,Clara,bergmann,clara.bergmann@example.com,0151-0000-3336,,,Hannover,07.10.2022
+B-00151,Vera,Engel,Vera.Engel@Example.Com,015100001681,,Kiefernhof Malerbetrieb,Dresden,14.10.2023
+B-00152,quentin,Conrad,Quentin.Conrad@Example.Com,,,Rheinblick Elektro,,09.11.2020
+B-00153,Käthe,Lang ,klang@example.com,0151 0000 9160,,,,03.05.2025
+B-00154,Sven,Nowak,snowak2@example.com,015100001777,,,,28.12.2021
+B-00155,HANNES,NEUMANN,Hannes.Neumann@Example.Com,,,Tannenwald Elektro,Köln,21.09.2019
+B-00156,Leon,Köhler,Leon.Koehler@Example.Com,+49 151 00009009,,Kiefernhof Metallbau GmbH,Berlin,20.09.2021
+B-00157,Hannes ,Vogel,hannes.vogel@example.com,0151 0000 8118,,Rheinblick Schreinerei,,15.08.2020
+B-00158,ELIF,Jansen,,4915100005414,,Eichenau Reinigung,Hamburg,23.02.2024
+B-00159,Birgit,Brandt,birgit.brandt@example.com,+4915100008230,,,Graz,16.07.2020
+B-00160,rosa,wagner,rosa.wagner@example.com,+49 151 0000 1294,,Sonnenberg Bau GmbH,München,26.01.2020
+B-00161,EMMA,Dahl,  edahl@example.com ,(0151) 0000 0894,,Tannenwald Schreinerei,,29.02.2024
+B-00162,käthe,Marx,kaethe.marx@example.org,+49 (0)151 0000 9892,,Sonnenberg Bau GmbH,Bremen,10.08.2019
+B-00163,Armin ,Roth,Armin.Roth@Example.Com,+49 (0)151 0000 5968,,Sonnenberg Malerbetrieb,,05.10.2019
+B-00164,Ines,Lehmann,Ilehmann@Example.Com,0151/00005376,,Falkenhorst Schreinerei,,12.03.2023
+B-00165,hannes,MARX,  hannes.marx@example.com ,+49 (0)151 0000 8168,,,Bremen,10.05.2019
+B-00166,Olivia,Köhler,olivia.koehler2@example.com,+49 (0)151 0000 4902,,Steinfeld Bau GmbH,Köln,05.03.2022
+B-00167,Tamara,Kovacs,  tamara.kovacs@example.com ,,,,Graz,24.09.2023
+B-00168,Quentin,lehmann,quentin.lehmann@example.com,+49 (0)151 0000 3567,,Morgenrot Heizung & Sanitär,Mainz,19.12.2024
+B-00169,Elif,keller,,015100000898,,Bergwerk Fensterbau,,07.02.2022
+B-00170,Birgit,Brandt,bbrandt@example.com,,,,,01.01.2021
+B-00171,RITA,OSTERMANN,Rostermann2@Example.Com,,,Seebrise Gartenbau,Nürnberg,13.05.2022
+B-00172,dorothea,Martin ,dorothea.martin@example.org,,,Lindenhof Bau GmbH,Nürnberg,21.11.2022
+B-00173,G.,Richter,Greta.Richter@Example.Com,+49 151 0000 7485,,Silberbach Logistik KG,Berlin,29.08.2022
+B-00174,R.,DIETRICH,  rita.dietrich@example.com ,015100008328,,,Mainz,26.02.2023
+B-00175,ELIF,Kaiser,,0049 151 0000 2223,,Falkenhorst Dachdecker GmbH,,03.09.2023
+B-00176,Boris,Lüdke,bluedke@example.com,+49 (0)151 0000 7399,,,,17.11.2023
+B-00177,lea,Böhm ,,0151/00009432,,,,14.02.2020
+B-00178,Heiko,VOGEL,,+49 151 0000 1122,,Tannenwald Logistik KG,Nürnberg,20.03.2019
+B-00179,Vera,Lorenz,vera.lorenz@example.com,0151/00002585,,Tannenwald Fensterbau,Dortmund,19.01.2021
+B-00180,S.,conrad,Sconrad@Example.Com,0151/00005508,,,,30.01.2019
+B-00181,Wiebke ,Vollmer,wiebke.vollmer@example.com,+49 151 0000 5725,,Lindenhof Metallbau GmbH,,26.04.2020
+B-00182,Walter,Quast,  walter.quast@example.com ,015100004637,,,,19.08.2021
+B-00183,Uwe,Naumann,Unaumann@Example.Com,0151-0000-9039,,,,01.11.2021
+B-00184,PAUL,Imhof,paul.imhof@example.com,0151/00004074,,,Kassel,07.09.2024
+B-00185,Emma,Czerny,emma.czerny@example.com,,,Morgenrot Heizung & Sanitär,München,02.02.2023
+B-00186,Käthe,Müller,,+49 151 00005328,,,,30.04.2021
+B-00187,Jonas,Roth,jonas.roth@example.com,015100001270,,Steinfeld Bau GmbH,Hamburg,06.05.2019
+B-00188,Clara,CZERNY,Cczerny@Example.Com,4915100003614,,,Frankfurt,15.11.2024
+B-00189,Lukas,Jung,lukas.jung@example.com,0151 0000 6533,,Eichenau Heizung & Sanitär,Ulm,
+B-00190,tamara,Teufel ,Tamara.Teufel@Example.Com,0049 151 0000 1226,,Morgenrot Heizung & Sanitär,,21.10.2023
+B-00191,Paul,Otto ,paul.otto@example.com,0151 0000 7492,,,,03.02.2022
+B-00192,Karin,OTTO,karin.otto@example.com,+49 151 0000 0445,,Eichenau Haustechnik GmbH,Ulm,25.10.2020
+B-00193,Greta,Czerny,Gczerny@Example.Com,,,Bergwerk Metallbau GmbH,Ulm,26.12.2020
+B-00194,Oskar ,Lehmann,oskar.lehmann@example,0049 151 0000 0723,,Kiefernhof Malerbetrieb,Stuttgart,30.04.2023
+B-00195,gfxtcpom,OSPVZNP,gfxtcpom.ospvznp@example.com,+49 (0)151 0000 2288,,,,12.12.2021
+B-00196,Felix,Lüdke,felix.luedke@example.com,Tel. 0151 00008487,,,Erfurt,29.03.2022
+B-00197,Käthe,Ott,kaethe.ott@example.com,Tel. 0151 00003511,,Tannenwald Schreinerei,Mainz,
+B-00198,elif,krause,  elif.krause@example.com ,+49 (0)151 0000 2719,,Bergwerk Heizung & Sanitär,Ulm,12.02.2025
+B-00199,David,Dietrich,David.Dietrich@Example.Com,0049 151 0000 2882,,,,11.04.2022
+B-00200,Björn,Jansen,bjansen@example.com,0151-0000-5281,,,Mainz,30.04.2022
+B-00201,Olivia,keller,olivia.keller@example,(0151) 0000 5401,,Tannenwald Gartenbau,Dresden,14.05.2019
+B-00202,Paul,Roth ,paul.roth@example.com,+49 151 00006109,,,Stuttgart,04.11.2022
+B-00203,Jakob ,Arnold,jakob.arnold@example.com,,,Seebrise Logistik KG,Erfurt,15.12.2021
+B-00204,Timo,Conrad,timo.conrad@example.com,,,Wiesengrund Reinigung,Essen,03.10.2023
+B-00205,KATHARINA,Graf,katharina.graf@example.com,+4915100007008,,Eichenau Metallbau GmbH,Freiburg,25.11.2019
+B-00206,,,kontakt.6028@example.com,,,,,19.12.2021
+B-00207,Theresa,Haas ,Theresa.Haas2@Example.Com,015100009017,,,,
+B-00208,Stefan,Kovacs,stefan.kovacs2@example.com,,,,,13.12.2019
+B-00209,karin,ROTH,karin.roth@example.com,,,Steinfeld Elektro,Essen,20.04.2025
+B-00210,Oskar,Reimann ,oskar.reimann@example.com,015100003674,,Morgenrot Bau GmbH,Hannover,13.04.2019
+B-00211,Noah,Thiel,nthiel@example.com,,,Bergwerk Dachdecker GmbH,,12.05.2024
+B-00212,Philipp,LEHMANN,PHILIPP.LEHMANN@EXAMPLE.COM,+4915100002268,,Nordlicht Reinigung,Hannover,27.02.2022
+B-00213,Emma,NAUMANN,Emma.Naumann@Example.Com,,,Kiefernhof Elektro,Köln,21.07.2022
+B-00214,Ulrike,Novak,  ulrike.novak@example.com ,(0151) 0000 4617,,Sonnenberg Metallbau GmbH,,07.04.2021
+B-00215,H.,Zimmer ,Hzimmer@Example.Com,,,,,26.11.2020
+B-00216,Wiebke,Eberle,wiebke.eberle@example.com,015100008851,,Kiefernhof Heizung & Sanitär,Rostock,18.04.2019
+B-00217,VFLXTJ,MQCNGJK,,0151/00003815,,,,03.01.2021
+B-00218,Karin,Unger ,kunger@example.com,4915100000154,,,Freiburg,
+B-00219,OLIVIA,Arnold,Olivia.Arnold@Example.Com,015100002348,,Rheinblick Gartenbau,Graz,02.10.2025
+B-00220,Zoë,Lindner 9,Zoe.Lindner@Example.Com,,,,Ulm,29.11.2022
+B-00221,elif,Kaiser,elif.kaiser2@example.com,+49 151 0000 9854,,Lindenhof Schreinerei,,18.07.2023
+B-00222,Sabine,THIEL,sabine.thiel@example.com,(0151) 0000 3793,,,Dortmund,21.01.2020
+B-00223,Greta,Böhm,greta.boehm@example.com,+49 151 00005461,,,Leipzig,29.04.2024
+B-00224,Lukas,Baumgartner,lukas.baumgartner@example.com,,,,München,26.07.2023
+B-00225,Gisela,Graf,ggraf@example.com,Tel. 0151 00006690,,Eichenau Reinigung,Dresden,02.03.2019
+B-00226,Boris,Thiel,boris.thiel@example.com,,,Kiefernhof Fensterbau,Bremen,20.06.2025
+B-00227,Ulrike,Lüdke,Uluedke@Example.Com,,,Rheinblick Logistik KG,Leipzig,28.03.2019
+B-00228,Sabine,Dietrich,Sabine.Dietrich@Example.Com,+49 151 00001321,,Rheinblick Dachdecker GmbH,Graz,09.08.2022
+B-00229,rita,Haas,rita.haas2@example.com,015100003263,,Sonnenberg Dachdecker GmbH,Hamburg,23.02.2024
+B-00230,Marek,Lorenz,mlorenz@example.com,0151 0000 8698,,Steinfeld Elektro,Frankfurt,
+B-00231,quentin,Kovacs,dwxkvzvmq@example.com,0151 0000 8838,,,Stuttgart,14.02.2025
+B-00232,Test ,TEST,Test.Test41@Example.Com,(0151) 0000 9196,,,,13.07.2023
+B-00233,Nadine,Böhm ,nboehm@example.com,,,,,06.10.2023
+B-00234,nadine,Ostermann,nadine.ostermann@example.com,0151 0000 6513,,Alpenglut Haustechnik GmbH,Berlin,15.11.2019
+B-00235,Dummy,Kontakt,test9@example.com,,,,,28.06.2022
+B-00236,GISELA,Kaiser,Gkaiser@Example.Com,+4915100003955,,Alpenglut Reinigung,,26.03.2019
+B-00237,dummy,KONTAKT,test46@example.com,+49 (0)151 0000 8929,,,,05.06.2022
+B-00238,Fabian,Sommer ,  fabian.sommer2@example.com ,+49 (0)151 0000 9145,,Steinfeld Logistik KG,,17.05.2023
+B-00239,Anna,reimann,Anna.Reimann@Example.Com,Tel. 0151 00007623,,,Rostock,25.01.2019
+B-00240,Rosa,Horvat,Rosa.Horvat@Example.Com,0151 123,,Wiesengrund Reinigung,Berlin,20.12.2022
+B-00241,clara,Wagner,clara.wagner@example.com,0151-0000-1100,,Eichenau Metallbau GmbH,Berlin,07.01.2022
+B-00242,JONAS,pfeiffer,jonas.pfeiffer@example.com,Tel. 0151 00008780,,Eichenau Logistik KG,Rostock,18.02.2022
+B-00243,lukas,Frey,lukas.frey@example.com,+49 151 0000 6142,,Kiefernhof Bau GmbH,Kassel,07.04.2025
+B-00244,Gisela,Lüdke,,+49 151 00001747,,,,26.07.2020
+B-00245,Miriam,Frey,miriam.frey@example.com,Tel. 0151 00009104,,Kiefernhof Reinigung,,29.08.2025
+B-00246,Elif,Albrecht,  elif.albrecht@example.com ,0151 0000 9356,,Kiefernhof Gartenbau,Rostock,06.12.2022
+B-00247,OTTILIE,brandt,hrvjdxbf@example.com,+49 151 00009885,,Morgenrot Schreinerei,Dresden,29.07.2020
+B-00248,Timo,Naumann,Tnaumann@Example.Com,+49 151 0000 7712,,Wiesengrund Schreinerei,Freiburg,17.01.2025
+B-00249,ines,Czerny,ines.czerny@example.com,+49 151 00008281,,Alpenglut Reinigung,,
+B-00250,viktor,jäger,jaeger@@example.com,,,,Frankfurt,13.06.2019
+B-00251,rita,Marx,rmarx@example.com,015100006133,,Seebrise Logistik KG,Hannover,02.09.2023
+B-00252,Ulrike,Imhof,Uimhof@Example.Com,0151/00005805,,Nordlicht Fensterbau,,01.03.2020
+B-00253,Fabian,Roth,Fabian.Roth@Example.Com,+4915100003728,,,Rostock,11.12.2021
+B-00254,Carla ,Dietrich,Carla.Dietrich@Example.Com,(0151) 0000 4326,,,Dresden,24.09.2019
+B-00255,R.,Bergmann,RBERGMANN@EXAMPLE.COM,,,,Nürnberg,05.12.2021
+B-00256,L.,Arnold,  lukas.arnold3@example.com ,,,Nordlicht Haustechnik GmbH,Dortmund,04.08.2019
+B-00257,Noah,Ulrich,nulrich@example.com,+49 151 00005120,,,Graz,12.08.2022
+B-00258,Clara,Frey,Clara.Frey2@Example.Com,+4915100000933,,Sonnenberg Fensterbau,Ulm,17.12.2021
+B-00259,O.,LORENZ,Olivia.Lorenz@Example.Com,,,Lindenhof Schreinerei,,
+B-00260,Sabine ,Frey,  sfrey@example.com ,+49 (0)151 0000 9874,,Seebrise Dachdecker GmbH,Frankfurt,21.01.2022
+B-00261,Walter,Conrad,walter.conrad@example.com,+49 151 0000 1966,,,,03.10.2025
+B-00262,Miriam ,ziegler,miriam.ziegler2@example.com,0151-0000-8519,,,Freiburg,07.03.2019
+B-00263,Jonas,Dahl,jonas.dahl@example.com,,,Wiesengrund Dachdecker GmbH,Kassel,16.05.2024
+B-00264,WALTER,Naumann,,0151/00005764,,Kiefernhof Heizung & Sanitär,,15.02.2025
+B-00265,Erika ,Mustermann,ERIKA.MUSTERMANN31@EXAMPLE.COM,,,,,01.07.2023
+B-00266,boris,Zimmer,boris.zimmer@example.com,(0151) 0000 4983,,Rheinblick Malerbetrieb,Ulm,03.09.2022
+B-00267,P.,Vogel,Philipp.Vogel@Example.Com,+4915100002956,,Nordlicht Dachdecker GmbH,Dresden,17.08.2020
+B-00268,clara,Moser ,Clara.Moser@Example.Com,0151/00000308,,Alpenglut Elektro,Freiburg,23.06.2023
+B-00269,WALTER,Quast,Walter.Quast2@Example.Com,,,Morgenrot Logistik KG,,20.09.2021
+B-00270,Yannik,Kovacs,none,tel folgt,,Seebrise Bau GmbH,Berlin,08.02.2019
+B-00271,jana,horvat,jana.horvat@example.com,+49,,,Hannover,08.07.2019
+B-00272,Jakob,Fuchs,Jfuchs@Example.Com,,,Morgenrot Logistik KG,Frankfurt,22.09.2024
+B-00273,miriam,Lorenz ,Miriam.Lorenz@Example.Com,,,Morgenrot Metallbau GmbH,Dresden,06.12.2024
+B-00274,Ida ,KELLER,Ida.Keller@Example.Com,0151 0000 6940,,Seebrise Haustechnik GmbH,Berlin,06.03.2021
+B-00275,Ulrike ,Keller,,+49 (0)151 0000 5765,,Lindenhof Heizung & Sanitär,,17.12.2024
+B-00276,Leon,KELLER,leon.keller@example.com,0049 151 0000 6023,,Bergwerk Heizung & Sanitär,Hannover,10.11.2022
+B-00277,Dummy,Kontakt ,DUMMY.KONTAKT12@EXAMPLE.COM,,,,,31.03.2021
+B-00278,CEM,Horvat,cem.horvat@example.com,0151-0000-4098,,Kiefernhof Malerbetrieb,München,26.03.2021
+B-00279,KARIN,UNGER,karin.unger@example.com,+49 151 00000154,,,Freiburg,27.07.2023
+B-00280,Jakob,Jansen,jakob.jansen@example.com,+49 151 0000 1912,,Rheinblick Bau GmbH,Dortmund,24.07.2023
+B-00281,Elif,Graf,elif.graf@example.com,,,Seebrise Metallbau GmbH,Kassel,28.06.2020
+B-00282,Käthe,Graf,kaethe.graf@example.com,015100006670,,Bergwerk Schreinerei,Kassel,29.04.2023
+B-00283,Viktor,DIETRICH,viktor.dietrich@example.com,(0151) 0000 9013,,,Hannover,03.04.2020
+B-00284,Xenia,ostermann,xenia.ostermann@example.com,+4915100001258,,,Köln,30.10.2022
+B-00285,Leon,lindner,leon.lindner@example.com,(0151) 0000 3982,,,Graz,05.06.2021
+B-00286,Mara,Brandt ,,+49 151 0000 5734,,Alpenglut Schreinerei,,20.09.2019
+B-00287,D.,Krause,david.krause@example.com,0151 0000 1144,,Falkenhorst Schreinerei,Bremen,24.04.2019
+B-00288,Elif,jung,Elif.Jung@Example.Com,+49 151 00003267,,Tannenwald Heizung & Sanitär,Leipzig,03.12.2020
+B-00289,Felix,Marx,fmarx@example.com,+49 151 0000 9069,,Seebrise Heizung & Sanitär,,30.04.2019
+B-00290,Nadine,Böhm,Nadine.Boehm@Example.Com,4915100007049,,,Dresden,24.09.2025
+B-00291,Rosa ,Martin,ROSA.MARTIN@EXAMPLE.COM,+49 151 0000 1164,,,Berlin,04.01.2025
+B-00292,nadine,Jansen,nadine.jansen@example.com,015100001903,,Kiefernhof Metallbau GmbH,Leipzig,14.09.2025
+B-00293,Tamara,Bergmann,tamara.bergmann@example.com,+49 (0)151 0000 6879,,Steinfeld Haustechnik GmbH,Nürnberg,13.01.2022
+B-00294,Rosa ,Eberle,Rosa.Eberle@Example.Com,,,Wiesengrund Reinigung,,19.04.2024
+B-00295,Jakob,Schaefer,Jakob.Schaefer@Example.Com,+49 151 0000 6866,,Silberbach Schreinerei,Nürnberg,06.05.2020
+B-00296,Carla,Ulrich,  carla.ulrich@example.com ,,,,Nürnberg,12.02.2021
+B-00297,Greta,QUAST,greta.quast@example.com,,,Nordlicht Haustechnik GmbH,,30.10.2019
+B-00298,Noah,Quast ,  noah.quast@example.com ,Tel. 0151 00002855,,,Rostock,18.08.2023
+B-00299,KÄTHE,Kovacs,Kaethe.Kovacs@Example.Com,+49 151 00008818,,Rheinblick Haustechnik GmbH,Dortmund,09.07.2021
+B-00300,Oskar ,Lehmann,oskar.lehmann2@example.com,+4915100001593,,Silberbach Elektro,Stuttgart,21.01.2019
+B-00301,jonas,Voigt,  jvoigt@example.com ,,,Steinfeld Fensterbau,,04.04.2023
+B-00302,MARA,Jung,mara.jung@example.org,0151-0000-9460,,,,23.03.2020
+B-00303,MAREK,eberle,marek.eberle@example.com,(0151) 0000 3572,,Tannenwald Malerbetrieb,Ulm,05.03.2022
+B-00304,Noah,Seidel,,+4915100005180,,,Mainz,25.11.2019
+B-00305,Rita,Dietrich ,  rita.dietrich2@example.com ,+49 (0)151 0000 8875,,Sonnenberg Gartenbau,,08.01.2020
+B-00306,Miriam,Reimann,Mreimann@Example.Com,(0151) 0000 1890,,Rheinblick Reinigung,,20.08.2022
+B-00307,ulrike,MOSER,Ulrike.Moser@Example.Com,+49,,Nordlicht Haustechnik GmbH,Essen,16.06.2022
+B-00308,Test,Kunde,test57@example.com,,,,,12.10.2020
+B-00309,Ida,Otto ,ida.otto2@example.com,,,Wiesengrund Malerbetrieb,Dortmund,13.12.2024
+B-00310,Fabian,Sommer,fsommer2@example.com,,,Steinfeld Logistik KG,,23.11.2025
+B-00311,alina,kovacs,alina.kovacs@example.com,0151 123,,,,20.12.2025
+B-00312,nils,Köhler,nils.koehler@example.com,+49 151 00006884,,Rheinblick Heizung & Sanitär,Essen,27.05.2019
+B-00313,Lukas,Zimmer ,lzimmer@example.com,,,Falkenhorst Schreinerei,,
+B-00314,Walter,Nowak,walter.nowak@example.com,0151-0000-6595,,Kiefernhof Metallbau GmbH,Dortmund,27.10.2020
+B-00315,Fabian,Baumgartner,  fabian.baumgartner@example.com ,0151-0000-9372,,Sonnenberg Fensterbau,Nürnberg,17.04.2025
+B-00316,Team,Billing ,billing@example.com,,,,,21.11.2021
+B-00317,Carla,Lüdke ,cluedke@example.com,,,Nordlicht Malerbetrieb,,28.03.2022
+B-00318,Karin,Yilmaz,karin.yilmaz@example.com,,,Morgenrot Gartenbau,München,23.09.2022
+B-00319,Walter,Bergmann ,walter.bergmann@example.com,,,Sonnenberg Gartenbau,Frankfurt,24.03.2024
+B-00320,Clara,Frey,clara.frey@example.com,+49 (0)151 0000 5086,,,München,10.05.2021
+B-00321,Philipp,Baumgartner,PBAUMGARTNER@EXAMPLE.COM,+49 (0)151 0000 9379,,,Mainz,06.03.2024
+B-00322,Ulrike,Ostermann,ulrike.ostermann2@example.com,4915100003589,,,Stuttgart,06.07.2024
+B-00323,P.,Lehmann,Plehmann@Example.Com,,,Wiesengrund Elektro,,21.03.2025
+B-00324,yannik,HORVAT,YANNIK.HORVAT2@EXAMPLE.COM,0151-0000-6581,,Rheinblick Schreinerei,,01.01.2022
+B-00325,hannes,Krause,bcnrljncgj@example.com,+49 151 00008690,,,,12.09.2022
+B-00326,Ida,Bergmann,ida.bergmann@example.com,,,Lindenhof Malerbetrieb,Ulm,04.12.2024
+B-00327,Alina,Maurer,Alina.Maurer@Example.Com,+49 151 00002386,,,Bremen,04.04.2022
+B-00328,Sabine,Jung,  sabine.jung@example.com ,,,Eichenau Bau GmbH,,15.06.2021
+B-00329,Zoë,Schaefer ,zoe.schaefer3@example.com,,,,Mainz,
+B-00330,viktor,Zimmer,  viktor.zimmer@example.com ,,,Nordlicht Haustechnik GmbH,Berlin,08.09.2021
+B-00331,Marek,Jäger,,+49 151 0000 0511,,,Erfurt,05.11.2024
+B-00332,WALTER,Otto,walter.otto2@example.com,(0151) 0000 7803,,,Frankfurt,10.04.2019
+B-00333,Clara,MOSER,,+49 151 0000 0308,,Alpenglut Elektro,Freiburg,
+B-00334,Vera ,Jung,vera.jung@example.com,015100004093,,Seebrise Fensterbau,Ulm,12.02.2023
+B-00335,Emma,VOIGT,Emma.Voigt@Example.Com,+49 151 0000 1324,,,Graz,28.04.2024
+B-00336,Paul ,Winter,,+49 151 00000961,,,Köln,14.10.2019
+B-00337,Carla,Dahl,CARLA.DAHL2@EXAMPLE.COM,0049 151 0000 5140,,Seebrise Haustechnik GmbH,Ulm,07.04.2023
+B-00338,ines,Eberle,ines.eberle@example.com,,,Lindenhof Metallbau GmbH,Leipzig,23.10.2025
+B-00339,O.,Köhler,  okoehler@example.com ,,,Steinfeld Bau GmbH,Köln,20.07.2024
+B-00340,Greta,EBERLE,Greta.Eberle2@Example.Com,0151 0000 9598,,,Dortmund,14.01.2025
+B-00341,mara,Kovacs,Mara.Kovacs@Example.Com,+49 (0)151 0000 6079,,Lindenhof Elektro,Bremen,10.09.2023
+B-00342,heiko,ulrich,Heiko.Ulrich@Example.Com,4915100003879,,,Essen,10.02.2025
+B-00343,Ulrike ,Engel,ulrike.engel@example.org,,,,Ulm,11.11.2024
+B-00344,Ben,Haas 4,Ben.Haas@Example.Com,,,Eichenau Dachdecker GmbH,München,28.03.2023
+B-00345,Elif,Kovacs,,0151/00006745,,Alpenglut Haustechnik GmbH,Hannover,03.04.2020
+B-00346,BEN,Ostermann,ben.ostermann@example.com,4915100004531,,Lindenhof Reinigung,Leipzig,24.05.2019
+B-00347,noah,LEHMANN,noah.lehmann2@example.com,+49 151 0000 0442,,,,26.05.2022
+B-00348,Carla,DAHL,  cdahl@example.com ,+49 (0)151 0000 8239,,Morgenrot Gartenbau,Bremen,04.12.2024
+B-00349,Jakob,Eberle ,kein mail,4915100003476,,,,22.07.2021
+B-00350,H.,Müller,HEIKO.MUELLER@EXAMPLE.COM,+49 (0)151 0000 3847,,Silberbach Fensterbau,Ulm,05.04.2020
+B-00351,Olivia,Seidel,Olivia.Seidel@Example.Com,,,,,
+B-00352,Karin,Schaefer,,Tel. 0151 00009242,,Alpenglut Gartenbau,München,22.04.2021
+B-00353,Dennis ,Bergmann,DENNIS.BERGMANN@EXAMPLE.COM,+4915100004659,,Silberbach Haustechnik GmbH,Stuttgart,10.07.2022
+B-00354,Walter,Lehmann,walter.lehmann@example.com,+49 (0)151 0000 8585,,Wiesengrund Heizung & Sanitär,Mainz,03.01.2023
+B-00355,leon,Sommer,leon.sommer@example.com,,,Sonnenberg Malerbetrieb,Leipzig,12.12.2023
+B-00356,CEM,Teufel,cem.teufel@example.com,015100005655,,Nordlicht Haustechnik GmbH,Dresden,17.05.2019
+B-00357,Team,Billing,Billing@Example.Com,,,,,20.04.2025
+B-00358,Vera,Lorenz,vera.lorenz2@example.com,Tel. 0151 00000823,,Steinfeld Metallbau GmbH,Dortmund,22.07.2021
+B-00359,Rzmnc,pklh,rzmncpklh@example.com,015100002341,,,,
+B-00360,käthe,Novak,Kaethe.Novak@Example.Com,015100004350,,Kiefernhof Metallbau GmbH,,24.09.2024
+B-00361,U.,wagner,Uwe.Wagner@Example.Com,,,Kiefernhof Reinigung,Dresden,26.09.2021
+B-00362,Elif ,Yilmaz ,ELIF.YILMAZ@EXAMPLE.COM,+49 (0)151 0000 1714,,Steinfeld Fensterbau,Bremen,20.07.2024
+B-00363,xenia,Voigt,xenia.voigt@example.com,015100008313,,Bergwerk Malerbetrieb,,14.11.2022
+B-00364,JANA,Voigt,,+49 151 00001863,,,Stuttgart,15.06.2025
+B-00365,Walter,Horvat,WALTER.HORVAT@EXAMPLE.COM,+49 (0)151 0000 2940,,Alpenglut Fensterbau,,19.09.2021
+B-00366,Yannik,LEHMANN,yannik.lehmann@example.com,,,Lindenhof Heizung & Sanitär,Hannover,04.09.2024
+B-00367,Boris,roth,broth@example.com,0049 151 0000 4247,,,Mainz,15.08.2019
+B-00368,Felix,Albrecht,felix.albrecht@example.com,+49 151 0000 8939,,Wiesengrund Gartenbau,München,19.03.2021
+B-00369,Birgit ,Lorenz,Birgit.Lorenz@Example.Com,0151-0000-2589,,,,
+B-00370,Ottilie,bergmann,obergmann@example.com,Tel. 0151 00009076,,Lindenhof Dachdecker GmbH,,30.12.2019
+B-00371,Sabine ,Müller,sabine.mueller@example.com,015100007484,,Silberbach Dachdecker GmbH,,08.09.2019
+B-00372,Dennis,Jäger,zfmxtncfx@example.com,+49 151 0000 0054,,Nordlicht Haustechnik GmbH,Köln,06.08.2019
+B-00373,Nadine,Peters,,0049 151 0000 3144,,,Frankfurt,03.08.2022
+B-00374,Oskar,Kaiser,,+49 (0)151 0000 2755,,,,28.07.2019
+B-00375,Björn ,Yilmaz ,bjoern.yilmaz@example.com,,,,Freiburg,27.01.2024
+B-00376,Rita,ZIMMER,rita.zimmer@example.org,0151 0000 0107,,Rheinblick Dachdecker GmbH,Berlin,26.01.2022
+B-00377,G.,Otto ,  gotto@example.com ,,,Lindenhof Metallbau GmbH,,27.04.2020
+B-00378,Xenia ,Horvat,  xenia.horvat2@example.com ,+49 151 00002002,,Sonnenberg Dachdecker GmbH,,29.01.2022
+B-00379,Yannik,Haas,yannik.haas@example.com,,,Steinfeld Haustechnik GmbH,,03.01.2024
+B-00380,Timo,Dietrich,timo.dietrich@example.com,,,Bergwerk Reinigung,Graz,06.08.2021
+B-00381,Ben ,Jung,ben.jung2@example.com,+49 151 00001211,,Eichenau Gartenbau,Ulm,11.06.2025
+B-00382,Fabian,LEHMANN,fabian.lehmann@example.com,0151 0000 2362,,,Ulm,29.01.2025
+B-00383,uwe,Lindner,uwe.lindner2@example.com,0049 151 0000 3461,,,Graz,23.12.2022
+B-00384,Jakob,Roth,jroth@example.com,,,,,18.04.2021
+B-00385,Ida,Otto,  ida.otto@example.com ,,,Kiefernhof Metallbau GmbH,Bremen,22.05.2024
+B-00386,Viktor ,Maurer ,Viktor.Maurer@Example.Com,,,,Hamburg,09.11.2022
+B-00387,Heiko,Gebhardt,,+49 (0)151 0000 7989,,Falkenhorst Elektro,Berlin,09.01.2024
+B-00388,Ines,czerny,ines.czerny2@example.com,+49 (0)151 0000 9323,,,Hamburg,
+B-00389,Quentin,albrecht,,0151/00002237,,Nordlicht Heizung & Sanitär,Graz,10.08.2022
+B-00390,Dennis ,Vogel,dennis.vogel@example.com,+49 151 0000 2435,,Sonnenberg Malerbetrieb,,06.04.2019
+B-00391,Alina,Novak,anovak@example.com,0151-0000-5633,,,Dortmund,09.11.2021
+B-00392,rita,martin,Rmartin@Example.Com,0151 0000 7137,,,Hamburg,
+B-00393,Jürgen,Arnold,juergen.arnold@example.com,0151 0000 4845,,,,14.11.2025
+B-00394,C.,Thiel,clara.thiel@example.com,,,,,19.05.2019
+B-00395,fabian,imhof,fabian.imhof@example.com,+49 151 0000 4463,,Wiesengrund Reinigung,,16.11.2021
+B-00396,Quentin,Köhler,,(0151) 0000 8729,,Alpenglut Haustechnik GmbH,Dresden,13.07.2019
+B-00397,Segsxfc,Whzuqjpj,  segsxfc.whzuqjpj@example.com ,+4915100007020,,,,25.02.2023
+B-00398,Marek,vogel,marek.vogel@example.com,+4915100004872,,Silberbach Fensterbau,Mainz,10.01.2024
+B-00399,Oskar ,Lüdke,,(0151) 0000 4690,,,,12.09.2025
+B-00400,Ida,Jäger,IDA.JAEGER@EXAMPLE.COM,015100003112,,Kiefernhof Gartenbau,Erfurt,30.07.2022
+B-00401,Lea ,Roth,lea.roth@example.com,(0151) 0000 6786,,Seebrise Reinigung,Stuttgart,16.06.2020
+B-00402,Carla,JANSEN,carla.jansen@example.com,+49 (0)151 0000 3506,,,Nürnberg,15.07.2019
+B-00403,Uwe,Kovacs,uwe.kovacs@example.com,+49 151 0000 6898,,Tannenwald Metallbau GmbH,Mainz,25.03.2022
+B-00404,Nils,Zimmer ,Nils.Zimmer@Example.Com,+4915100007026,,Wiesengrund Heizung & Sanitär,Graz,30.07.2022
+B-00405,david,Winter,david.winter@example.com,+4915100003021,,Morgenrot Bau GmbH,Nürnberg,19.04.2024
+B-00406,Marek,Böhm,MAREK.BOEHM@EXAMPLE.COM,+49 (0)151 0000 2980,,Falkenhorst Reinigung,Berlin,06.11.2025
+B-00407,Sabine,Keller,sabine.keller@example.com,0151/00006106,,Silberbach Haustechnik GmbH,Nürnberg,02.02.2024
+B-00408,w.,Unger,wiebke.unger@example.com,Tel. 0151 00000388,,Morgenrot Bau GmbH,Rostock,26.04.2019
+B-00409,Birgit,LEHMANN,birgit.lehmann@example.com,0151 0000 4720,,,Hannover,26.06.2025
+B-00410,Leon ,unger,Leon.Unger@Example.Com,+49 151 0000 7200,,Lindenhof Haustechnik GmbH,Essen,11.10.2025
+B-00411,ELIF,Hartmann,,0049 151 0000 4083,,Nordlicht Haustechnik GmbH,,21.01.2019
+B-00412,Nils,Eberle,nils.eberle@@example.com,+49 151 00003503,,Lindenhof Logistik KG,,08.01.2020
+B-00413,Sabine,UNGER,sabine.unger@example.com,+49 (0)151 0000 1977,,Tannenwald Fensterbau,Essen,08.09.2021
+B-00414,Uwe,naumann,unaumann@example.com,,,,,28.06.2024
+B-00415,Philipp,yilmaz,philipp.yilmaz@example.com,0049 151 0000 9384,,,Graz,09.05.2021
+B-00416,Philipp,Köhler ,philipp.koehler@example.com,,,,Nürnberg,12.01.2025
+B-00417,Emma,Ziegler,EMMA.ZIEGLER@EXAMPLE.COM,,,Eichenau Logistik KG,Graz,25.03.2022
+B-00418,Wiebke ,Eberle,Weberle@Example.Com,,,,Rostock,15.02.2025
+B-00419,Ines,conrad,,4915100007206,,,Hamburg,09.07.2019
+B-00420,W.,Czerny,wiebke.czerny@example.com,Tel. 0151 00008267,,,Dortmund,20.06.2023
+B-00421,Sabine,Gebhardt,sabine.gebhardt@example.org,,,,Dortmund,14.09.2022
+B-00422,Ida,Krause,ida.krause@example.com,015100001965,,,Leipzig,25.10.2024
+B-00423,Dtifrml,Dwntozcq,dtifrml.dwntozcq@example.com,0049 151 0000 6305,,,,12.05.2020
+B-00424,Yannik,Imhof,,0151 0000 9813,,Bergwerk Haustechnik GmbH,Kassel,10.03.2020
+B-00425,BORIS,Lüdke,Boris.Luedke@Example.Com,(0151) 0000 7399,,Wiesengrund Heizung & Sanitär,München,03.07.2023
+B-00426,Katharina,Czerny,  katharina.czerny@example.com ,0151/00002185,,Tannenwald Reinigung,Mainz,17.06.2019
+B-00427,Zckwbga,Qhxqdkqa,Zckwbga.Qhxqdkqa@Example.Com,+49 (0)151 0000 4041,,,,02.04.2024
+B-00428,Mara,Czerny,mara.czerny@example.com,0151/00000686,,Alpenglut Metallbau GmbH,,16.10.2020
+B-00429,Jana,Vogel,Jana.Vogel@Example.Com,,,,Köln,31.08.2019
+B-00430,Heiko,Winter,heiko.winter@example.com,+49 151 0000 1648,,Silberbach Schreinerei,Dresden,23.05.2019
+B-00431,Ida,Wagner,Ida.Wagner@Example.Com,+49 (0)151 0000 7973,,,Ulm,10.09.2021
+B-00432,INES,Ott,ines.ott@example.com,,,Steinfeld Bau GmbH,Dortmund,03.07.2025
+B-00433,Karin,Roth ,KARIN.ROTH2@EXAMPLE.COM,,,Steinfeld Logistik KG,Ulm,17.04.2025
+B-00434,Zoe,ulrich,Zoe.Ulrich@Example.Com,0151-0000-7617,,Morgenrot Bau GmbH,Rostock,07.12.2024
+B-00435,Carla,WINTER,carla.winter@example.com,015100000101,,,Köln,15.04.2025
+B-00436,Zoe,Keller,zoe.keller2@example.com,0151-0000-3744,,,,11.01.2025
+B-00437,Marek,JUNG,marek.jung@example.com,,,Nordlicht Haustechnik GmbH,,09.01.2020
+B-00438,Dummy,Kontakt,Test6@Example.Com,+4915100004507,,,,04.10.2019
+B-00439,DAVID,Winter,dwinter@example.com,+4915100009527,,,,11.07.2019
+B-00440,yannik,Imhof ,yannik.imhof3@example.com,,,Bergwerk Bau GmbH,Nürnberg,14.05.2025
+B-00441,Yannik,Krause,  yannik.krause@example.com ,+49 (0)151 0000 1529,,,Bremen,12.05.2021
+B-00442,Philipp,Lehmann,  plehmann2@example.com ,,,Nordlicht Reinigung,Hannover,15.07.2020
+B-00443,Quentin,Teufel,QUENTIN.TEUFEL@EXAMPLE.COM,0151-0000-2939,,Falkenhorst Metallbau GmbH,Nürnberg,27.09.2024
+B-00444,,,kontakt.7358@example.com,,,,,23.03.2022
+B-00445,Leon,Leon,Leon.Leon@Example.Com,+49 151 0000 7124,,,,05.06.2020
+B-00446,Anna,Dahl ,anna.dahl@example.com,(0151) 0000 9611,,Silberbach Bau GmbH,Leipzig,25.02.2024
+B-00447,ALINA,Böhm,cdcgshmc@example.com,+4915100008006,,Bergwerk Bau GmbH,,03.10.2025
+B-00448,Z. ,gebhardt,zoe.gebhardt@example.com,+49 151 00008042,,Bergwerk Elektro,Frankfurt,12.03.2024
+B-00449,Ines ,Seidel,Ines.Seidel@Example.Com,+49 (0)151 0000 0652,,Lindenhof Heizung & Sanitär,Kassel,28.05.2025
+B-00450,Dorothea,Zimmer,Dorothea.Zimmer@Example.Com,,,Sonnenberg Bau GmbH,Hamburg,27.07.2022
+B-00451,Jonas,Pfeiffer,jonas.pfeiffer2@example.com,4915100007286,,,Hannover,31.07.2022
+B-00452,VIKTOR,Engel,kein mail,0151 0000 9534,,Eichenau Malerbetrieb,Mainz,17.04.2022
+B-00453,Zoë,Marx,,+4915100003007,,Tannenwald Heizung & Sanitär,Köln,15.07.2023
+B-00454,b.,Yilmaz ,,Tel. 0151 00000833,,Sonnenberg Heizung & Sanitär,Dortmund,12.08.2020
+B-00455,katharina,Jäger,katharina.jaeger@example.com,+49 151 00009717,,,,03.02.2019
+B-00456,Armin,quast,armin.quast@example.com,+49 (0)151 0000 0654,,Morgenrot Haustechnik GmbH,Essen,04.07.2022
+B-00457,David,Schröder,david.schroeder@example.com,+4915100001583,,Kiefernhof Logistik KG,Essen,17.06.2019
+B-00458,PSFRDT,Vvbhzlg,psfrdtvvbhzlg@example.com,0151 0000 3484,,,,07.09.2019
+B-00459,Elif,Neumann,ENEUMANN@EXAMPLE.COM,0151-0000-6791,,Steinfeld Schreinerei,Dresden,17.01.2024
+B-00460,Asdf,Hjkla,kontakt.8111@example.com,0151-0000-1134,,,,22.08.2019
+B-00461,Uwe,roth,uwe.roth@example.com,,,Nordlicht Metallbau GmbH,Essen,17.06.2022
+B-00462,YANNIK,Schaefer,,0151 0000 0937,,Eichenau Gartenbau,Graz,18.05.2024
+B-00463,Jana,neumann,jana.neumann@example.com,015100002400,,Nordlicht Dachdecker GmbH,Hannover,04.02.2023
+B-00464,Dennis ,Dennis,dennis.dennis@example.com,015100001877,,,,20.03.2023
+B-00465,Vera,Maurer,,+49 151 00007509,,Tannenwald Bau GmbH,Hannover,01.01.2024
+B-00466,Boris,Gebhardt ,BGEBHARDT@EXAMPLE.COM,+49 151 0000 4635,,,Dresden,21.03.2020
+B-00467,Yannik,GRAF,yannik.graf@example.com,0151,,Alpenglut Malerbetrieb,Dortmund,07.07.2019
+B-00468,Zoe,QUAST,Zoe.Quast2@Example.Com,+49 (0)151 0000 7461,,,,21.06.2023
+B-00469,J.,Marx,n/a,+4915100007265,,,,12.06.2019
+B-00470,Timo,Ibrahim,TIMO.IBRAHIM@EXAMPLE.COM,0049 151 0000 7239,,,Kassel,
+B-00471,FABIAN,Arnold,fabian.arnold@example.com,+49 151 0000 7214,,Eichenau Elektro,Stuttgart,30.12.2021
+B-00472,OTTILIE,JÄGER,ojaeger@example.com,,,,Essen,04.10.2023
+B-00473,Viktor,Engel,  viktor.engel2@example.com ,0151-0000-0711,,Wiesengrund Haustechnik GmbH,Berlin,07.11.2019
+B-00474,C.,Novak,cnovak@example.com,,,Steinfeld Fensterbau,,18.06.2019
+B-00475,J. ,Marx,jakob.marx@example.com,,,Eichenau Haustechnik GmbH,,08.02.2020
+B-00476,Elif,Keller ,elif.keller@example.com,4915100000898,,Bergwerk Fensterbau,Erfurt,21.02.2020
+B-00477,T.,Marx,,0151 0000 6227,,Tannenwald Fensterbau,Graz,23.10.2025
+B-00478,Vera ,Kovacs,Vera.Kovacs@Example.Com,,,,Leipzig,10.06.2023
+B-00479,W.,nowak,WNOWAK@EXAMPLE.COM,0151/00002852,,Falkenhorst Fensterbau,,01.10.2024
+B-00480,Ulrike,Marx,ulrike.marx@example.com,015100004500,,,Dortmund,12.02.2024
+B-00481,VERA,Marx,vera.marx@example.com,0049 151 0000 3805,,Nordlicht Gartenbau,Ulm,07.08.2019
+B-00482,rita,jäger,rita.jaeger@example.com,+49 (0)151 0000 0646,,,Essen,29.01.2022
+B-00483,Elif,Marx,,015100006867,,,,19.06.2020
+B-00484,Sabine ,Nowak,snowak@example.com,Tel. 0151 00002297,,Steinfeld Haustechnik GmbH,,13.11.2019
+B-00485,BIRGIT,Eberle,birgit.eberle@example.com,+49 151 00009441,,Nordlicht Gartenbau,Freiburg,09.04.2021
+B-00486,JONAS,Voigt,jvoigt@example.com,Tel. 0151 00006072,,,,12.11.2020
+B-00487,Greta ,teufel,greta.teufel@example.com,,,Rheinblick Schreinerei,,16.09.2022
+B-00488,Nils,Lang,Nils.Lang@Example.Com,+49,,Bergwerk Metallbau GmbH,,09.02.2021
+B-00489,Emma,Maurer,emaurer@example.com,(0151) 0000 7178,,Nordlicht Dachdecker GmbH,Stuttgart,10.10.2022
+B-00490,JANA,Martin,jana.martin@example.com,0151-0000-4501,,Kiefernhof Metallbau GmbH,Köln,11.03.2023
+B-00491,Fabian,Ott,fabian.ott@example.com,+49 151 0000 2042,,Morgenrot Malerbetrieb,Essen,16.09.2022
+B-00492,PAUL,Kovacs  5 ,  paul.kovacs@example.com ,,,Falkenhorst Haustechnik GmbH,,10.12.2020
+B-00493,Jana,Thiel,Jana.Thiel@Example.Com,(0151) 0000 3911,,Lindenhof Dachdecker GmbH,,16.05.2023
+B-00494,Olivia,Köhler,olivia.koehler@example.com,0151/00001344,,Alpenglut Gartenbau,Köln,18.05.2022
+B-00495,Anna,Peters,anna.peters@example.com,,,Silberbach Heizung & Sanitär,Graz,10.03.2023
+B-00496,Theresa,Neumann,,+49 151 0000 5993,,,,21.08.2022
+B-00497,Lukas,Otto,lotto@example.com,0151/00006524,,,,18.11.2025
+B-00498,Lukas,Teufel,  lukas.teufel@example.com ,,,Eichenau Reinigung,,24.05.2024
+B-00499,Sabine,KELLER,sabine.keller@example.com,,,Silberbach Haustechnik GmbH,Nürnberg,16.03.2020
+B-00500,Alina,Novak,alina.novak@example.com,+49 (0)151 0000 2663,,Steinfeld Haustechnik GmbH,,20.08.2019
+B-00501,Jana,Wolff,jana.wolff@example.com,015100008091,,Morgenrot Elektro,Essen,24.10.2024
+B-00502,Alina,Arnold,aarnold@example.com,015100001481,,Falkenhorst Metallbau GmbH,Leipzig,07.06.2024
+B-00503,Zoe,Yilmaz,,0151-0000-7725,,Sonnenberg Elektro,,09.06.2020
+B-00504,Theresa,Haas,Theresa.Haas@Example.Org,,,Lindenhof Heizung & Sanitär,Kassel,13.01.2019
+B-00505,björn,Horvat,  bjoern.horvat@example.com ,,,Seebrise Schreinerei,Ulm,01.07.2024
+B-00506,armin,Haas 4,armin.haas@example.com,,,Nordlicht Bau GmbH,Nürnberg,16.11.2020
+B-00507,LEON,Brandt,leon.brandt2@example.com,0151-0000-2951,,Kiefernhof Gartenbau,Leipzig,25.06.2022
+B-00508,T.,Böhm,Tamara.Boehm@Example.Com,,,Bergwerk Haustechnik GmbH,,12.09.2023
+B-00509,Xenia,Fuchs,  xenia.fuchs@example.org ,+4915100006225,,Kiefernhof Dachdecker GmbH,Graz,05.01.2025
+B-00510,Miriam,Böhm,miriam.boehm@example.com,+49 (0)151 0000 6210,,,Berlin,13.06.2019
+B-00511,Zoe,Lang,zoe.lang@example.com,Tel. 0151 00009513,,,,23.03.2023
+B-00512,Emma,Lorenz,  emma.lorenz@example.com ,+49 151 0000 7759,,,Leipzig,11.12.2019
+B-00513,Nqvqg,Fbgg,Nqvqgfbgg@Example.Com,+49 151 0000 0526,,,,
+B-00514,leon,imhof,,4915100003250,,Sonnenberg Dachdecker GmbH,,30.07.2024
+B-00515,ERIKA,Mustermann,Test51@Example.Com,Tel. 0151 00003612,,,,08.09.2022
+B-00516,B.,SOMMER,,0151/00008166,,Nordlicht Reinigung,Freiburg,10.06.2021
+B-00517,Sven,dahl,  sven.dahl@example.com ,0049 151 0000 3523,,Eichenau Gartenbau,Graz,25.08.2024
+B-00518,Theresa,Hartmann,theresa.hartmann@example.com,0049 151 0000 9957,,Nordlicht Gartenbau,,11.12.2020
+B-00519,olivia,THIEL,,+49 151 0000 9212,,Steinfeld Logistik KG,Dresden,04.12.2024
+B-00520,S.,Naumann,Stefan.Naumann@Example.Com,+49 151 00003994,,Eichenau Malerbetrieb,Freiburg,01.03.2024
+B-00521,Jonas,Dahl,  jdahl@example.com ,Tel. 0151 00004052,,,Hannover,17.08.2025
+B-00522,Rosa,Conrad,rosa.conrad@example.com,,,,Köln,16.09.2025
+B-00523,ulrike,Marx,Umarx@Example.Com,015100004500,,,,18.05.2025
+B-00524,LEA,Horvat,Lea.Horvat@Example.Com,+4915100003085,,,,10.01.2019
+B-00525,Armin,Lorenz,armin.lorenz@example.com,+4915100003115,,Lindenhof Heizung & Sanitär,Stuttgart,11.03.2021
+B-00526,Ines,Unger,ines.unger@example.com,Tel. 0151 00002828,,Steinfeld Gartenbau,Erfurt,04.06.2021
+B-00527,Emma,brandt,emma.brandt@example.com,4915100006382,,Wiesengrund Elektro,Graz,04.03.2024
+B-00528,ARMIN,Naumann,  armin.naumann@example.com ,,,,Hannover,24.11.2021
+B-00529,Ulrike,Bergmann,ULRIKE.BERGMANN@EXAMPLE.COM,0151-0000-0642,,Bergwerk Haustechnik GmbH,,06.11.2019
+B-00530,Anna,Beck ,abeck@example.com,0151/00006780,,,,24.07.2024
+B-00531,Xplgz,Dwllqhq,Xplgzdwllqhq@Example.Com,015100004375,,,,09.10.2023
+B-00532,Rosa,Ostermann,rosa.ostermann2@example.com,015100002684,,Sonnenberg Haustechnik GmbH,Freiburg,25.01.2022
+B-00533,Rosa,Ostermann,rosa.ostermann@example.com,0151-0000-7565,,Tannenwald Heizung & Sanitär,Erfurt,10.05.2021
+B-00534,Katharina ,Lüdke,katharina.luedke@example.com,+49 151 0000 5569,,Sonnenberg Metallbau GmbH,,29.02.2020
+B-00535,olivia,quast,,+49 (0)151 0000 4744,,Tannenwald Schreinerei,Rostock,23.08.2023
+B-00536,viktor,Frey,viktor.frey@example.com,4915100003389,,Steinfeld Dachdecker GmbH,,15.10.2022
+B-00537,HEIKO,Köhler ,  heiko.koehler2@example.com ,(0151) 0000 1276,,,Dortmund,31.08.2021
+B-00538,Marek,KOVACS,marek.kovacs2@example.com,0151/00009261,,,,22.06.2025
+B-00539,Dennis,MAURER,DENNIS.MAURER@EXAMPLE.COM,0151/00005184,,Silberbach Logistik KG,Essen,19.07.2021
+B-00540,Boris,Kaiser,BORIS.KAISER2@EXAMPLE.COM,+49 151 0000 2074,,Lindenhof Heizung & Sanitär,Freiburg,23.08.2025
+B-00541,Lukas,kaiser,lukas.kaiser@example.com,0151-0000-0059,,,Frankfurt,03.10.2021
+B-00542,Jana,Ulrich,Jana.Ulrich@Example.Com,+49 151 00002750,,,,31.10.2022
+B-00543,Wiebke,NAUMANN,wiebke.naumann@example.com,,,,Mainz,31.03.2021
+B-00544,EMMA,Keller,emma.keller2@example.com,(0151) 0000 6150,,Eichenau Bau GmbH,Graz,30.05.2020
+B-00545,Team,Billing ,billing@example.com,,,,,02.01.2024
+B-00546,VERA,Keller,vera.keller@example.com,,,,Frankfurt,18.03.2021
+B-00547,LUKAS,Arnold,n/a,0151 0000 0743,,Steinfeld Dachdecker GmbH,,26.03.2022
+B-00548,THERESA,Kaiser,Theresa.Kaiser@Example.Com,+49 151 0000 0159,,Silberbach Malerbetrieb,,12.03.2025
+B-00549,Lukas,dahl,Lukas.Dahl@Example.Com,,,Eichenau Gartenbau,Dresden,31.10.2024
+B-00550,Heiko,Naumann,heiko.naumann@example.com,0049 151 0000 1531,,Tannenwald Fensterbau,Erfurt,10.11.2021
+B-00551,Quentin,Wolff,quentin.wolff@example.com,4915100004459,,Eichenau Haustechnik GmbH,Hamburg,03.12.2019
+B-00552,Sven,Fuchs,Sven.Fuchs@Example.Com,0151-0000-4416,,Seebrise Logistik KG,,24.09.2023
+B-00553,Lea ,JUNG,lea.jung@example.com,0151/00008139,,,Nürnberg,05.05.2021
+B-00554,Wiebke,Baumgartner,  wiebke.baumgartner@example.com ,4915100001774,,Morgenrot Reinigung,Nürnberg,
+B-00555,Timo ,Naumann,Timo.Naumann@Example.Com,0151 0000 7712,,Wiesengrund Schreinerei,Freiburg,17.07.2020
+B-00556,Wiebke,Böhm,wiebke.boehm@example.com,,,,Frankfurt,27.09.2022
+B-00557,David,SEIDEL,david.seidel@example.com,015100000591,,Nordlicht Haustechnik GmbH,Leipzig,22.05.2020
+B-00558,Erika,Mustermann,test2@example.com,,,,,22.04.2022
+B-00559,elif,Marx,EMARX@EXAMPLE.COM,015100003987,,,,03.09.2020
+B-00560,Ottilie,Müller,Ottilie.Mueller@Example.Com,+49 151 00009707,,,Bremen,20.01.2020
+B-00561,Oskar ,Pfeiffer,OSKAR.PFEIFFER@EXAMPLE.COM,0151/00008620,,Tannenwald Heizung & Sanitär,Hamburg,19.04.2023
+B-00562,Dummy,Kontakt,test4@example.com,+49 151 00000410,,,,15.12.2025
+B-00563,Gisela ,OTTO,Gisela.Otto@Example.Com,Tel. 0151 00001875,,Lindenhof Metallbau GmbH,Graz,26.05.2023
+B-00564,Felix,Kaiser  5 ,felix.kaiser@example.com,,,Eichenau Gartenbau,München,22.04.2024
+B-00565,Yannik,Krause,yannik.krause3@example.com,,,,Köln,17.06.2024
+B-00566,Walter,Yilmaz,,n/a,,,,08.03.2025
+B-00567,Birgit,Kovacs,Birgit.Kovacs@Example.Com,4915100004709,,,Kassel,
+B-00568,Timo,Maurer  6 ,Timo.Maurer@Example.Com,,,Bergwerk Reinigung,Kassel,20.11.2021
+B-00569,L.,Schröder,Leon.Schroeder@Example.Com,,,Seebrise Logistik KG,Berlin,05.08.2022
+B-00570,Käthe,Lang,Klang@Example.Com,,,Nordlicht Fensterbau,,20.03.2021
+B-00571,Nils,Ibrahim,,+4915100002579,,,Bremen,29.12.2025
+B-00572,Wdtfesnh,LOXPPDD,wdtfesnh.loxppdd@example.com,0151 0000 4340,,,,22.04.2024
+B-00573,Uwe,Lindner,,0151/00001623,,,Stuttgart,22.02.2021
+B-00574,Philipp,Kovacs ,Philipp.Kovacs@Example.Org,+4915100006202,,,Dresden,20.01.2023
+B-00575,Rmxgfnd,hqbqwwvt,Rmxgfndhqbqwwvt@Example.Com,0151/00002665,,,,16.01.2025
+B-00576,GRETA,Frey ,greta.frey@example.com,+49 (0)151 0000 9490,,Steinfeld Metallbau GmbH,Mainz,25.09.2020
+B-00577,N.,Naumann,NILS.NAUMANN@EXAMPLE.COM,,,Alpenglut Bau GmbH,München,23.10.2022
+B-00578,N.,teufel,,015100007406,,Sonnenberg Fensterbau,,14.09.2023
+B-00579,Ida,Wagner,,0151/00007973,,,Ulm,07.09.2020
+B-00580,,,Kontakt.1812@Example.Com,(0151) 0000 4343,,,,24.01.2021
+B-00581,Marek,Sommer,marek.sommer@example.com,+4915100007252,,,Graz,07.02.2025
+B-00582,karin,Unger,dtqtzhxvv@example.com,+49 (0)151 0000 4890,,Seebrise Elektro,Nürnberg,20.08.2022
+B-00583,MAREK,Neumann,Fxqbxmczs@Example.Com,015100008318,,Seebrise Dachdecker GmbH,Nürnberg,
+B-00584,JÜRGEN,Frey,juergen.frey2@example.com,(0151) 0000 6626,,Alpenglut Bau GmbH,Hannover,19.11.2024
+B-00585,Nils,Reimann,nils.reimann@example.com,n/a,,,Berlin,09.12.2022
+B-00586,Carla,Seidel,carla.seidel@example.com,,,,Bremen,21.02.2021
+B-00587,Test,Kunde,test.kunde13@example.com,+49 (0)151 0000 1680,,,,29.03.2024
+B-00588,Elif,Krause,ekrause@example.com,,,Bergwerk Heizung & Sanitär,,19.11.2022
+B-00589,Rita,Conrad ,rconrad2@example.com,0151 0000 9807,,,Frankfurt,25.12.2024
+B-00590,Nadine,NADINE,nadine.nadine@example.com,0049 151 0000 7434,,,,09.07.2023
+B-00591,greta,Sommer,Greta.Sommer@Example.Com,0151 0000 5273,,,,
+B-00592,Dorothea,schröder,Dorothea.Schroeder2@Example.Com,0151/00007691,,Steinfeld Fensterbau,Graz,15.09.2022
+B-00593,Oskar,Graf,oskar.graf2@example.com,+49 (0)151 0000 7793,,Tannenwald Metallbau GmbH,Rostock,21.04.2020
+B-00594,Ines,Seidel,INES.SEIDEL@EXAMPLE.COM,+49 151 0000 9486,,Lindenhof Heizung & Sanitär,Kassel,20.01.2025
+B-00595,Armin,Ott,  aott@example.com ,0049 151 0000 0091,,,Berlin,07.07.2020
+B-00596,TIMO,Jansen,TIMO.JANSEN@EXAMPLE.COM,0151 0000 5001,,Morgenrot Haustechnik GmbH,Essen,29.05.2022
+B-00597,JONAS,CONRAD,jconrad@example.com,0151 0000 2145,,Wiesengrund Metallbau GmbH,Hamburg,26.05.2020
+B-00598,ulrike,Ostermann,uostermann@example.com,,,,,01.06.2024
+B-00599,Frtj,Vvgr ,Frtjvvgr@Example.Com,Tel. 0151 00005314,,,,29.09.2020
+B-00600,Birgit,Ziegler,birgit.ziegler@example.com,,,Seebrise Reinigung,Hannover,21.07.2024
+B-00601,Hannes,conrad,hannes.conrad@example.com,Tel. 0151 00007828,,,Dortmund,14.04.2024
+B-00602,Heiko,Lorenz,  heiko.lorenz@example.com ,,,Silberbach Logistik KG,Rostock,22.03.2021
+B-00603,Carla,Lehmann,CARLA.LEHMANN@EXAMPLE.COM,,,Silberbach Logistik KG,Essen,28.05.2020
+B-00604,Timo ,PFEIFFER,tpfeiffer@example.com,0151/00002574,,,,
+B-00605,Lukas,keller,lukas.keller@example.com,,,,,11.05.2021
+B-00606,oskar,Frey ,oskar.frey@example.com,0151/00009642,,,Kassel,15.06.2021
+B-00607,Karin,Nowak,karin.nowak@example.com,+49 (0)151 0000 5540,,,Ulm,06.05.2020
+B-00608,Yannik,imhof,yannik.imhof@example.com,+49 151 0000 0889,,Falkenhorst Reinigung,Dortmund,29.12.2021
+B-00609,Carla,Ibrahim,cibrahim@example.com,015100003165,,Morgenrot Metallbau GmbH,,04.04.2022
+B-00610,Armin,Lehmann ,Armin.Lehmann@Example.Com,0151-0000-0987,,Alpenglut Fensterbau,Erfurt,01.08.2023
+B-00611,OSKAR,Keller,oskar.keller@example.com,0151/00000019,,,,10.09.2025
+B-00612,Rita,Martin,Rita.Martin@Example.Com,4915100007137,,,Hamburg,14.11.2019
+B-00613,Jonas,Winter,Jonas.Winter2@Example.Com,0151 0000 5794,,,Dresden,31.03.2023
+B-00614,Vera,ZIMMER,,12345,,Alpenglut Heizung & Sanitär,Graz,06.08.2024
+B-00615,lea,Haas,lea.haas@example.com,+49 151 00000829,,Nordlicht Malerbetrieb,Leipzig,07.07.2019
+B-00616,Elif,WAGNER,elif.wagner@example.com,0049 151 0000 0411,,,Graz,02.12.2023
+B-00617,Sven,Dahl,SDAHL@EXAMPLE.COM,,,Eichenau Gartenbau,,30.07.2023
+B-00618,Oskar,Naumann,,+4915100006050,,Steinfeld Heizung & Sanitär,Freiburg,27.10.2021
+B-00619,Jonas,Dahl,jonas.dahl@example.com,Tel. 0151 00001772,,Wiesengrund Dachdecker GmbH,Kassel,20.06.2025
+B-00620,Elif,Brandt,elif.brandt@example.com,0151-0000-0746,,Bergwerk Reinigung,Graz,
+B-00621,Miriam,Imhof,Miriam.Imhof@Example.Com,keine,,,Freiburg,29.04.2019
+B-00622,Dennis,Lindner,dennis.lindner@example.com,+4915100000921,,Silberbach Gartenbau,Dresden,04.12.2020
+B-00623,Leon ,CZERNY,Leon.Czerny@Example.Com,015100000888,,,Leipzig,21.02.2021
+B-00624,Rosa,Bergmann,Rbergmann@Example.Com,0049 151 0000 9285,,,Nürnberg,23.06.2023
+B-00625,Leon,Zimmer,leon.zimmer@example.com,0151 0000 3827,,,,
+B-00626,Hpfnkwf ,Mtmljb,,(0151) 0000 9126,,,,09.06.2021
+B-00627,Rita,marx,rita.marx2@example.com,015100008096,,Eichenau Schreinerei,,05.09.2024
+B-00628,Leon,Quast ,LQUAST@EXAMPLE.COM,Tel. 0151 00004296,,Sonnenberg Heizung & Sanitär,Dresden,24.07.2025
+B-00629,Sven,Bergmann,Sbergmann@Example.Com,Tel. 0151 00000043,,,,15.02.2022
+B-00630,Paul,Krause,PAUL.KRAUSE@EXAMPLE.COM,+49 (0)151 0000 6567,,Lindenhof Malerbetrieb,Essen,18.08.2021
+B-00631,MARA,Beck,,+4915100003546,,Sonnenberg Bau GmbH,Berlin,14.02.2023
+B-00632,Mara,ALBRECHT,Mara.Albrecht@Example.Org,+49 151 00002046,,Steinfeld Reinigung,Kassel,05.06.2023
+B-00633,WALTER,Quast ,wquast@example.com,+4915100004637,,,,27.11.2025
+B-00634,Karin,EBERLE,karin.eberle@example.com,0151-0000-4521,,,Köln,06.02.2023
+B-00635,Marek,KAISER,marek.kaiser@example.com,Tel. 0151 00001194,,Wiesengrund Dachdecker GmbH,Graz,07.07.2019
+B-00636,Ottilie ,Jäger ,ottilie.jaeger@example.com,+49 151 0000 8215,,,Essen,27.01.2019
+B-00637,wiebke,Zimmer,WIEBKE.ZIMMER@EXAMPLE.COM,015100009334,,Falkenhorst Haustechnik GmbH,Hamburg,22.12.2021
+B-00638,Fabian ,Müller,cbjwzqbw@example.com,0151-0000-9814,,Silberbach Dachdecker GmbH,Dresden,05.05.2023
+B-00639,quentin,Krause,  quentin.krause@example.com ,0151 0000 1161,,Tannenwald Haustechnik GmbH,Freiburg,12.03.2019
+B-00640,Team,Support,support@example.com,,,,,30.08.2022
+B-00641,VERA,unger,  vera.unger@example.com ,0151-0000-3697,,Wiesengrund Malerbetrieb,Berlin,30.06.2021
+B-00642,J.,Ibrahim,,015100005097,,,,18.10.2024
+B-00643,Jürgen,Frey ,,(0151) 0000 1050,,,Mainz,28.02.2022
+B-00644,OSKAR,Lorenz,Oskar.Lorenz@Example.Com,,,Tannenwald Logistik KG,,27.03.2025
+B-00645,Olivia,Czerny ,olivia.czerny@example.com,,,,Graz,04.09.2025
+B-00646,Boris,Martin ,Bmartin@Example.Com,(0151) 0000 6985,,Kiefernhof Bau GmbH,,23.04.2023
+B-00647,Gisela,Quast,gisela.quast@example,+4915100001181,,Rheinblick Heizung & Sanitär,,17.05.2025
+B-00648,Uwe,Böhm,uwe.boehm@example.com,,,,Dortmund,08.10.2020
+B-00649,Noah,winter,noah.winter@example.com,,,Falkenhorst Gartenbau,,07.01.2024
+B-00650,FABIAN,Pfeiffer,fpfeiffer@example.com,0151-0000-5384,,Tannenwald Reinigung,Leipzig,10.12.2021
+B-00651,lea,OTT,  lea.ott@example.com ,015100001125,,Lindenhof Schreinerei,Köln,24.08.2021
+B-00652,Mara ,Ulrich,mara.ulrich@example.com,+49,,Morgenrot Bau GmbH,Hamburg,17.01.2025
+B-00653,Jana ,Nowak ,,0049 151 0000 4466,,Sonnenberg Reinigung,,09.07.2022
+B-00654,Jürgen,Albrecht,jalbrecht@example.com,+4915100009870,,Tannenwald Reinigung,Stuttgart,02.04.2019
+B-00655,Leon,Schaefer,lschaefer@example.com,+49 (0)151 0000 4495,,,,19.10.2019
+B-00656,Yannik,Arnold,,0049 151 0000 4089,,,Frankfurt,02.09.2022
+B-00657,Miriam,böhm,  mboehm@example.com ,0151-0000-6210,,,Berlin,23.05.2020
+B-00658,Boris,Maurer,boris.maurer@example.com,0049 151 0000 5503,,Wiesengrund Elektro,Mainz,25.02.2021
+B-00659,Qamrmzfd ,Ozrftzw,qamrmzfd.ozrftzw@example.com,Tel. 0151 00006544,,,,14.05.2019
+B-00660,Jakob,Keller ,  jakob.keller@example.com ,015100005426,,,Berlin,30.10.2022
+B-00661,T.,müller,,Tel. 0151 00004570,,Seebrise Fensterbau,Essen,17.09.2019
+B-00662,Philipp,Fuchs,-,015100009080,,,,13.03.2019
+B-00663,Carla ,Ziegler,Cziegler@Example.Com,0151-0000-9488,,,Leipzig,28.12.2022
+B-00664,Noah ,Martin,noah.martin@example.com,,,Nordlicht Fensterbau,Köln,12.02.2024
+B-00665,Katharina,WAGNER,katharina.wagner@example.com,4915100005004,,Nordlicht Dachdecker GmbH,Dortmund,24.04.2019
+B-00666,Tamara,Ibrahim,TAMARA.IBRAHIM@EXAMPLE.COM,+4915100004633,,,Dortmund,31.02.2024
+B-00667,WALTER,Schaefer ,walter.schaefer@example.org,+49 151 00001520,,Tannenwald Heizung & Sanitär,Dortmund,14.02.2022
+B-00668,Ulrike,Graf,ugraf@example.com,0151 0000 0635,,Rheinblick Fensterbau,Kassel,29.03.2024
+B-00669,Ines,Wolff,,Tel. 0151 00008978,,Silberbach Bau GmbH,München,31.05.2025
+B-00670,Team,Support,support@example.com,,,,,25.03.2023
+B-00671,xenia,Graf,xgraf@example.com,+49 (0)151 0000 9447,,,Stuttgart,21.11.2023
+B-00672,Theresa,Krause ,Theresa.Krause@Example.Com,+49 151 00002086,,,Mainz,21.08.2021
+B-00673,boris,Ziegler,,+49 151 00001042,,,Leipzig,26.01.2019
+B-00674,Elif,Horvat,Elif.Horvat@Example.Com,,,Alpenglut Heizung & Sanitär,Dortmund,13.06.2022
+B-00675,TEAM,Billing,Billing@Example.Com,,,,,25.09.2022
+B-00676,clara,Lindner,clara.lindner@example.com,+49 (0)151 0000 1645,,,,21.12.2019
+B-00677,Stefan,Kovacs,stefan.kovacs@example.com,0151 0000 4115,,Eichenau Gartenbau,Graz,19.09.2020
+B-00678,carla,CZERNY,carla.czerny@example.com,0151 0000 9935,,,Berlin,30.09.2024
+B-00679,Heiko,Köhler,HEIKO.KOEHLER@EXAMPLE.COM,0049 151 0000 4062,,,Bremen,12.05.2021
+B-00680,Rita ,Ostermann ,  rostermann2@example.com ,0151-0000-8792,,Seebrise Gartenbau,Nürnberg,16.07.2025
+B-00681,UWE,ott,UWE.OTT@EXAMPLE.COM,,,Alpenglut Elektro,Kassel,29.03.2019
+B-00682,Carla,Czerny,CARLA.CZERNY@EXAMPLE.COM,,,,,23.01.2025
+B-00683,Dennis ,otto,dennis.otto@example.com,Tel. 0151 00005315,,Alpenglut Malerbetrieb,,13.11.2024
+B-00684,Ben,Kovacs,  bkovacs@example.com ,0151 0000 6571,,Seebrise Gartenbau,,15.04.2022
+B-00685,Zoë,Gebhardt ,zoe.gebhardt2@example.com,+4915100008743,,,Dresden,
+B-00686,Fabian ,Haas,fabian.haas2@example.com,0151/00002420,,,Essen,06.03.2022
+B-00687,Yannik,LORENZ,kein mail,+49 151 0000 7136,,Falkenhorst Reinigung,Rostock,14.07.2019
+B-00688,Uwe ,wolff,,015100009225,,Wiesengrund Metallbau GmbH,,11.12.2022
+B-00689,LEON,Krause,leon.krause@example.com,+49 (0)151 0000 0822,,,,21.02.2022
+B-00690,Fabian,Ott,FOTT@EXAMPLE.COM,0049 151 0000 2042,,Morgenrot Malerbetrieb,Essen,12.08.2025
+B-00691,Carla,Unger,carla.unger@example.com,,,Bergwerk Logistik KG,Köln,17.12.2022
+B-00692,Alina,Wagner,alina.wagner2@example.com,+49 (0)151 0000 9067,,Wiesengrund Gartenbau,,18.06.2022
+B-00693,Rosa,Conrad,Rosa.Conrad@Example.Com,(0151) 0000 9982,,,Köln,22.03.2021
+B-00694,Asdfg,Qwert,kontakt.4677@example.com,+4915100009296,,,,25.01.2021
+B-00695,ANNA,Imhof,anna.imhof@example.org,015100005575,,Falkenhorst Elektro,Ulm,24.02.2025
+B-00696,Erika ,Mustermann,test33@example.com,,,,,05.10.2020
+B-00697,Ines,Schaefer,ines.schaefer2@example.com,+49 151 0000 9801,,,,19.12.2019
+B-00698,Jakob,Marx,Jakob.Marx@Example.Com,+49 151 00000225,,Eichenau Haustechnik GmbH,,24.12.2022
+B-00699,Lukas,Müller,lukas.mueller@example.org,(0151) 0000 5926,,,Leipzig,18.01.2021
+B-00700,Ottilie,Jung,Ottilie.Jung@Example.Com,Tel. 0151 00000843,,Rheinblick Logistik KG,,25.07.2025
+B-00701,HANNES,Zimmer,hannes.zimmer@example.com,+49 (0)151 0000 6687,,Eichenau Dachdecker GmbH,Erfurt,15.04.2019
+B-00702,JONAS,Marx,jonas.marx@example.com,0151/00001592,,Tannenwald Elektro,Freiburg,11.02.2022
+B-00703,FABIAN,Albrecht ,fabian.albrecht@example.com,,,,Leipzig,16.10.2021
+B-00704,noah,Martin ,Nmartin@Example.Com,0151/00001376,,,,01.02.2023
+B-00705,Uwe,Quast,quast@example,,,Tannenwald Malerbetrieb,Freiburg,20.07.2020
+B-00706,Quentin,Baumgartner,Quentin.Baumgartner@Example.Com,,,Silberbach Reinigung,Freiburg,29.07.2023
+B-00707,Xenia,Graf ,XGRAF2@EXAMPLE.COM,0151 0000 9133,,,Dortmund,05.04.2025
+B-00708,ida,Jung,ijung@example.com,+49 (0)151 0000 6044,,Alpenglut Logistik KG,,13.10.2021
+B-00709,Walter,Moser,walter.moser2@example.com,+49 151 0000 7439,,Rheinblick Logistik KG,Graz,07.11.2022
+B-00710,Olivia,Seidel,olivia.seidel2@example.com,+49 151 00005512,,Lindenhof Elektro,Berlin,02.03.2019
+B-00711,GRETA,Graf,greta.graf@example.com,,,Falkenhorst Reinigung,Graz,06.11.2023
+B-00712,Björn,Nowak,Bjoern.Nowak@Example.Com,,,Wiesengrund Malerbetrieb,Ulm,27.07.2020
+B-00713,JAKOB,Schaefer,jschaefer@example.com,,,Silberbach Schreinerei,,12.07.2019
+B-00714,Anna,Lüdke ,anna.luedke@example.com,0151-0000-7254,,,Nürnberg,02.06.2022
+B-00715,Zoë,Quast,zoe.quast@example.com,+4915100004136,,,Dresden,10.06.2019
+B-00716,anna,Zimmer,Anna.Zimmer@Example.Com,0151-0000-1859,,,Rostock,09.05.2019
+B-00717,Rosa,Lüdke,rosa.luedke@example.com,+49 (0)151 0000 5701,,,Rostock,25.07.2023
+B-00718,Noah,Kaiser ,noah.kaiser@example.com,0049 151 0000 4723,,,Hamburg,08.01.2021
+B-00719,KATHARINA,keller,katharina.keller@example.org,+49 (0)151 0000 3151,,Tannenwald Haustechnik GmbH,Bremen,10.06.2024
+B-00720,Viktor,Lüdke,viktor.luedke@example.com,0151 0000 2003,,Seebrise Elektro,,10.12.2020
+B-00721,UWE,Wolff,UWE.WOLFF2@EXAMPLE.COM,Tel. 0151 00003264,,Falkenhorst Reinigung,Mainz,06.07.2025
+B-00722,Elif,Neumann,elif.neumann2@example.com,,,Sonnenberg Logistik KG,,20.08.2025
+B-00723,Timo,Kovacs,timo.kovacs@example.com,Tel. 0151 00002241,,Wiesengrund Logistik KG,Hamburg,01.09.2019
+B-00724,Philipp,Otto,philipp.otto@example.com,Tel. 0151 00003139,,Morgenrot Gartenbau,Stuttgart,19.08.2022
+B-00725,Armin,BÖHM,armin.boehm@example.com,+49,,,,18.09.2025
+B-00726,Miriam,PFEIFFER,MIRIAM.PFEIFFER@EXAMPLE.COM,0151/00005795,,Nordlicht Reinigung,,14.02.2019
+B-00727,Rita,OSTERMANN,Rita.Ostermann@Example.Com,0151/00004650,,Tannenwald Bau GmbH,,
+B-00728,Käthe ,Köhler,KAETHE.KOEHLER@EXAMPLE.COM,+49 151 0000 0959,,Alpenglut Elektro,Freiburg,18.01.2021
+B-00729,oskar,Haas,oskar.haas@example.com,0151-0000-2160,,Bergwerk Reinigung,Nürnberg,25.11.2019
+B-00730,Ben,Zimmer,Ben.Zimmer@Example.Com,0151 123,,,München,06.10.2024
+B-00731,KARIN,Reimann,,0151 0000 8338,,,,
+B-00732,Yannik,kovacs,yannik.kovacs@example.com,+49 (0)151 0000 7620,,Eichenau Metallbau GmbH,,23.09.2019
+B-00733,Oskar,Vollmer,oskar.vollmer@example.com,015100006718,,,Freiburg,14.07.2023
+B-00734,Noah,marx,  noah.marx@example.com ,12345,,Wiesengrund Elektro,Graz,14.08.2022
+B-00735,Oskar,ALBRECHT,oskar.albrecht2@example.com,015100001331,,Tannenwald Elektro,Mainz,08.07.2022
+B-00736,Paul,Dahl,paul.dahl2@example.com,+4915100004187,,Seebrise Haustechnik GmbH,Mainz,11.01.2019
+B-00737,Erika,Mustermann,test3@example.com,,,,,21.09.2025
+B-00738,Ines,Dietrich,idietrich@example.com,,,Falkenhorst Haustechnik GmbH,,12.06.2023
+B-00739,Cem,Keller,ckeller@example.com,015100004527,,Alpenglut Schreinerei,,01.08.2022
+B-00740,Wiebke,BAUMGARTNER,wbaumgartner@example.com,,,Morgenrot Reinigung,Nürnberg,12.11.2023
+B-00741,Karin,nowak,  knowak@example.com ,(0151) 0000 5540,,,Ulm,14.07.2020
+B-00742,Dummy,Kontakt,dummy.kontakt24@example.com,,,,,14.08.2020
+B-00743,ulrike,Neumann,ulrike.neumann@example.org,0151/00002548,,Sonnenberg Schreinerei,Hamburg,06.04.2021
+B-00744,Olivia ,Unger,,+4915100007386,,Nordlicht Schreinerei,Frankfurt,12.04.2025
+B-00745,noah,DIETRICH,Noah.Dietrich@Example.Com,4915100008977,,,Köln,12.09.2025
+B-00746,Jonas,Graf,jonas.graf@example.com,0151-0000-5656,,,Leipzig,14.09.2024
+B-00747,Leon,Winter,leon.winter@example.com,+4915100005106,,Alpenglut Gartenbau,Dortmund,10.12.2020
+B-00748,DAVID,Jansen,david.jansen@example.com,+49 (0)151 0000 2608,,Rheinblick Haustechnik GmbH,,05.11.2022
+B-00749,Walter,Dietrich,walter.dietrich@example.com,+49 (0)151 0000 7047,,,Kassel,14.05.2024
+B-00750,Björn,Marx,Bjoern.Marx@Example.Com,n/a,,Nordlicht Logistik KG,Köln,05.08.2025
+B-00751,Sven,dietrich,Sven.Dietrich@Example.Org,,,Wiesengrund Elektro,Ulm,10.10.2021
+B-00752,Olivia,Frey,ofrey2@example.com,+49 151 00007142,,Sonnenberg Schreinerei,Hannover,30.09.2024
+B-00753,Walter,Eberle,,(0151) 0000 1647,,Tannenwald Metallbau GmbH,München,
+B-00754,Felix,Jäger,jaeger@example,tel folgt,,Alpenglut Reinigung,Graz,14.10.2025
+B-00755,Nadine,PETERS,Nadine.Peters2@Example.Com,0049 151 0000 2878,,Kiefernhof Haustechnik GmbH,Ulm,10.04.2020
+B-00756,Ida,Quast,ida.quast2@example.com,(0151) 0000 0842,,Nordlicht Bau GmbH,Erfurt,07.11.2025
+B-00757,A.,VOIGT,avoigt@example.com,,,Rheinblick Dachdecker GmbH,,13.05.2025
+B-00758,Birgit,Dietrich ,birgit.dietrich@example.com,,,Seebrise Malerbetrieb,Dortmund,
+B-00759,Gisela,FREY,gisela.frey@example.org,,,Eichenau Bau GmbH,Graz,26.08.2021
+B-00760,PHILIPP,Haas,philipp.haas@example.com,015100002537,,Eichenau Schreinerei,Graz,18.09.2019
+B-00761,Timo,Teufel,,0049 151 0000 9973,,Falkenhorst Schreinerei,Kassel,21.04.2023
+B-00762,Lukas,DAHL,,(0151) 0000 9491,,Nordlicht Bau GmbH,Ulm,23.07.2025
+B-00763,Viktor ,Krause,viktor.krause@example.com,+49 (0)151 0000 9409,,Tannenwald Haustechnik GmbH,Hannover,03.10.2019
+B-00764,UWE,KAISER,Uwe.Kaiser@Example.Com,015100005108,,Lindenhof Metallbau GmbH,,17.04.2020
+B-00765,Katharina,HAAS,khaas@example.com,(0151) 0000 0993,,,Berlin,29.01.2021
+B-00766,Lea,Roth,lea.roth@example.com,+49 151 0000 4476,,Seebrise Reinigung,Stuttgart,02.07.2024
+B-00767,o.,Brandt ,,015100008283,,,Berlin,
+B-00768,ZOË,Eberle,zoe.eberle@example.com,+49 151 00006372,,Falkenhorst Heizung & Sanitär,Nürnberg,31.02.2024
+B-00769,Greta ,Krause,GRETA.KRAUSE@EXAMPLE.COM,015100003831,,,,19.02.2024
+B-00770,Quentin,Fuchs,,0151/00001502,,,,13.06.2024
+B-00771,YANNIK,Ulrich,Yannik.Ulrich@Example.Com,0151 0000 9174,,Bergwerk Malerbetrieb,Hannover,10.06.2020
+B-00772,Ottilie,Otto,Ottilie.Otto@Example.Com,,,Lindenhof Dachdecker GmbH,,29.11.2019
+B-00773,Theresa,Albrecht,theresa.albrecht@example.com,,,Alpenglut Logistik KG,Hannover,29.08.2021
+B-00774,Greta ,Kaiser,greta.kaiser@example.com,Tel. 0151 00006368,,Silberbach Gartenbau,Erfurt,02.06.2023
+B-00775,Ottilie,Kaiser,ottilie.kaiser@example.com,Tel. 0151 00006465,,Steinfeld Metallbau GmbH,Kassel,30.09.2023
+B-00776,Emma,SEIDEL,EMMA.SEIDEL@EXAMPLE.ORG,,,Lindenhof Reinigung,Frankfurt,23.03.2019
+B-00777,Test,Test,test.test49@example.com,0151 0000 6874,,,,14.09.2022
+B-00778,Nadine,Lüdke,nadine.luedke@example.com,0151/00006456,,Steinfeld Metallbau GmbH,Köln,12.07.2024
+B-00779,zoe,Quast,,+49 151 00007057,,,Rostock,12.01.2024
+B-00780,Rosa,Horvat ,rosa.horvat2@example.com,+49 (0)151 0000 2726,,Kiefernhof Elektro,Berlin,29.07.2023
+B-00781,Timo,Krause,timo.krause@example.com,+49 151 0000 7580,,,,24.11.2019
+B-00782,CEM,Martin ,cem.martin@example.com,,,,Kassel,19.08.2024
+B-00783,Rosa,LANG,ROSA.LANG@EXAMPLE.COM,+49 151 00007658,,Alpenglut Fensterbau,,01.02.2024
+B-00784,Ottilie,RICHTER,,0151/00000252,,Sonnenberg Elektro,,17.10.2023
+B-00785,Wiebke ,Horvat ,,4915100004012,,Lindenhof Haustechnik GmbH,Nürnberg,04.12.2024
+B-00786,Birgit,Zimmer,birgit.zimmer@example.com,0049 151 0000 6247,,Rheinblick Elektro,Dresden,16.02.2019
+B-00787,Marek,Hartmann,marek.hartmann@example.com,+49 151 00001769,,Alpenglut Logistik KG,Nürnberg,19.02.2021
+B-00788,Rosa,Richter,rosa.richter@example.com,0049 151 0000 3682,,Sonnenberg Elektro,Hannover,18.10.2025
+B-00789,Karin,Ostermann,KARIN.OSTERMANN@EXAMPLE.COM,0151-0000-5443,,,Erfurt,30.10.2021
+B-00790,Ulrike,frey,ulrike.frey@example.com,+4915100009851,,Nordlicht Metallbau GmbH,Mainz,16.03.2021
+B-00791,lukas,Voigt,lukas.voigt@example.com,+4915100004942,,Falkenhorst Schreinerei,Kassel,29.02.2020
+B-00792,Ida,Lehmann,ida.lehmann@example.com,+49 151 0000 6476,,Nordlicht Heizung & Sanitär,Hamburg,21.01.2023
+B-00793,Walter,Nowak,Walter.Nowak2@Example.Com,n/a,,Eichenau Elektro,Dresden,30.10.2020
+B-00794,Ida,Engel,Ida.Engel@Example.Com,015100008100,,Falkenhorst Reinigung,Nürnberg,01.02.2019
+B-00795,Ida,Quast,Ida.Quast2@Example.Com,4915100004137,,,,12.03.2020
+B-00796,Jmtlzf ,Hltpnmf,jmtlzfhltpnmf@example.com,(0151) 0000 3457,,,,
+B-00797,Lea ,ziegler,lea.ziegler@example.com,4915100006390,,Seebrise Logistik KG,Dortmund,02.05.2023
+B-00798,Zoe,Böhm,zoe.boehm@example.com,,,Eichenau Bau GmbH,Ulm,24.05.2022
+B-00799,Ida,Ida,ida.ida@example.com,4915100004809,,,,23.05.2022
+B-00800,jonas,Ibrahim,  jonas.ibrahim@example.com ,,,,Hannover,15.09.2022
+B-00801,JÜRGEN,Neumann,  jneumann2@example.com ,+49 151 00004893,,,Bremen,15.06.2025
+B-00802,Jana,Haas,jana.haas3@example,015100005447,,Alpenglut Metallbau GmbH,,
+B-00803,Boris,Maurer,  boris.maurer2@example.com ,+4915100001802,,Alpenglut Malerbetrieb,Hannover,11.01.2019
+B-00804,Vera,baumgartner,Vera.Baumgartner@Example.Com,0151 0000 1888,,Alpenglut Fensterbau,,30.01.2021
+B-00805,Zoe ,Lüdke,zoe.luedke2@example.com,0151/00005239,,Lindenhof Metallbau GmbH,,
+B-00806,Wiebke,Horvat ,  wiebke.horvat2@example.com ,+49 151 0000 4012,,Lindenhof Haustechnik GmbH,Nürnberg,27.03.2025
+B-00807,Käthe,Novak ,,015100004350,,,,04.09.2025
+B-00808,Jürgen,Maurer ,juergen.maurer@example.com,0151-0000-8309,,Steinfeld Malerbetrieb,Dortmund,27.12.2025
+B-00809,R.,Marx,rosa.marx@example.com,015100008549,,,,11.03.2019
+B-00810,Anna ,Ziegler,,0151 0000 7917,,Nordlicht Elektro,,25.01.2019
+B-00811,Wtbrvg,Tvwfqbz,Wtbrvgtvwfqbz@Example.Com,0049 151 0000 6217,,,,30.01.2019
+B-00812,Björn,Horvat,bjoern.horvat@example.com,015100005063,,Seebrise Schreinerei,Ulm,21.11.2025
+B-00813,Jonas ,Winter ,JONAS.WINTER@EXAMPLE.COM,+49 151 0000 7223,,,,21.01.2019
+B-00814,Marek,Kovacs,Marek.Kovacs@Example.Com,0151/00006616,,,Hannover,
+B-00815,Test ,Kunde,test43@example.com,,,,,13.10.2024
+B-00816,Xenia,Maurer,xenia.maurer@example.com,,,,Rostock,03.01.2021
+B-00817,sven,Baumgartner ,Sbaumgartner@Example.Com,,,Silberbach Gartenbau,Graz,22.09.2023
+B-00818,Zoë,Sommer ,  zoe.sommer@example.com ,,,Kiefernhof Heizung & Sanitär,Erfurt,14.06.2020
+B-00819,Cem ,Müller,n/a,n/a,,Bergwerk Elektro,Dortmund,19.11.2019
+B-00820,Ines,Quast,ines.quast@example.com,Tel. 0151 00004103,,,,23.09.2021
+B-00821,jsfdw,Nmtjwgcg,jsfdwnmtjwgcg@example.com,0151-0000-5156,,,,31.10.2021
+B-00822,Dennis,Reimann,Dennis.Reimann@Example.Com,(0151) 0000 8018,,,Erfurt,24.11.2019
+B-00823,Greta,Czerny,greta.czerny@example.com,0049 151 0000 4582,,Bergwerk Metallbau GmbH,Ulm,08.04.2019
+B-00824,Ottilie,Bergmann,ottilie.bergmann2@example.com,(0151) 0000 9351,,Tannenwald Logistik KG,,10.12.2021
+B-00825,ANNA,MARX,anna.marx@example.com,+49 151 00007683,,Morgenrot Dachdecker GmbH,Rostock,29.01.2021
+B-00826,Ben,ZIEGLER,ben.ziegler.example.com,+49 (0)151 0000 4439,,,Ulm,03.01.2022
+B-00827,Noah,thiel,NTHIEL2@EXAMPLE.COM,,,Silberbach Malerbetrieb,Hannover,11.03.2020
+B-00828,Theresa,Bergmann ,-,,,Alpenglut Bau GmbH,,
+B-00829,T.,ziegler,theresa.ziegler@example.com,0049 151 0000 4565,,Rheinblick Dachdecker GmbH,Hannover,04.01.2023
+B-00830,dorothea,Kovacs,dorothea.kovacs@example.com,0049 151 0000 8850,,Nordlicht Haustechnik GmbH,,03.10.2022
+B-00831,Cem,Müller,CEM.MUELLER@EXAMPLE.COM,0151/00005729,,,München,28.01.2025
+B-00832,Jana,Ibrahim,,015100001316,,Alpenglut Fensterbau,,06.01.2025
+B-00833,Jonas ,dietrich,jonas.dietrich@example.com,0151 0000 2501,,,,05.04.2022
+B-00834,Nils,Neumann ,nils.neumann at example.com,+49 (0)151 0000 8480,,,Essen,05.07.2020
+B-00835,Jonas ,Krause,  jonas.krause@example.com ,,,,München,30.12.2022
+B-00836,Ulrike,Lüdke,Ulrike.Luedke@Example.Com,0151-0000-8154,,Rheinblick Logistik KG,Leipzig,13.06.2019
+B-00837,noah,Gebhardt,noah.gebhardt@example.com,,,Steinfeld Metallbau GmbH,Rostock,06.09.2019
+B-00838,Zoë,dahl,zoe.dahl@example.com,+49 (0)151 0000 2144,,Rheinblick Malerbetrieb,Bremen,20.02.2020
+B-00839,Stefan,Müller,Stefan.Mueller2@Example.Com,+49 (0)151 0000 1865,,,Kassel,06.05.2023
+B-00840,Katharina,Nowak,katharina.nowak@example.com,0151/00000859,,Alpenglut Dachdecker GmbH,Dresden,19.02.2022
+B-00841,Team,Support,support@example.com,,,,,25.02.2025
+B-00842,ines,Ziegler,ines.ziegler@example.com,,,Steinfeld Haustechnik GmbH,Bremen,27.03.2025
+B-00843,Carla,Moser,Carla.Moser@Example.Com,0049 151 0000 7217,,Falkenhorst Metallbau GmbH,,02.12.2020
+B-00844,Noah,Lehmann,Noah.Lehmann@Example.Com,,,Sonnenberg Elektro,Stuttgart,05.02.2024
+B-00845,HEIKO,Schröder,,+49 (0)151 0000 3998,,,,12.05.2025
+B-00846,Cem,Keller,cem.keller@example.com,+49 (0)151 0000 4527,,Alpenglut Schreinerei,,07.09.2023
+B-00847,Leon,Böhm,leon.boehm@example.com,Tel. 0151 00006679,,,Leipzig,14.02.2025
+B-00848,Jana,Roth,Jana.Roth@Example.Org,,,,Essen,17.02.2023
+B-00849,Katharina,Jäger,kjaeger2@example.com,015100009717,,,,31.08.2022
+B-00850,Rosa,lüdke,Rosa.Luedke2@Example.Com,(0151) 0000 5568,,,Freiburg,08.02.2019
+B-00851,Olivia,Jansen,Olivia.Jansen@Example.Com,+4915100009639,,Steinfeld Malerbetrieb,Mainz,26.05.2019
+B-00852,rosa,Maurer ,rosa.maurer@example.com,+49 (0)151 0000 1984,,Falkenhorst Logistik KG,,07.01.2025
+B-00853,J. ,Müller ,jana.mueller@example.com,0049 151 0000 7268,,Silberbach Elektro,Kassel,06.12.2019
+B-00854,Mara,Jung,,+4915100007056,,Lindenhof Elektro,Stuttgart,17.09.2019
+B-00855,M.,ziegler,MIRIAM.ZIEGLER@EXAMPLE.COM,+4915100001236,,Silberbach Heizung & Sanitär,Hamburg,26.05.2019
+B-00856,Viktor ,jung,viktor.jung@example.com,+4915100001989,,,Rostock,07.02.2021
+B-00857,jana,Unger,JANA.UNGER2@EXAMPLE.COM,Tel. 0151 00005296,,Tannenwald Schreinerei,Hamburg,15.02.2020
+B-00858,rosa,naumann,Rosa.Naumann@Example.Com,0151-0000-3684,,Sonnenberg Elektro,Berlin,30.06.2023
+B-00859,OLIVIA,Peters,olivia.peters@example.com,,,Rheinblick Bau GmbH,Köln,03.08.2022
+B-00860,Cem,EBERLE,CEM.EBERLE@EXAMPLE.COM,0151-0000-1754,,,Leipzig,
+B-00861,Björn,Jansen,bjoern.jansen@example.com,Tel. 0151 00005281,,,Mainz,06.04.2022
+B-00862,Viktor,KÖHLER,viktor.koehler@example.com,0151/00007398,,Falkenhorst Bau GmbH,Essen,05.08.2025
+B-00863,Leon,Yilmaz,  lyilmaz@example.com ,0049 151 0000 6736,,Wiesengrund Dachdecker GmbH,,09.12.2020
+B-00864,Timo,LEHMANN,TIMO.LEHMANN@EXAMPLE.COM,(0151) 0000 7771,,,Leipzig,13.10.2022
+B-00865,Fjibngkd,Tjdpwmso,fjibngkd.tjdpwmso@example.com,+49 (0)151 0000 1797,,,,27.06.2023
+B-00866,Ines,SCHAEFER,ines.schaefer@example.com,0151/00000453,,,,13.04.2025
+B-00867,Wiebke,Quast,wiebke.quast@example.com,,,,,29.06.2024
+B-00868,Heiko,Kaiser,heiko.kaiser@example.org,,,,Bremen,06.11.2022
+B-00869,Felix,Böhm,felix.boehm@example.com,(0151) 0000 7431,,Rheinblick Heizung & Sanitär,Nürnberg,
+B-00870,Sven,jansen,SVEN.JANSEN@EXAMPLE.COM,+49 151 00000127,,,,29.03.2020
+B-00871,Hannes,Pfeiffer,,4915100001252,,,Ulm,21.10.2019
+B-00872,M.,KÖHLER,,(0151) 0000 6055,,,Rostock,03.08.2025
+B-00873,Rita,Conrad,Rconrad@Example.Com,,,,,21.07.2019
+B-00874,Kbrcbubg,Nhxurkwq,  kbrcbubg.nhxurkwq@example.com ,0049 151 0000 3594,,,,31.07.2019
+B-00875,Björn,Teufel,bjoern.teufel@example.com,0049 151 0000 5024,,,Dresden,29.05.2023
+B-00876,Viktor,Otto ,viktor.otto@example.com,+49 151 0000 4832,,Sonnenberg Bau GmbH,Berlin,10.04.2025
+B-00877,Nils,Vogel,Nils.Vogel@Example.Com,0151 0000 2565,,Lindenhof Fensterbau,Ulm,22.11.2023
+B-00878,philipp,Vollmer,Philipp.Vollmer@Example.Com,0151/00001546,,Seebrise Malerbetrieb,,21.02.2021
+B-00879,Marek,Imhof,mimhof@example.com,0049 151 0000 0920,,,,01.05.2019
+B-00880,Nils,ULRICH,nils.ulrich@example.com,015100009756,,Seebrise Dachdecker GmbH,Nürnberg,16.08.2022
+B-00881,Carla,Lüdke,carla.luedke@example.com,+49 151 0000 3706,,Nordlicht Malerbetrieb,Leipzig,11.05.2024
+B-00882,Lukas,Zimmer,lukas.zimmer@example.com,+4915100009827,,Falkenhorst Schreinerei,,26.01.2024
+B-00883,David,Ostermann,,(0151) 0000 4211,,Lindenhof Reinigung,Stuttgart,11.08.2023
+B-00884,Rosa,Frey,ROSA.FREY@EXAMPLE.COM,Tel. 0151 00000999,,,Nürnberg,15.07.2022
+B-00885,Elif,voigt,elif.voigt@example.com,Tel. 0151 00001895,,,Erfurt,04.10.2023
+B-00886,Uwe,Vollmer,uwe.vollmer@example.com,(0151) 0000 5322,,Eichenau Malerbetrieb,Stuttgart,23.12.2019
+B-00887,Birgit,Baumgartner ,birgit.baumgartner@example.com,015100007942,,Rheinblick Elektro,Freiburg,17.11.2021
+B-00888,Xenia,VOGEL,Xenia.Vogel@Example.Com,+49 (0)151 0000 4353,,Nordlicht Dachdecker GmbH,Frankfurt,26.05.2020
+B-00889,ALINA,Vogel,alina.vogel@example.com,0151 0000 5753,,Eichenau Reinigung,Nürnberg,29.06.2023
+B-00890,leon,frey,leon.frey at example.com,0151-0000-3186,,,Freiburg,30.05.2025
+B-00891,Jonas,Ott,n/a,+49 151 0000 3909,,Morgenrot Bau GmbH,Rostock,23.06.2023
+B-00892,Olivia,Quast,olivia.quast@example.com,015100004559,,Sonnenberg Logistik KG,Köln,01.02.2019
+B-00893,NXCMS,Xgstm,,+49 (0)151 0000 6228,,,,12.03.2021
+B-00894,Greta,Frey ,  greta.frey2@example.com ,015100006039,,,Hannover,11.11.2021
+B-00895,Y.,jäger,yannik.jaeger@example.com,0151/00004713,,Silberbach Bau GmbH,Berlin,
+B-00896,Lukas ,Ziegler,lukas.ziegler@example.com,Tel. 0151 00006691,,Morgenrot Metallbau GmbH,Stuttgart,07.12.2020
+B-00897,Alina,Böhm,alina.boehm@example.com,,,Silberbach Haustechnik GmbH,Frankfurt,
+B-00898,Olivia,Lüdke ,olivia.luedke@example.com,0049 151 0000 5422,,Rheinblick Logistik KG,Bremen,04.04.2019
+B-00899,Zoë,Reimann,vvjpvqvdh@example.com,0049 151 0000 1744,,Eichenau Schreinerei,Stuttgart,12.12.2022
+B-00900,Greta,Vogel,greta.vogel@example.com,0151/00004957,,Steinfeld Bau GmbH,Dortmund,07.12.2020
+B-00901,ULRIKE,Imhof ,ulrike.imhof@example.com,015100005805,,Nordlicht Fensterbau,,23.04.2024
+B-00902,M.,Pfeiffer,mpfeiffer@example.com,,,Nordlicht Reinigung,,27.08.2020
+B-00903,Clara,Zimmer,CLARA.ZIMMER@EXAMPLE.COM,0049 151 0000 3887,,,,28.02.2024
+B-00904,Zoë,schaefer,zoe.schaefer@example.org,,,Silberbach Bau GmbH,,14.08.2021
+B-00905,philipp,jäger,PHILIPP.JAEGER@EXAMPLE.COM,0151-0000-0028,,Lindenhof Fensterbau,Dortmund,30.05.2019
+B-00906,Philipp,Jung,philipp.jung@example.com,0049 151 0000 9107,,Falkenhorst Fensterbau,Ulm,20.12.2023
+B-00907,,,kontakt.7987@example.com,,,,,30.08.2022
+B-00908,Olivia,EBERLE,Olivia.Eberle@Example.Com,+4915100004892,,Eichenau Elektro,,07.05.2023
+B-00909,ida,Jung,ida.jung2@example.com,+49 151 0000 6993,,,,07.04.2024
+B-00910,Viktor,Ott,viktor.ott@example.com,4915100009583,,Wiesengrund Logistik KG,Frankfurt,13.04.2023
+B-00911,Ggqxl,Pkzr,,0151-0000-2678,,,,20.12.2022
+B-00912,Ines,Otto,Ines.Otto@Example.Com,,,Alpenglut Fensterbau,Freiburg,20.06.2025
+B-00913,Greta ,Eberle,,+49 151 0000 9598,,,Dortmund,28.02.2025
+B-00914,Leon,Lang,leon.lang@example.com,0049 151 0000 3729,,Lindenhof Bau GmbH,Berlin,21.04.2023
+B-00915,Fabian,RICHTER,fabian.richter@example.com,Tel. 0151 00009032,,Kiefernhof Logistik KG,Stuttgart,24.02.2024
+B-00916,Dummy,Kontakt,dummy.kontakt32@example.com,+49 (0)151 0000 3583,,,,26.01.2024
+B-00917,S.,Thiel,STHIEL@EXAMPLE.COM,,,,Dortmund,03.10.2025
+B-00918,VIKTOR,Dietrich,viktor.dietrich@example.com,015100000602,,,,08.01.2025
+B-00919,,,kontakt.8214@example.com,,,,,
+B-00920,Test,Kunde,  test21@example.com ,,,,,27.03.2019
+B-00921,JANA,Fuchs,jana.fuchs@example.com,,,Tannenwald Elektro,Ulm,20.11.2024
+B-00922,Timo,Maurer,timo.maurer2@example.com,+49 151 00003653,,Lindenhof Fensterbau,,22.12.2019
+B-00923,Jonas,kovacs,jonas.kovacs@example.com,,,Falkenhorst Gartenbau,Mainz,
+B-00924,Katharina,Böhm,katharina.boehm@example.com,0049 151 0000 1105,,Eichenau Gartenbau,Stuttgart,28.05.2019
+B-00925,Jakob,Wolff,JAKOB.WOLFF@EXAMPLE.COM,,,,,03.11.2025
+B-00926,Emma,Vogel,emma.vogel@example.com,Tel. 0151 00002532,,,Köln,20.03.2019
+B-00927,Ben ,Maurer,ben.maurer@@example.com,0151 0000 5356,,Morgenrot Haustechnik GmbH,Leipzig,17.06.2020
+B-00928,Viktor,Novak,viktor.novak@example.com,+49 (0)151 0000 8424,,,Köln,08.08.2021
+B-00929,Nadine,Keller,nadine.keller@example.com,0151/00007954,,,München,19.03.2021
+B-00930,Max,Mustermann,  test40@example.com ,,,,,02.02.2025
+B-00931,sabine,Kaiser,  sabine.kaiser@example.com ,,,,,11.01.2023
+B-00932,J.,Yilmaz,jakob.yilmaz@example.com,+49 151 0000 5737,,,Rostock,27.03.2020
+B-00933,Nils,Otto,NILS.OTTO@EXAMPLE.COM,0151-0000-8667,,Kiefernhof Malerbetrieb,Frankfurt,28.12.2020
+B-00934,zoe,Lüdke,zoe.luedke@example.com,,,,,02.06.2020
+B-00935,Rita,jung,RITA.JUNG@EXAMPLE.COM,+4915100001869,,Morgenrot Elektro,Essen,27.12.2024
+B-00936,D. ,Lindner,  dlindner@example.com ,,,Silberbach Gartenbau,Dresden,09.02.2024
+B-00937,Anna,PETERS,anna.peters2@example.com,+4915100004001,,Sonnenberg Schreinerei,Stuttgart,09.12.2025
+B-00938,ULRIKE,unger,ulrike.unger@example.com,0151 123,,Eichenau Heizung & Sanitär,Bremen,25.03.2022
+B-00939,Ottilie ,Nowak,,0151 0000 0476,,Alpenglut Heizung & Sanitär,Nürnberg,02.07.2024
+B-00940,Xenia,LEHMANN,,+49 (0)151 0000 7317,,,Berlin,10.05.2022
+B-00941,Heiko ,SOMMER,heiko.sommer@example.com,+49 151 00004987,,Seebrise Elektro,Berlin,22.12.2020
+B-00942,Yannik,winter,ywinter@example.com,0151/00000047,,,,16.12.2025
+B-00943,Zoë,Naumann,,0049 151 0000 3493,,Rheinblick Malerbetrieb,,18.04.2019
+B-00944,Nadine,Naumann,  nadine.naumann2@example.com ,0049 151 0000 7196,,Bergwerk Schreinerei,Erfurt,30.11.2021
+B-00945,jana,schröder,Jana.Schroeder@Example.Com,+49 151 0000 0515,,Tannenwald Schreinerei,Nürnberg,19.05.2019
+B-00946,Noah,Teufel,noah.teufel@example.com,Tel. 0151 00003899,,Alpenglut Gartenbau,Köln,17.10.2024
+B-00947,M.,Lorenz,mlorenz@example.com,,,Steinfeld Elektro,,20.06.2021
+B-00948,Gisela,ziegler,,0151-0000-8702,,Tannenwald Bau GmbH,,06.11.2019
+B-00949,Nadine,Lorenz,NLORENZ@EXAMPLE.COM,Tel. 0151 00008432,,Bergwerk Reinigung,Dresden,27.02.2024
+B-00950,Hannes,Jung,hannes.jung@example.com,,,Lindenhof Reinigung,Essen,30.04.2025
+B-00951,leon,Vollmer,hkffttnkkf@example.com,+49 (0)151 0000 9859,,Seebrise Dachdecker GmbH,Hamburg,13.12.2020
+B-00952,F.,Roth,FROTH@EXAMPLE.COM,,,,Rostock,13.09.2024
+B-00953,Dennis,fuchs,dennis.fuchs@example.com,0049 151 0000 7582,,,Erfurt,24.12.2023
+B-00954,Jakob,unger,jakob.unger@@example.com,+49 (0)151 0000 7906,,Bergwerk Haustechnik GmbH,München,24.04.2025
+B-00955,TEST,Kunde,Test23@Example.Com,Tel. 0151 00006913,,,,28.11.2024
+B-00956,Erika,Mustermann,erika.mustermann26@example.com,+49 (0)151 0000 0489,,,,
+B-00957,Greta,Jung,greta.jung@example.com,,,,Nürnberg,09.04.2025
+B-00958,Jakob,Kaiser,Jakob.Kaiser@Example.Com,,,,,01.12.2023
+B-00959,ULRIKE,Novak,unovak@example.com,,,Sonnenberg Metallbau GmbH,,05.06.2019
+B-00960,Jakob,Lorenz,-,+49 (0)151 0000 2472,,,Kassel,15.12.2021
+B-00961,Ottilie,Zimmer,  ottilie.zimmer@example.com ,,,Morgenrot Fensterbau,Erfurt,09.01.2023
+B-00962,David,Sommer,David.Sommer@Example.Com,,,,Leipzig,29.11.2022
+B-00963,Dorothea,Vogel,DOROTHEA.VOGEL@EXAMPLE.COM,4915100005689,,Steinfeld Metallbau GmbH,Kassel,30.04.2023
+B-00964,ZOE,Marx 1,zoe.marx@example.com,,,,Leipzig,07.11.2022
+B-00965,OTTILIE,Vogel,,0151-0000-7602,,Alpenglut Dachdecker GmbH,Köln,26.09.2022
+B-00966,GRETA,EBERLE 5,greta.eberle@example.com,,,,,01.12.2020
+B-00967,Jakob,Naumann,jakob.naumann@example.com,,,,Dortmund,27.04.2023
+B-00968,Philipp,Keller,,+49 151 0000 3296,,,,18.11.2024
+B-00969,Jqftbrda,Rqanshh,jqftbrda.rqanshh@example.com,+49 (0)151 0000 1490,,,,12.05.2025
+B-00970,Jakob,Wolff,Jakob.Wolff@Example.Com,015100000694,,Kiefernhof Elektro,Berlin,13.07.2024
+B-00971,Kklfmdf ,Nxjf,Kklfmdfnxjf@Example.Com,0151 0000 3734,,,,07.07.2022
+B-00972,Zoe,zimmer,  zoe.zimmer@example.com ,,,Seebrise Haustechnik GmbH,Berlin,29.11.2021
+B-00973,Dennis,imhof,kein mail,+4915100009370,,,,29.05.2019
+B-00974,Oskar,Pfeiffer,oskar.pfeiffer2@example.com,0151 0000 2816,,,Freiburg,27.07.2022
+B-00975,Yannik,KRAUSE,yannik.krause2@example.com,0151/00002648,,Alpenglut Bau GmbH,Essen,10.05.2025
+B-00976,Clara,Frey ,,Tel. 0151 00000933,,Sonnenberg Fensterbau,Ulm,24.12.2024
+B-00977,Philipp ,Haas,,,,Steinfeld Schreinerei,Kassel,07.07.2025
+B-00978,GRETA,Naumann,GRETA.NAUMANN2@EXAMPLE.COM,+49 151 0000 0610,,,Freiburg,08.08.2025
