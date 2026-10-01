@@ -1,6 +1,6 @@
 # crm-data-cleanup
 
-![Messy CRM export in, clean contacts out: three rows of one person merged into one contact; 2,000 rows in, 190 set aside, 484 duplicates merged, 1,326 clean contacts](docs/images/overview.png)
+![Cleanup shown as a pipeline: 2,000 imported rows, 190 set aside with a reason, 484 duplicates merged, 1,326 clean contacts; integrity checks passed and ready to import](docs/images/overview.png)
 
 CRM exports from different tools describe the same person several times, with mixed-case e-mails, phone numbers in a dozen notations, test entries, internal addresses and keyboard junk in between. Imported as they are, they fill the new CRM with duplicates and unreachable contacts; cleaned by deleting, they lose real people.
 
